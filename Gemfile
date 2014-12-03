@@ -11,7 +11,6 @@ gem 'jquery-ui-rails'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
-  gem 'haml-rails', '>= 0.3.4'
 end
 
 group :test do
@@ -20,6 +19,7 @@ group :test do
   gem 'factory_girl_rails', '4.2.1', require: false
 end
 
+gem 'haml-rails', '>= 0.3.4'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
