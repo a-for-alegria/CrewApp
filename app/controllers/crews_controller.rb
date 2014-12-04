@@ -16,6 +16,10 @@ class CrewsController < ApplicationController
     end
   end
 
+  def show
+    @crew = Crew.find(params[:id])
+  end
+
   private
 
     def crew_params
