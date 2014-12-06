@@ -91,5 +91,19 @@ describe 'CrewPage' do
 	    end
     end
   end
+
+#==============================Delete action===========>>
+
+	describe 'delete action from index page' do
+		before do
+			@crew = Crew.create(name: 'Name', secondname: 'First')
+			visit root_path
+		end
+
+		it {should have_content('delete')}
+		it 'should delete crew member' do
+			expect{click_link('delete')}.to change(Crew, :count).by(-1)
+		end
+	end
 end
 

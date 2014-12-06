@@ -6,5 +6,8 @@
   -@crews.each do |crew|
     %li 
       %span #{ link_to crew.combine_names , crew_path(crew)}
+      %br
+      %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
+    %br  
 #{link_to 'Add member', new_crew_path}
     

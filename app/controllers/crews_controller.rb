@@ -34,6 +34,11 @@ class CrewsController < ApplicationController
     end
   end
 
+  def destroy
+    crew_finder.destroy
+    redirect_to root_path
+  end
+
   private
 
     def crew_finder
