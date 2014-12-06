@@ -3,7 +3,9 @@ require 'spec_helper'
 describe 'CrewPage' do
   subject {page}
 
-  describe 'main page' do
+#==============================Index page===========>>
+
+  describe 'main page/index' do
     before do
       @crew = Crew.create(name: 'Name', secondname: 'First')
       visit root_path
@@ -15,6 +17,8 @@ describe 'CrewPage' do
       expect(page).to have_selector('li', text: @crew.name)
     end
   end
+
+#==============================New page===========>>
 
   describe 'new crew member page' do
     before {visit new_crew_path}
@@ -42,7 +46,9 @@ describe 'CrewPage' do
     end
   end
 
-  describe 'crew member personal profile' do
+#==============================Show page===========>>
+
+  describe 'show page' do
     before do
       @crew = Crew.create(name: 'Name', secondname: 'First')
       visit root_path
@@ -55,13 +61,35 @@ describe 'CrewPage' do
     it {should have_link('Edit', href: edit_crew_path(@crew))}
   end
 
-  describe 'update action for crew' do
+#==============================Edit page===========>>
+
+  describe 'edit page' do
     before do
       @crew = Crew.create(name: 'Name', secondname: 'First')
       visit edit_crew_path(@crew)
     end
     it {should have_title('Edit panel')}
     it {should have_link('Cancel', href: crew_path(@crew))}
+
+    describe 'edit action' do  	
+    	
+    	# describe 'unseccessfull edit' do
+    	# 	let(:submit) {'Save'}
+	    # 	it "should not save changes" do
+	        
+	    #   end
+	    # end
+
+	    describe 'successfull edit' do
+	    	before do
+	        fill_in 'Name',       with: 'Reloadname'
+	        fill_in 'Secondname', with: 'Reloadsecondname'
+	        click_button('Save')
+	      end
+	      it {should have_content('Reloadname')}
+	      it {should have_content('Reloadsecondname')}
+	    end
+    end
   end
 end
 

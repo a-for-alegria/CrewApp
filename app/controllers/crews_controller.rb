@@ -1,5 +1,5 @@
 class CrewsController < ApplicationController
-	before_filter :crew_finder, only: [:show, :edit]
+	before_filter :crew_finder, only: [:show, :edit, :update]
 
   def index
 		@crews = Crew.all
@@ -23,6 +23,15 @@ class CrewsController < ApplicationController
 
   def edit
 
+  end
+
+  def update
+    if @crew.save
+      @crew.update_attributes(crew_params)
+      redirect_to @crew
+    else
+      render 'edit'
+    end
   end
 
   private
