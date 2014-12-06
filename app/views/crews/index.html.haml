@@ -6,4 +6,5 @@
   -@crews.each do |crew|
     %li 
       %span #{ link_to crew.combine_names , crew_path(crew)}
-  %span #{link_to 'Add member', new_crew_path}
+  %button #{link_to 'Add member', new_crew_path}
+    

@@ -1,5 +1,7 @@
 class CrewsController < ApplicationController
-	def index
+	before_filter :crew_finder, only: [:show, :edit]
+
+  def index
 		@crews = Crew.all
 	end
 
@@ -17,10 +19,17 @@ class CrewsController < ApplicationController
   end
 
   def show
-    @crew = Crew.find(params[:id])
+  end
+
+  def edit
+
   end
 
   private
+
+    def crew_finder
+      @crew = Crew.find(params[:id])
+    end
 
     def crew_params
       params.require(:crew).permit(:name, :secondname)

@@ -52,13 +52,16 @@ describe 'CrewPage' do
     it {should have_title("#{@crew.combine_names} profile")}
     it {should have_selector('h1', text: @crew.combine_names)}
     it {should have_link('return to Dashboard', href: root_path)}
+    it {should have_link('Edit', href: edit_crew_path(@crew))}
   end
 
   describe 'update action for crew' do
     before do
       @crew = Crew.create(name: 'Name', secondname: 'First')
-      visit edit_crew-path9@crew
+      visit edit_crew_path(@crew)
     end
+    it {should have_title('Edit panel')}
+    it {should have_link('Cancel', href: crew_path(@crew))}
   end
 end
 
