@@ -3,6 +3,7 @@ class CrewsController < ApplicationController
 
   def index
 		@crews = Crew.all
+    @clients = Client.all
 	end
 
 	def new

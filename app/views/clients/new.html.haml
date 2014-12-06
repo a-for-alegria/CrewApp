@@ -1,0 +1,13 @@
+- provide(:title, 'New client')
+
+%h1 New client
+%div.form-block-client
+  =form_for(@client) do |f|
+    / =render 'shared/error_messages', object: f.object 
+    =f.label :client_name
+    =f.text_field :client_name, placeholder: "Enter name of new client"
+    =f.label :client_secondname
+    =f.text_field :client_secondname, placeholder: "Enter second name of new client"
+
+    =f.submit "Create"
+#{to_root}

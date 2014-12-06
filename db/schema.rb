@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203005147) do
+ActiveRecord::Schema.define(version: 20141206221940) do
+
+  create_table "clients", force: true do |t|
+    t.string   "client_name"
+    t.string   "client_secondname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "crews", force: true do |t|
     t.string   "name"
