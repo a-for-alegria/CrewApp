@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206221940) do
+ActiveRecord::Schema.define(version: 20141207202041) do
 
   create_table "clients", force: true do |t|
     t.string   "client_name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141206221940) do
     t.string   "secondname"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "in_charge",  default: false
   end
 
 end

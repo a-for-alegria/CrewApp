@@ -8,6 +8,7 @@ describe Crew do
 
   it {should respond_to(:name)}
   it {should respond_to(:secondname)}
+  it {should respond_to(:in_charge)}
 
   describe "Name should be present" do
     before {@crew.name = " "}
