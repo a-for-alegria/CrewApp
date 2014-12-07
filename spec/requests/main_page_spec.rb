@@ -12,7 +12,6 @@ describe 'DashboardPage' do
       visit root_path
     end
     it {should have_title('Dashboard')}
-    it {should have_content('Ace Team')}
     it {should have_link('Add member', href: new_crew_path)}
     it {should have_link('Add client', href: new_client_path)}
     it 'should list all the crew members' do

@@ -9,7 +9,6 @@ describe 'ClientPage' do
     before {visit new_client_path}
 
     it {should have_title('New client')}
-    it {should have_link('return to Dashboard', href: root_path)}
 
     let(:submit) {"Create"}
 
@@ -40,7 +39,6 @@ describe 'ClientPage' do
     end
 
     it {should have_title("#{@client.combine_names} profile")}
-    it {should have_link('return to Dashboard', href: root_path)}
     it {should have_link('Edit', href: edit_client_path(@client))}
   end
 

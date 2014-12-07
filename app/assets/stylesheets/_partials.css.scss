@@ -1,0 +1,10 @@
+/* Classes------------------*/
+
+.scrollable {
+  font-size: 1em;
+  height: 92%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}

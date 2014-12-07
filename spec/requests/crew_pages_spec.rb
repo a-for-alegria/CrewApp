@@ -9,7 +9,6 @@ describe 'CrewPage' do
     before {visit new_crew_path}
 
     it {should have_title('New member')}
-    it {should have_link('return to Dashboard', href: root_path)}
 
     let(:submit) {"Create"}
 
@@ -40,7 +39,6 @@ describe 'CrewPage' do
     end
 
     it {should have_title("#{@crew.combine_names} profile")}
-    it {should have_link('return to Dashboard', href: root_path)}
     it {should have_link('Edit', href: edit_crew_path(@crew))}
   end
 
