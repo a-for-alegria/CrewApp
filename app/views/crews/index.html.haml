@@ -5,26 +5,28 @@
 %section.core-data
   %ul
     %li Total members: #{@crews.count}
-    %li total clients: #{@clients.count}
+    %li Total clients: #{@clients.count}
 
 // Index page itself
 
-%h2 Crew members
-%ul.index-list-crew
--@crews.each do |crew|
-  %li 
-    %span #{ link_to crew.combine_names , crew_path(crew)}
+%div.index-list-crew
+  %h2 Crew members
+  %ul
+  -@crews.each do |crew|
+    %li 
+      %span #{ link_to crew.combine_names , crew_path(crew)}
+      %br
+      %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
     %br
-    %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
-  %br
-#{link_to 'Add member', new_crew_path}
-%h2 Company clients
-%ul.index-list-clients
--@clients.each do |client|
-  %li 
-    %span #{ link_to client.combine_names , client_path(client)}
-    %br
-    %a.delete-button{"data-method" => "delete", href: client_path(client)} delete
-  %br    
-#{link_to 'Add client', new_client_path}
+  #{link_to 'Add member', new_crew_path}
+%div.index-list-clients  
+  %h2 Company clients
+  %ul
+  -@clients.each do |client|
+    %li 
+      %span #{ link_to client.combine_names , client_path(client)}
+      %br
+      %a.delete-button{"data-method" => "delete", href: client_path(client)} delete
+    %br    
+  #{link_to 'Add client', new_client_path}
     
