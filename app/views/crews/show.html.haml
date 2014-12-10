@@ -2,6 +2,8 @@
 
 %h1 #{@crew.combine_names}
 #{link_to 'Edit', edit_crew_path(@crew)}
+%br
+%a.delete-button{"data-method" => "delete", href: crew_path(@crew)} delete
 
 
   

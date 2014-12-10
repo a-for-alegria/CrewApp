@@ -9,22 +9,29 @@
 
 // Index page itself
 
-%div.index-list-crew
+%div.index-list-crew.scrollable
   %h2 Crew members
   %ul
   -@crews.each do |crew|
-    %li 
-      %span #{crew.combine_names}
+    %li.main-list-item-crew
+      #{image_tag 'me.jpg', height: '100px', width: '100px', class: 'client-avatar'}
+      %ol
+        %li 
+          %h3 #{crew.combine_names}
+        %li Secondary info
+        %li Third-party info
+        %li Fourth-party info
       %div.hiden-crew-info-crew
         %ul
           %li #{link_to 'Profile' , crew_path(crew)}
+          %li #{link_to 'Edit', edit_crew_path(crew)}
           %li 
             %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
-%div.index-list-clients  
+%div.index-list-clients.scrollable
   %h2 Company clients
   %ul
   -@clients.each do |client|
-    %li 
+    %li.main-list-item-client
       %span #{client.combine_names}
       %div.hiden-crew-info-client
         %ul

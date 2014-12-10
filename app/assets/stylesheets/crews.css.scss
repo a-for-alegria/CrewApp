@@ -18,6 +18,7 @@
 .index-list-crew,
 .index-list-clients {
 	width: 49%;
+	height: 100%;
 	display: inline-block;
 	text-align: center;
 	li, 
@@ -28,12 +29,32 @@
 		cursor: pointer;
 	}
 	span {
-		display: block;
+		display: inline-block;
 		color: darken(#ffffff, 45%);
 		font-weight: bold;
-		border-bottom: 1px solid darken(#ffffff, 15%)
+	}
+	.client-avatar {
+		display: inline-block;
 	}
 }
+
+/* Border only for specific li */
+
+.main-list-item-crew,
+.main-list-item-client {
+  border-bottom: 1px solid darken(#ffffff, 15%);
+  margin-right: 10px;
+  text-align: left;
+  ol {
+  	display: inline-block;
+  }
+}
+.main-list-item-client {
+	margin-left: 10px;
+}
+
+/*---*/
+
 
 .index-list-crew {
   li {
@@ -61,8 +82,6 @@
 .hiden-crew-info-client {
 	padding: 10px;
 	padding-bottom: 0;
-	margin-bottom: 0;
-
 	display: none;
 	margin: 10px;
 	margin-left: 0;
