@@ -35,7 +35,7 @@ describe 'ClientPage' do
     before do
       @client = Client.create(client_name: 'Client', client_secondname: 'First')
       visit root_path
-      click_link('Profile', client_path(@client))
+      click_link('Details', client_path(@client))
     end
 
     it {should have_title("#{@client.combine_names} profile")}

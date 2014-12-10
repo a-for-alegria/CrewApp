@@ -9,33 +9,37 @@
 
 // Index page itself
 
-%div.index-list-crew.scrollable
+%div.index-list-crew
   %h2 Crew members
-  %ul
-  -@crews.each do |crew|
-    %li.main-list-item-crew
-      #{image_tag 'me.jpg', height: '100px', width: '100px', class: 'client-avatar'}
-      %ol
-        %li 
-          %h3 #{crew.combine_names}
-        %li Secondary info
-        %li Third-party info
-        %li Fourth-party info
-      %div.hiden-crew-info-crew
-        %ul
-          %li #{link_to 'Profile' , crew_path(crew)}
-          %li #{link_to 'Edit', edit_crew_path(crew)}
+  .scrollable
+    %ul
+    -@crews.each do |crew|
+      %li.main-list-item-crew
+        #{image_tag 'me.jpg', height: '60px', width: '60px', class: 'crew-avatar'}
+        %ol
           %li 
-            %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
+            %h3 #{crew.combine_names}
+          %li Front-End Engineer
+          %li Senior
+        %div.hiden-crew-info-crew
+          %ul
+            %li #{link_to 'Profile' , crew_path(crew)}
+            %li #{link_to 'Edit', edit_crew_path(crew)}
+            %li 
+              %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
 %div.index-list-clients.scrollable
   %h2 Company clients
   %ul
   -@clients.each do |client|
     %li.main-list-item-client
-      %span #{client.combine_names}
+      %ol
+        %li 
+          %h3 #{client.combine_names}
+        %li Project name
+        %li Fulltime
       %div.hiden-crew-info-client
         %ul
-          %li #{link_to 'Profile' , client_path(client)}
+          %li #{link_to 'Details' , client_path(client)}
           %li 
             %a.delete-button{"data-method" => "delete", href: client_path(client)} delete
     
