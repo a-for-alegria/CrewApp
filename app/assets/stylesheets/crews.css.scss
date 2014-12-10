@@ -1,4 +1,6 @@
-/* Dashboard ---------------------*/
+@import 'partials';
+
+/* Dashboard ---------------------------------------*/
 
 /* Side panel */
 .core-data {
@@ -13,4 +15,81 @@
 
 /* Content */
 
+.index-list-crew,
+.index-list-clients {
+	width: 49%;
+	display: inline-block;
+	text-align: center;
+	li, 
+	span {
+		padding: 10px;
+	}
+	li {
+		cursor: pointer;
+	}
+	span {
+		display: block;
+		color: darken(#ffffff, 45%);
+		font-weight: bold;
+		border-bottom: 1px solid darken(#ffffff, 15%)
+	}
+}
+
+.index-list-crew {
+  li {
+  	&:hover .hiden-crew-info-crew {
+			display: block;
+		}
+  }
+}
+
+.index-list-clients {
+  li {
+  	&:hover .hiden-crew-info-client {
+			display: block;
+		}
+  }
+}
+
+.index-list-crew {
+	float: left;
+}
+
+/* Hiden blocks */
+
+.hiden-crew-info-crew,
+.hiden-crew-info-client {
+	padding: 10px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+
+	display: none;
+	margin: 10px;
+	margin-left: 0;
+	li {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 10px;
+		border-left: 1px solid darken(#ffffff, 15%);
+		color: darken(#ffffff, 60%);
+	}
+}
+
+.hiden-crew-info-crew {
+	a {	
+		@include button-style(orange, 5%, 10%);
+	}
+}
+
+.hiden-crew-info-client {
+	a {	
+		@include button-style(red, 5%, 10%);
+	}
+}
 

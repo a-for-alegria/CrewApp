@@ -8,3 +8,22 @@
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
 }
+
+/* Variables------------------*/
+
+$margin-h: 10px 0 10px 0;
+
+/* Mixins------------------*/
+
+@mixin button-style($color, $perc1, $perc2) {
+  &:hover {
+		border-left: 3px solid $color;
+		background-color: darken(#ffffff, $perc1);
+	}
+	&:active {
+		background-color: darken(#ffffff, $perc2);
+		border-radius: 5px;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}

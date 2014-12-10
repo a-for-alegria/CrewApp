@@ -1,3 +1,5 @@
+@import 'partials';
+
 /* CSS Reset ---------------------*/
 
 * {
@@ -19,17 +21,18 @@ body {
 body {
 	font-size: 14px;
 	font-family: 'Exo 2', sans-serif;
+	color: darken(#ffffff, 45%);
 }
 
 h1 {
 	font-size: 3em;
 	font-weight: 700;
-	text-decoration: underline;
 }
 
 h2 {
 	font-size: 2em;
 	font-weight: 500;
+	margin: $margin-h;
 }
 
 h3 {
@@ -42,13 +45,23 @@ h4 {
 	font-weight: 300;
 }
 
+h1,
+h2,
+h3,
+h4 {
+	color: #000000;
+}
+
 li {
 	list-style: none;
-	margin-bottom: 10px;
 }
 
 a {
 	text-decoration: none;
+	color: lighten(#000000, 30%);
+	&:hover{
+		color: #000000;
+	}
 }
 
 /* Layout elements ---------------------*/
@@ -72,10 +85,10 @@ nav {
 		width: 50%;
 		margin: 0 auto;
 		padding: 10px;
-		&:hover {
-			background-color: #aaaaaa;
-			border-radius: 5px;
-		}
+		color: darken(#ffffff, 45%);
+		font-weight: bold;
+		border-left: 1px solid darken(#ffffff, 15%);
+		@include button-style(orange, 10%, 15%);
 	}
 }
 

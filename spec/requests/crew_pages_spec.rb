@@ -35,11 +35,10 @@ describe 'CrewPage' do
     before do
       @crew = Crew.create(name: 'Name', secondname: 'First')
       visit root_path
-      click_link(@crew.name, crew_path(@crew))
+      click_link('Profile', crew_path(@crew))
     end
 
     it {should have_title("#{@crew.combine_names} profile")}
-    it {should have_link('Edit', href: edit_crew_path(@crew))}
   end
 
 #==============================Edit page===========>>
