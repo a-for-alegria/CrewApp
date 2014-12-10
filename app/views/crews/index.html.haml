@@ -27,19 +27,21 @@
             %li #{link_to 'Edit', edit_crew_path(crew)}
             %li 
               %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
-%div.index-list-clients.scrollable
+%div.index-list-clients
   %h2 Company clients
-  %ul
-  -@clients.each do |client|
-    %li.main-list-item-client
-      %ol
-        %li 
-          %h3 #{client.combine_names}
-        %li Project name
-        %li Fulltime
-      %div.hiden-crew-info-client
-        %ul
-          %li #{link_to 'Details' , client_path(client)}
+  .scrollable
+    %ul
+    -@clients.each do |client|
+      %li.main-list-item-client
+        %ol
           %li 
-            %a.delete-button{"data-method" => "delete", href: client_path(client)} delete
+            %h3 #{client.combine_names}
+          %li Project name
+          %li Fulltime
+        %div.hiden-crew-info-client
+          %ul
+            %li #{link_to 'Details' , client_path(client)}
+            %li #{link_to 'Edit' , edit_client_path(client)}
+            %li 
+              %a.delete-button{"data-method" => "delete", href: client_path(client)} delete
     

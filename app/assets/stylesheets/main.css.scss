@@ -98,4 +98,21 @@ main {
 	margin: 0 auto;
 }
 
+/* Scrollbars ---------------------*/
+
+::-webkit-scrollbar {
+	width: 3px;
+	background-color: darken(#ffffff, 10%);
+} 
+
+::-webkit-scrollbar-thumb {
+	background-color: darken(#ffffff, 30%);
+	&:hover {
+		background-color: darken(#ffffff, 35%);
+	}
+	&:active {
+		background-color: darken(#ffffff, 35%);
+	}
+}
+
 
