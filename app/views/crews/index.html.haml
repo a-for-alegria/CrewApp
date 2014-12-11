@@ -15,7 +15,7 @@
     %ul
     -@crews.each do |crew|
       %li.main-list-item-crew
-        #{image_tag 'me.jpg', height: '60px', width: '60px', class: 'crew-avatar'}
+        #{image_tag crew.avatar.url(:thumb), class: 'crew-avatar'}
         %ol
           %li 
             %h3 #{crew.combine_names}

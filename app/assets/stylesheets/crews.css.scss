@@ -29,13 +29,15 @@
 		cursor: pointer;
 	}
 	span {
-		display: inline-block;
 		color: darken(#ffffff, 45%);
 		font-weight: bold;
 	}
 	.crew-avatar {
+		display: inline-block;
+		margin: 0 auto;
+		height: 30%;
+		width: 30%;
 		border: 3px solid darken(#ffffff, 15%);
-		text-align: center;
 	}
 }
 
@@ -45,7 +47,7 @@
 .main-list-item-client {
   border-bottom: 1px solid darken(#ffffff, 15%);
   margin-right: 10px;
-  text-align: left;
+  text-align: center;
   ol {
   	display: inline-block;
   }

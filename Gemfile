@@ -29,6 +29,7 @@ gem 'jbuilder', '1.0.2'
 gem 'cucumber-rails', '1.4.0', :require => false
 gem 'database_cleaner', github: 'bmabey/database_cleaner'
 gem 'pony'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

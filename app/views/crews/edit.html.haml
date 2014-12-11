@@ -8,6 +8,7 @@
     =f.text_field :name, placeholder: "Enter name of new member"
     =f.label :secondname
     =f.text_field :secondname, placeholder: "Enter second name of new member"
+    =f.file_field :avatar
 
     =f.submit "Save"
     %button #{link_to 'Cancel', crew_path(@crew)}
