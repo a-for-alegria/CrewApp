@@ -62,6 +62,8 @@
   	&:hover > .hiden-crew-info-crew {
   		opacity:1;
   		height: 100px;
+  		margin: 10px;
+  		padding: 10px;
 		}
   }
 }
@@ -71,6 +73,8 @@
   	&:hover > .hiden-crew-info-client {
   		opacity:1;
   		height: 100px;
+  		margin: 10px;
+  		padding: 10px;
 		}
   }
 }
@@ -87,7 +91,6 @@
   opacity:1;                                  /* transitions for smooth display none/block */
   clear: both;
   height: 0;
-  padding: 0 8px;
   overflow: hidden;
   -webkit-transition: all .3s ease .15s;
   -moz-transition: all .3s ease .15s;
@@ -95,10 +98,7 @@
   -ms-transition: all .3s ease .15s;
   transition: all .3s ease .15s;							/*---*/
   
-	padding: 10px;
 	padding-bottom: 0;
-	// display: none;
-	margin: 10px;
 	margin-left: 0;
 	li {
 		width: 100%;
