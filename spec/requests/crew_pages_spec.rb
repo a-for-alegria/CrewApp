@@ -60,6 +60,24 @@ describe 'CrewPage' do
       it {should have_content('Reloadname')}
       it {should have_content('Reloadsecondname')}
     end
+
+    describe 'check \'in_charge\' checkbox' do
+      before do
+        visit edit_crew_path(@crew)
+        check "In charge"
+        click_button('Save')
+      end
+      it {should have_selector('li', text: 'Privileged member')}
+    end
+
+    describe 'uncheck \'in_charge\' checkbox' do
+      before do
+        visit edit_crew_path(@crew)
+        uncheck "In charge"
+        click_button('Save')
+      end
+      it {should_not have_content('Privileged member')}
+    end
   end
 
 #==============================Delete action===========>>

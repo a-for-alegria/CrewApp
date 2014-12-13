@@ -48,6 +48,7 @@
 
 .main-list-item-crew,
 .main-list-item-client {
+	position: relative;
   border-bottom: 1px solid darken(#ffffff, 15%);
   margin-right: 10px;
   text-align: center;
@@ -125,6 +126,15 @@
 		}
 	}
 }
+.star_in_charge {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: gold;
+	position: absolute;
+	right: 0;
+  margin-right: 10px;
+}
 /* Show page ---------------------------------------*/
 
 .side-info,
@@ -162,4 +172,12 @@
 	width: 65%;
 	height: 100%;
 	display: inline-block;
+}
+.in_charge {
+	color: gold;
+	font-weight: 700;
+	background-color: lighten(#000000, 50%);
+	display: inline-block;
+	padding: 5px;
+	border-radius: 10px;
 }

@@ -10,6 +10,8 @@
   %ul
     %li 
       %h2 #{@crew.combine_names}
+    - if @crew.in_charge?
+      %li.in_charge Privileged member 
 
 
 / %h1 #{@crew.combine_names}

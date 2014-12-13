@@ -9,6 +9,10 @@
     =f.label :secondname
     =f.text_field :secondname, placeholder: "Enter second name of new member"
     =f.file_field :avatar
+    .boolean-block
+      %span In charge
+      =f.label :in_charge
+      =f.check_box :in_charge
 
     =f.submit "Save"
     %button #{link_to 'Cancel', crew_path(@crew)}
