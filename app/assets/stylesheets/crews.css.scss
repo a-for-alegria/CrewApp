@@ -34,7 +34,7 @@
 	}
 }
 .avatar {
-	height: 50px;
+	height: 60px;
 	width: 50px;
 	margin: 0 auto;
 	img {
@@ -135,7 +135,7 @@
 	width: 30%;
 	float: left;
   img {
-  	height: 200px;
+  	height: 250px;
 		width: 200px;
 		margin-bottom: 10px;
   }
@@ -151,6 +151,11 @@
 		border-left: 1px solid darken(#ffffff, 15%);
 		color: darken(#ffffff, 60%);
 		@include button-style(orange, 5%, 10%);
+	}
+	.delete-button {
+		&:hover {
+		  border-left: 3px solid red;
+		}
 	}
 }
 .main-info {

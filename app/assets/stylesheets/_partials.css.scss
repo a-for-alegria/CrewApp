@@ -16,7 +16,7 @@ $margin-h: 10px 0 20px 0;
 /* Mixins------------------*/
 
 @mixin button-style($color, $perc1, $perc2) {
-  &:hover {
+    &:hover {
 		border-left: 3px solid $color;
 		background-color: darken(#ffffff, $perc1);
 	}
