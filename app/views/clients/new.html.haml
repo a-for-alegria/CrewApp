@@ -1,7 +1,7 @@
 - provide(:title, 'New client')
 
 %h1 New client
-%div.form-block-client
+%div.form-block
   =form_for(@client) do |f|
     / =render 'shared/error_messages', object: f.object 
     =f.label :client_name

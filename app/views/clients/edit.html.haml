@@ -1,7 +1,7 @@
 - provide(:title, 'Edit client panel')
 
-%h1 Edit client
-%div.form-block-client
+%h2 Edit client
+%div.form-block
   =form_for(@client) do |f|
     / =render 'shared/error_messages', object: f.object 
     =f.label :client_name

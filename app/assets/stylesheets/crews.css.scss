@@ -32,12 +32,14 @@
 		color: darken(#ffffff, 45%);
 		font-weight: bold;
 	}
-	.crew-avatar {
-		display: inline-block;
+	.avatar {
+		height: 50px;
+		width: 50px;
 		margin: 0 auto;
-		height: 20%;
-		width: 20%;
-		border: 3px solid darken(#ffffff, 15%);
+		img {
+			height: 100%;
+			width: 100%;
+		}
 	}
 }
 
