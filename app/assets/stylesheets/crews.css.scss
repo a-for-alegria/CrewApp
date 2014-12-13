@@ -32,17 +32,17 @@
 		color: darken(#ffffff, 45%);
 		font-weight: bold;
 	}
-	.avatar {
-		height: 50px;
-		width: 50px;
-		margin: 0 auto;
-		img {
-			height: 100%;
-			width: 100%;
-			border: 2px solid darken(#ffffff, 15%);
-		}
+}
+.avatar {
+	height: 50px;
+	width: 50px;
+	margin: 0 auto;
+	img {
+		height: 100%;
+		width: 100%;
 	}
 }
+
 
 /* Border only for specific li */
 
@@ -125,6 +125,36 @@
 		}
 	}
 }
+/* Show page ---------------------------------------*/
 
-
-
+.side-info,
+.main-info {
+	margin-top: 28px;
+}
+.side-info {
+	width: 30%;
+	float: left;
+  img {
+  	height: 200px;
+		width: 200px;
+		margin-bottom: 10px;
+  }
+  ul,
+  li,
+  a {
+  	margin-right: 10px;
+  }
+  a {
+		display: block;
+		text-align: left;
+		padding: 10px;
+		border-left: 1px solid darken(#ffffff, 15%);
+		color: darken(#ffffff, 60%);
+		@include button-style(orange, 5%, 10%);
+	}
+}
+.main-info {
+	width: 65%;
+	height: 100%;
+	display: inline-block;
+}

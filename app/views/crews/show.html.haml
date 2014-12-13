@@ -1,9 +1,19 @@
 - provide(:title, "#{@crew.combine_names} profile")
 
-%h1 #{@crew.combine_names}
-#{link_to 'Edit', edit_crew_path(@crew)}
-%br
-%a.delete-button{"data-method" => "delete", href: crew_path(@crew)} delete
+.side-info
+  #{image_tag @crew.avatar.url}
+  %ul
+    %li #{link_to 'Edit', edit_crew_path(@crew)}
+    %li 
+      %a.delete-button{"data-method" => "delete", href: crew_path(@crew)} delete
+.main-info.scrollable
+  %ul
+    %li 
+      %h2 #{@crew.combine_names}
+
+
+/ %h1 #{@crew.combine_names}
+
 
 
   

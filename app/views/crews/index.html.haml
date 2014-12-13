@@ -27,7 +27,7 @@
             %li #{link_to 'Profile' , crew_path(crew)}
             %li #{link_to 'Edit', edit_crew_path(crew)}
             %li 
-              %a.delete-button{"data-method" => "delete", href: crew_path(crew)} delete
+              %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
 %div.index-list-clients
   %h2 Company clients
   .scrollable
