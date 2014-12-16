@@ -17,8 +17,6 @@
       %li.main-list-item-crew
         - if crew.in_charge?
           .star_in_charge 
-        .avatar
-          #{image_tag crew.avatar.url}
         %ol
           %li 
             %h3 #{crew.combine_names}

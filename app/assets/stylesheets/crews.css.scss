@@ -93,17 +93,17 @@
 
 .hiden-crew-info-crew,
 .hiden-crew-info-client {
-  
-  opacity:1;                                  /* transitions for smooth display none/block */
-  clear: both;
+  /* transitions for smooth display none/block */
+  opacity:1;                                  
+  clear: both;                                
   height: 0;
   overflow: hidden;
   -webkit-transition: all .3s ease .15s;
   -moz-transition: all .3s ease .15s;
   -o-transition: all .3s ease .15s;
   -ms-transition: all .3s ease .15s;
-  transition: all .3s ease .15s;							/*---*/
-  
+  transition: all .3s ease .15s;							
+  /*---*/
 	padding-bottom: 0;
 	margin-left: 0;
 	li {
@@ -126,15 +126,7 @@
 		}
 	}
 }
-.star_in_charge {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: gold;
-	position: absolute;
-	right: 0;
-  margin-right: 10px;
-}
+
 /* Show page ---------------------------------------*/
 
 .side-info,
@@ -173,11 +165,23 @@
 	height: 100%;
 	display: inline-block;
 }
-.in_charge {
-	color: gold;
-	font-weight: 700;
-	background-color: lighten(#000000, 50%);
+.star_in_charge {
 	display: inline-block;
-	padding: 5px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: gold;
+	margin: 5px 5px 0 0;
+
+}
+.in_charge {
+	color: darken(gold, 15%);
+	font-weight: 700;
+	background-color: gold;
+	display: inline-block;
+	padding: 7.5px;
 	border-radius: 10px;
 }
