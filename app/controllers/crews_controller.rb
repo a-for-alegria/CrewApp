@@ -47,6 +47,6 @@ class CrewsController < ApplicationController
     end
 
     def crew_params
-      params.require(:crew).permit(:name, :secondname, :avatar, :in_charge)
+      params.require(:crew).permit(:name, :secondname, :avatar, :in_charge, :bank_card)
     end
 end

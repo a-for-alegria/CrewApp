@@ -22,6 +22,7 @@ describe 'CrewPage' do
       before do
         fill_in 'Name',               with: 'Ace'
         fill_in 'Secondname',         with: 'Team'
+        fill_in 'Bank card',          with: '1122 3344 5566 7788'
       end
       it 'should create crew member' do
         expect{click_button submit}.to change(Crew, :count).by(1)
