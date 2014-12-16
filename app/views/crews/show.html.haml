@@ -10,12 +10,8 @@
   %ul
     %li 
       %h2 #{@crew.combine_names}
-    - if @crew.in_charge?
-      %li.in_charge Privileged member 
-
-
-/ %h1 #{@crew.combine_names}
-
-
-
-  
+      -if @crew.in_charge?
+        %span.in_charge Privileged member 
+    -if @crew.bank_card
+      %li.bank_account #{@crew.bank_card}
+      %span.bank_label #{@crew.bank_name}

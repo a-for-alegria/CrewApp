@@ -11,6 +11,7 @@ describe Crew do
   it {should respond_to(:avatar)}
   it {should respond_to(:in_charge)}
   it {should respond_to(:bank_card)}
+  it {should respond_to(:bank_name)}
 
   describe 'Name should be present' do
     before {@crew.name = " "}

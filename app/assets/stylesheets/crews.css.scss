@@ -164,6 +164,10 @@
 	width: 65%;
 	height: 100%;
 	display: inline-block;
+	position: relative;
+	h2 {
+		display: inline-block;
+	}
 }
 .star_in_charge {
 	display: inline-block;
@@ -184,4 +188,15 @@
 	display: inline-block;
 	padding: 7.5px;
 	border-radius: 10px;
+	position: absolute;
+	margin: 10px;
+  right: 0;
+}
+.bank_account {
+	display: inline-block;
+}
+.bank_label {
+	vertical-align: super;
+	font-size: 0.7em;
+	font-style: italic;
 }
