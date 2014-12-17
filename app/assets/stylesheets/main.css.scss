@@ -39,7 +39,7 @@ h1 {
 h2 {
 	font-size: 2em;
 	font-weight: 500;
-	margin: $margin-h;
+	margin: 10px 0 20px 0;
 }
 
 h3 {
@@ -156,6 +156,12 @@ button {
 input[type="checkbox"] {
 	vertical-align: middle;
 	margin-left: 10px;
+}
+input[id="crew_bank_card"] {
+	width: 50%;
+}
+input[id="crew_bank_name"] {
+	width: 49%;
 }
 .boolean-block {
 	padding: 10px 10px 10px 0;

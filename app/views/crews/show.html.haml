@@ -9,7 +9,7 @@
 .main-info.scrollable
   %ul
     %li 
-      %h2 #{@crew.combine_names}
+      %h2.header_personal #{@crew.combine_names}
       -if @crew.in_charge?
         %span.in_charge Privileged member 
     -if @crew.bank_card
