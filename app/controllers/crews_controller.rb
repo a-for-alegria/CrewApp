@@ -1,5 +1,6 @@
 class CrewsController < ApplicationController
 	before_filter :crew_finder, only: [:show, :edit, :update]
+  # before_filter :redirect
 
   def index
 		@crews = Crew.all
@@ -41,6 +42,10 @@ class CrewsController < ApplicationController
   end
 
   private
+
+    def redirect
+      redirect_to start_pages_start_path unless signed_in?
+    end
 
     def crew_finder
       @crew = Crew.find(params[:id])

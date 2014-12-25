@@ -1,14 +1,15 @@
 - provide(:title, 'Dashboard')
 
 // Standalone section with company statistic
-
 %section.core-data
   %ul
     %li Total members: #{@crews.count}
     %li Total clients: #{@clients.count}
+    - if current_user
+      %li Signed in as #{current_user.name}!
+      %li #{link_to "Sign out", signout_path, id: "sign_out"}
 
 // Index page itself
-
 %div.index-list-crew
   %h2 Crew members
   .scrollable

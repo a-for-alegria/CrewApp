@@ -40,4 +40,18 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   config.include Capybara::DSL
+  config.include IntegrationSpecHelper, type: :request
 end
+
+Capybara.default_host = 'http://0.0.0.0:3000'
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:facebook] = {
+  'user_info' => {
+    'name' => 'Mario Brothers',
+    'image' => '',
+    'email' => 'dpsk@email.ru' },
+  'uid' => '123545',
+  'provider' => 'facebook',
+  'credentials' => {'token' => 'token'}
+}

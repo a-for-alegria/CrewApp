@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
 	before_filter :client_finder, only: [:show, :edit, :update]
+  # before_filter :redirect
 
   def index
 	end
@@ -39,6 +40,9 @@ class ClientsController < ApplicationController
   end
 
   private
+    def redirect
+      redirect_to start_pages_start_path unless signed_in?
+    end
 
     def client_finder
       @client = Client.find(params[:id])
