@@ -8,6 +8,8 @@ describe Client do
 
   it {should respond_to(:client_name)}
   it {should respond_to(:client_secondname)}
+  it {should respond_to(:crews)}
+  it {should respond_to(:project)}
 
   describe "Name should be present" do
     before {@client.client_name = " "}
@@ -16,6 +18,11 @@ describe Client do
   
   describe "Secondname should be present" do
     before {@client.client_secondname = " "}
+    it {should_not be_valid}
+  end
+
+  describe "Project should be present" do
+    before {@client.project = " "}
     it {should_not be_valid}
   end
 end

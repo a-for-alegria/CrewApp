@@ -22,6 +22,7 @@ describe 'ClientPage' do
       before do
         fill_in 'Client name',               with: 'Client'
         fill_in 'Client secondname',         with: 'Rocks'
+        fill_in 'Project',                   with: 'Project'
       end
       it 'should create client' do
         expect{click_button submit}.to change(Client, :count).by(1)
@@ -33,7 +34,7 @@ describe 'ClientPage' do
 
   describe 'show page' do
     before do
-      @client = Client.create(client_name: 'Client', client_secondname: 'First')
+      @client = Client.create(client_name: 'Client', client_secondname: 'First', project: 'Project')
       visit root_path
       click_link('Details', client_path(@client))
     end
@@ -45,7 +46,7 @@ describe 'ClientPage' do
 
   describe 'edit page' do
     before do
-      @client = Client.create(client_name: 'Client', client_secondname: 'First')
+      @client = Client.create(client_name: 'Client', client_secondname: 'First', project: 'Project')
       visit edit_client_path(@client)
     end
     it {should have_title('Edit client panel')}
@@ -55,10 +56,12 @@ describe 'ClientPage' do
     	before do
         fill_in 'Client name',       with: 'Reloadclientname'
         fill_in 'Client secondname', with: 'Reloadclientsecondname'
+        fill_in 'Project',                   with: 'ReloadProject'
         click_button('Save')
       end
       it {should have_content('Reloadclientname')}
       it {should have_content('Reloadclientsecondname')}
+      it {should have_content('ReloadProject')}
     end
   end
 
@@ -66,7 +69,7 @@ describe 'ClientPage' do
 
 	describe 'delete action from index page' do
 		before do
-			@client = Client.create(client_name: 'Client', client_secondname: 'First')
+			@client = Client.create(client_name: 'Client', client_secondname: 'First', project: 'Project')
 			visit root_path
 		end
 

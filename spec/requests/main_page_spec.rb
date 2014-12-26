@@ -8,7 +8,7 @@ describe 'DashboardPage' do
   describe 'main page/index' do
     before do
       @crew = Crew.create(name: 'Name', secondname: 'First')
-      @client = Client.create(client_name: 'Client', client_secondname: 'First')
+      @client = Client.create(client_name: 'Client', client_secondname: 'First', project: 'Project')
       visit root_path
     end
     it {should have_title('Dashboard')}

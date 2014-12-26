@@ -8,6 +8,8 @@
     - if current_user
       %li Signed in as #{current_user.name}!
       %li #{link_to "Sign out", signout_path, id: "sign_out"}
+    - else
+      %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
 
 // Index page itself
 %div.index-list-crew
@@ -38,7 +40,7 @@
         %ol
           %li 
             %h3 #{client.combine_names}
-          %li Project name
+          %li #{client.project}
           %li Fulltime
         %div.hiden-crew-info-client
           %ul

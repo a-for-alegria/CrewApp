@@ -13,6 +13,7 @@
     =f.label :bank_name
     =f.text_field :bank_name, placeholder: "Your bank name"
     =f.file_field :avatar
+    =f.select(:client_project, @clients.pluck(:project), {prompt: "Select project"})
     .boolean-block
       %span In charge
       =f.label :in_charge

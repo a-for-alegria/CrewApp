@@ -1,10 +1,10 @@
 class CrewsController < ApplicationController
 	before_filter :crew_finder, only: [:show, :edit, :update]
+  before_filter :parce_clients, only: [:index, :new, :edit]
   # before_filter :redirect
 
   def index
 		@crews = Crew.all
-    @clients = Client.all
 	end
 
 	def new
@@ -42,6 +42,9 @@ class CrewsController < ApplicationController
   end
 
   private
+    def parce_clients
+      @clients = Client.all
+    end
 
     def redirect
       redirect_to start_pages_start_path unless signed_in?
@@ -52,6 +55,6 @@ class CrewsController < ApplicationController
     end
 
     def crew_params
-      params.require(:crew).permit(:name, :secondname, :avatar, :in_charge, :bank_card, :bank_name)
+      params.require(:crew).permit(:name, :secondname, :avatar, :in_charge, :bank_card, :bank_name, :client_project)
     end
 end
