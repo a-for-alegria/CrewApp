@@ -1,5 +1,6 @@
 - provide(:title, 'Starter')
 
 %div.unsigned_user
-  %h1 The Crew
-  #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
+  .access-denied 
+    %span Access denied
+  #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: 'facebook-login'}

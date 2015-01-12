@@ -6,13 +6,15 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %nav
-      %h1 Ace! Team
-      %ul
-        %li #{to_root}
-        %li #{link_to 'Add member', new_crew_path}
-        %li #{link_to 'Add client', new_client_path}
+    -if signed_in?
+      %nav
+        %h1 Ace! Team
+        %ul
+          %li #{to_root}
+          %li #{link_to 'Add member', new_crew_path}
+          %li #{link_to 'Add client', new_client_path}
     %main
       = yield
-    
+
+
 

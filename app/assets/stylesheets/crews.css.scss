@@ -168,6 +168,12 @@
 	h2 {
 		display: inline-block;
 	}
+	li {
+		margin-bottom: 20px;
+		&:first-child {
+			margin-bottom: 0;
+		}
+	}
 }
 .star_in_charge {
 	display: inline-block;

@@ -1,17 +1,21 @@
 - provide(:title, "#{@crew.combine_names} profile")
 
+- c = @crew
 .side-info
-  #{image_tag @crew.avatar.url}
+  #{image_tag c.avatar.url}
   %ul
-    %li #{link_to 'Edit', edit_crew_path(@crew)}
+    %li #{link_to 'Edit', edit_crew_path(c)}
     %li 
-      %a.delete-button{"data-method" => "delete", href: crew_path(@crew)} delete
+      %a.delete-button{"data-method" => "delete", href: crew_path(c)} delete
 .main-info.scrollable
   %ul
     %li 
-      %h2.header_personal #{@crew.combine_names}
-      -if @crew.in_charge?
+      %h2.header_personal #{c.combine_names}
+      -if c.in_charge?
         %span.in_charge Privileged member 
-    -if @crew.bank_card
-      %li.bank_account #{@crew.bank_card}
-      %span.bank_label #{@crew.bank_name}
+    %li.assigned_project #{c.client_project if c.client_project}
+
+    -if c.bank_card
+      %li.bank_account #{c.bank_card}
+      %span.bank_label #{c.bank_name}
+    
