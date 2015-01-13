@@ -1,21 +1,27 @@
 - provide(:title, "#{@crew.combine_names} profile")
 
 - c = @crew
-.side-info
-  #{image_tag c.avatar.url}
-  %ul
-    %li #{link_to 'Edit', edit_crew_path(c)}
-    %li 
-      %a.delete-button{"data-method" => "delete", href: crew_path(c)} delete
-.main-info.scrollable
-  %ul
-    %li 
-      %h2.header_personal #{c.combine_names}
-      -if c.in_charge?
-        %span.in_charge Privileged member 
-    %li.assigned_project #{c.client_project if c.client_project}
+.profile-crew.clearfix
+  .profile-avatar
+    #{image_tag c.avatar.url}
+  .profile-main
+    %table
+      %tr
+      -(1..4).each do |a|
+        %td #{a}
+      %tr
+      -(5..8).each do |a|
+        %td #{a}
+      %tr
+      -(9..12).each do |a|
+        %td #{a}
+  / .main-info.scrollable
+  /   %ul
+  /     %li 
+  /       %h2.header_personal #{c.combine_names}
+  /     %li.assigned_project #{c.client_project if c.client_project}
 
-    -if c.bank_card
-      %li.bank_account #{c.bank_card}
-      %span.bank_label #{c.bank_name}
+  /     -if c.bank_card
+  /       %li.bank_account #{c.bank_card}
+  /       %span.bank_label #{c.bank_name}
     

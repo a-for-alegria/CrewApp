@@ -15,37 +15,34 @@
 %div.index-list-crew
   %h2 Crew members
   .scrollable
-    %ul
-    -@crews.each do |crew|
-      %li.main-list-item-crew
-        - if crew.in_charge?
-          .star_in_charge 
-        %ol
-          %li 
-            %h3 #{crew.combine_names}
-          %li Front-End Engineer
-          %li Senior
-        %div.hiden-crew-info-crew
-          %ul
-            %li #{link_to 'Profile' , crew_path(crew)}
-            %li #{link_to 'Edit', edit_crew_path(crew)}
-            %li 
-              %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
+    %table
+      %tr
+        %th 1
+        %th 2
+        %th 3
+        %th 4
+      -@crews.each do |crew|
+        %tr
+          %td #{crew.combine_names}
+          %td #{link_to 'profile' , crew_path(crew)}
+          %td #{link_to 'edit', edit_crew_path(crew)}
+          %td
+            %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
 %div.index-list-clients
   %h2 Company clients
   .scrollable
-    %ul
-    -@clients.each do |client|
-      %li.main-list-item-client
-        %ol
-          %li 
-            %h3 #{client.combine_names}
-          %li #{client.project}
-          %li Fulltime
-        %div.hiden-crew-info-client
-          %ul
-            %li #{link_to 'Details' , client_path(client)}
-            %li #{link_to 'Edit' , edit_client_path(client)}
-            %li 
-              %a.delete-button{"data-method" => "delete", href: client_path(client)} delete
+    %table
+      %tr
+        %th 1
+        %th 2
+        %th 3
+        %th 4
+      -@clients.each do |client|
+        %tr
+          %td #{client.combine_names}
+          %td #{link_to 'details' , client_path(client)}
+          %td #{link_to 'edit', edit_client_path(client)}
+          %td
+            %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
+
     

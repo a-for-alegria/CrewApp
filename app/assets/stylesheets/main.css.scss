@@ -136,6 +136,9 @@ main {
 	label {
 		display: none;
 	}
+	select {
+		margin-bottom: 10px;
+	}
 }
 
 input[type="text"] {
@@ -162,14 +165,6 @@ input[id="crew_bank_card"] {
 }
 input[id="crew_bank_name"] {
 	width: 49%;
-}
-.boolean-block {
-	padding: 10px 10px 10px 0;
-}
-/* Custom checkbox */
-
-#crew_in_charge {
-	margin: 10px;
 }
 /* Custom select */
 

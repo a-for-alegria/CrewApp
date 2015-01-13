@@ -33,16 +33,6 @@
 		font-weight: bold;
 	}
 }
-.avatar {
-	height: 60px;
-	width: 50px;
-	margin: 0 auto;
-	img {
-		height: 100%;
-		width: 100%;
-	}
-}
-
 
 /* Border only for specific li */
 
@@ -60,143 +50,26 @@
 	margin-left: 10px;
 }
 
-/*---*/
-
-
-.index-list-crew {
-  li {
-  	&:hover > .hiden-crew-info-crew {
-  		opacity:1;
-  		height: 100px;
-  		margin: 10px;
-  		padding: 10px;
-		}
-  }
-}
-
-.index-list-clients {
-  li {
-  	&:hover > .hiden-crew-info-client {
-  		opacity:1;
-  		height: 100px;
-  		margin: 10px;
-  		padding: 10px;
-		}
-  }
-}
-
 .index-list-crew {
 	float: left;
-}
-
-/* Hiden blocks */
-
-.hiden-crew-info-crew,
-.hiden-crew-info-client {
-  /* transitions for smooth display none/block */
-  opacity:1;                                  
-  clear: both;                                
-  height: 0;
-  overflow: hidden;
-  -webkit-transition: all .3s ease .15s;
-  -moz-transition: all .3s ease .15s;
-  -o-transition: all .3s ease .15s;
-  -ms-transition: all .3s ease .15s;
-  transition: all .3s ease .15s;							
-  /*---*/
-	padding-bottom: 0;
-	margin-left: 0;
-	li {
-		width: 100%;
-		margin: 0;
-		padding: 0;
-	}
-	a {
-		display: block;
-		width: 100%;
-		text-align: left;
-		padding: 10px;
-		border-left: 1px solid darken(#ffffff, 15%);
-		color: darken(#ffffff, 60%);
-		@include button-style(orange, 5%, 10%);
-	}
-	.delete-button {
-		&:hover {
-		  border-left: 3px solid red;
-		}
-	}
 }
 
 /* Show page ---------------------------------------*/
-
-.side-info,
-.main-info {
+.profile-crew {
+	padding: 10px;
 	margin-top: 28px;
-}
-.side-info {
-	width: 30%;
-	float: left;
-  img {
-  	height: 250px;
-		width: 200px;
-		margin-bottom: 10px;
+	img {
+  	height: auto;
+		width: 120px;
+		border-radius: 5px;
   }
-  ul,
-  li,
-  a {
-  	margin-right: 10px;
-  }
-  a {
-		display: block;
-		text-align: left;
-		padding: 10px;
-		border-left: 1px solid darken(#ffffff, 15%);
-		color: darken(#ffffff, 60%);
-		@include button-style(orange, 5%, 10%);
-	}
-	.delete-button {
-		&:hover {
-		  border-left: 3px solid red;
-		}
-	}
 }
-.main-info {
-	width: 65%;
-	height: 100%;
-	display: inline-block;
-	position: relative;
-	h2 {
-		display: inline-block;
-	}
-	li {
-		margin-bottom: 20px;
-		&:first-child {
-			margin-bottom: 0;
-		}
-	}
+.profile-avatar {
+  float: left;
+  margin-right: 10px;
 }
-.star_in_charge {
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: gold;
-	margin: 5px 5px 0 0;
-
-}
-.in_charge {
-	color: darken(gold, 15%);
-	font-weight: 700;
-	background-color: gold;
-	display: inline-block;
-	padding: 7.5px;
-	border-radius: 10px;
-	position: absolute;
-	margin: 10px;
-  right: 0;
+.profile-main {
+  
 }
 .bank_account {
 	display: inline-block;
@@ -206,4 +79,6 @@
 	font-size: 0.7em;
 	font-style: italic;
 }
+
+
 
