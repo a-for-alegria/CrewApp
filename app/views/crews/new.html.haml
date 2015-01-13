@@ -10,8 +10,8 @@
     =f.text_field :secondname, placeholder: "Enter second name of new member"
     =f.label :bank_card
     =f.text_field :bank_card, placeholder: "xxxx xxxx xxxx xxxx"
-    =f.label :bank_name
-    =f.text_field :bank_name, placeholder: "Your bank name"
+    =f.label :rate
+    =f.text_field :rate, placeholder: "e.g. 1000"
     =f.file_field :avatar
     =f.select(:client_project, @clients.map(&:project), {prompt: "Select project"})
 

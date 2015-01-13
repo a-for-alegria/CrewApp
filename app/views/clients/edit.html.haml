@@ -10,6 +10,8 @@
     =f.text_field :client_secondname, placeholder: "Enter second name of new client"
     =f.label :project
     =f.text_field :project, placeholder: "Project title"
+    =f.label :budget
+    =f.text_field :budget, placeholder: "e.g. 1000"
 
     =f.submit "Save"
     %button #{link_to 'Cancel', client_path(@client)}

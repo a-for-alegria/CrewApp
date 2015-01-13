@@ -156,15 +156,13 @@ button {
 	display: inline-block;
 	padding: 2px;
 }
-input[type="checkbox"] {
-	vertical-align: middle;
-	margin-left: 10px;
-}
 input[id="crew_bank_card"] {
 	width: 50%;
 }
-input[id="crew_bank_name"] {
-	width: 49%;
+input[id="crew_rate"],
+input[id="client_budget"] {
+	width: 50%;
+	display: block;
 }
 /* Custom select */
 
