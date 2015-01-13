@@ -7,21 +7,21 @@
   .profile-main
     %table
       %tr
-      -(1..4).each do |a|
-        %td #{a}
+        %td name
+        %td #{c.combine_names}
       %tr
-      -(5..8).each do |a|
-        %td #{a}
-      %tr
-      -(9..12).each do |a|
-        %td #{a}
-  / .main-info.scrollable
-  /   %ul
-  /     %li 
-  /       %h2.header_personal #{c.combine_names}
-  /     %li.assigned_project #{c.client_project if c.client_project}
+        %td date of birth
+        %td 21.12.1989
+      -if c.bank_card
+        %tr
+          %td bank card
+          %td #{c.bank_card}
+        %tr
+          %td bank name
+          %td #{c.bank_name}
+      -if c.client_project
+        %tr
+          %td project
+          %td #{c.client_project}
 
-  /     -if c.bank_card
-  /       %li.bank_account #{c.bank_card}
-  /       %span.bank_label #{c.bank_name}
     

@@ -64,6 +64,11 @@
 		border-radius: 5px;
   }
 }
+.profile-avatar,
+.profile-main {
+	float: left;
+}
+
 .profile-avatar {
   float: left;
   margin-right: 10px;
@@ -79,6 +84,14 @@
 	font-size: 0.7em;
 	font-style: italic;
 }
-
+/* Table */
+.profile-main table {
+  td {
+  	padding: 5px;
+    &:last-child {
+    	background-color: lighten(tomato, 20%);
+    }
+  }  
+}
 
 

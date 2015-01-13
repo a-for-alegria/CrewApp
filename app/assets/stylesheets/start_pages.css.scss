@@ -2,34 +2,19 @@
 
 /* Dashboard ---------------------------------------*/
 
-.access-denied {
-	background-color: tomato;
-	padding: 10px;
-	margin: 0 auto;
+.unsigned_user {
 	text-align: center;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	span {
-		color: firebrick;
-		font-weight: bold;
-		font-size: 2em;
+	margin-top: 200px;
+	a {
+		font-size: 10em;
+    &:hover {
+	    color: darken(steelblue, 5%);
+	  }
+	  &:active {
+	    color: darken(steelblue, 10%);
+	  }
 	}
-}
-
-.facebook-login {
-	text-align: center;
-	display: block;
-	width: 20%;
-	margin: 0 auto;
-	background-color: steelblue;
-	color: white;
-	padding: 10px;
-	margin-top: 20px;
-	&:hover {
-		background-color: darken(steelblue, 5%);
-		color: white;
-	}
-	&:active {
-		background-color: darken(steelblue, 10%);
-	}
+  p {
+  	margin-top: 10px;
+  }
 }
