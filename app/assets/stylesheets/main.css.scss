@@ -8,6 +8,7 @@
 	font-size: 100%;
 	font-weight: normal;
 	line-height: 1;
+	box-sizing: border-box;
 }
 
 /* Global styles ---------------------*/
@@ -39,7 +40,7 @@ h1 {
 h2 {
 	font-size: 2em;
 	font-weight: 500;
-	margin: 10px 0 20px 0;
+	margin-bottom: 20px;
 }
 
 h3 {
@@ -100,6 +101,7 @@ main {
 	height: 100%;
 	width: 50%;
 	margin: 0 auto;
+	padding: 10px;
 }
 
 /* Scrollbars ---------------------*/
@@ -124,7 +126,8 @@ main {
 .form-block {
 	width: 50%;
   margin: 0 auto;
-  form {
+  form,
+  textarea {
   	padding: 10px;
   }
   input {
@@ -136,8 +139,13 @@ main {
 	label {
 		display: none;
 	}
-	select {
+	select,
+	textarea {
 		margin-bottom: 10px;
+	}
+	textarea {
+		min-height: 100px;
+		width: 100%;
 	}
 }
 

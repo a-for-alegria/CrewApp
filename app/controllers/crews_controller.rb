@@ -1,6 +1,6 @@
 class CrewsController < ApplicationController
 	before_filter :crew_finder, only: [:show, :edit, :update]
-  before_filter :parce_clients, only: [:index, :new, :edit]
+  before_filter :parce_clients, only: [:index, :new, :edit, :update, :create]
   before_filter :redirect
 
   def index
