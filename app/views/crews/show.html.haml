@@ -4,7 +4,7 @@
 .profile-crew.clearfix
   .profile-avatar
     #{image_tag c.avatar.url}
-  .profile-main
+  .profile-crew-main.profile-table-settings
     %table
       %tr
         %td name
@@ -22,6 +22,6 @@
           %td #{c.client_project}
       %tr
         %td salary
-        %td #{c.rate}$
+        %td #{c.rate} $
 
     

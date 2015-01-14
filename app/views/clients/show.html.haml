@@ -1,7 +1,16 @@
 - provide(:title, "#{@client.combine_names} profile")
 - c = @client
-%h3 #{c.combine_names}
-%h2 #{c.project}
-%h4 #{c.budget}
-%span #{c.descr}
-#{link_to 'Edit', edit_client_path(@client)}
+.profile-client-main
+  %table.profile-table-settings
+    %tr
+      %td name
+      %td #{c.combine_names}
+    %tr
+      %td project
+      %td #{c.project}
+    %tr
+      %td budget
+      %td #{c.budget}$
+  -if c.descr
+    %p.descr-text #{c.descr}
+    

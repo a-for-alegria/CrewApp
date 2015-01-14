@@ -73,10 +73,11 @@
   float: left;
   margin-right: 10px;
 }
-.profile-main {
+.profile-crew-main {
   height: 100%;
   border-left: 2px solid darken(#ffffff, 15%);
   padding-left: 25px;
+  float: left;
 }
 .bank_account {
 	display: inline-block;
@@ -86,14 +87,6 @@
 	font-size: 0.7em;
 	font-style: italic;
 }
-/* Table */
-.profile-main table {
-  td {
-  	padding: 5px;
-    &:last-child {
-    	background-color: lighten(tomato, 20%);
-    }
-  }  
-}
+
 
 
