@@ -1,48 +1,45 @@
 - provide(:title, 'Dashboard')
 
-// Standalone section with company statistic
-%section.core-data
-  %ul
-    %li Total members: #{@crews.count}
-    %li Total clients: #{@clients.count}
-    - if current_user
-      %li Signed in as #{current_user.name}!
-      %li #{link_to "Sign out", signout_path, id: "sign_out"}
-    - else
-      %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
+.signed-in-content
+  // Standalone section with company statistic
+  %section.core-data
+    %ul
+      %li Total members: #{@crews.count}
+      %li Total clients: #{@clients.count}
+      - if current_user
+        %li Signed in as #{current_user.name}!
+        %li #{link_to "Sign out", signout_path, id: "sign_out"}
+      - else
+        %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
 
-// Index page itself
-%div.index-list-crew
-  %h2 Crew members
-  .scrollable
-    %table
-      %tr
-        %th 1
-        %th 2
-        %th 3
-        %th 4
-      -@crews.each do |crew|
+  // Index page itself
+  %div.index-list-crew
+    %h2 Crew members
+    .scrollable
+      %table
         %tr
-          %td #{crew.combine_names}
-          %td #{link_to 'profile' , crew_path(crew)}
-          %td #{link_to 'edit', edit_crew_path(crew)}
-          %td
-            %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
-%div.index-list-clients
-  %h2 Company clients
-  .scrollable
-    %table
-      %tr
-        %th 1
-        %th 2
-        %th 3
-        %th 4
-      -@clients.each do |client|
+          %th Member name
+          %th{colspan: '3'} Action
+        -@crews.each do |crew|
+          %tr
+            %td #{crew.combine_names}
+            %td #{link_to 'profile' , crew_path(crew)}
+            %td #{link_to 'edit', edit_crew_path(crew)}
+            %td
+              %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
+  %div.index-list-clients
+    %h2 Company clients
+    .scrollable
+      %table
         %tr
-          %td #{client.combine_names}
-          %td #{link_to 'details' , client_path(client)}
-          %td #{link_to 'edit', edit_client_path(client)}
-          %td
-            %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
+          %th Client name
+          %th{colspan: '3'} Action
+        -@clients.each do |client|
+          %tr
+            %td #{client.combine_names}
+            %td #{link_to 'details' , client_path(client)}
+            %td #{link_to 'edit', edit_client_path(client)}
+            %td
+              %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
 
     

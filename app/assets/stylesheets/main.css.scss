@@ -24,14 +24,14 @@ body {
 body {
 	font-size: 14px;
 	font-family: 'Exo 2', sans-serif;
-	color: darken(#ffffff, 45%);
+	color: #081555;
 }
 
 h1,
 h2,
 h3,
 h4 {
-	color: #000000;
+	color: darken(#b4bad9, 20%);
 }
 
 h1 {
@@ -61,9 +61,9 @@ li {
 
 a {
 	text-decoration: none;
-	color: lighten(#000000, 30%);
+	color: lighten(#081555, 10%);
 	&:hover{
-		color: #000000;
+		color: #081555;
 	}
 }
 
@@ -74,36 +74,49 @@ input {
 /* Layout elements ---------------------*/
 
 nav {
-	position: absolute;
-	left: 0;
-	top: 0;
-	margin: 5px 0 0 5px;
+	height: 100%;
+	float: left;
 	width: 20%;
 	text-align: center;
-	h1 {
-		margin: 10px 0 10px 0;
+	// background: linear-gradient(to bottom, #1a2b77 0%, #081555 100%);
+	background-color: rgba(8, 21, 85, 0.69);
+	border-right: 3px solid rgba(8, 21, 85, 0.15);
+	ul {
+		margin-top: 30px;
 	}
 	li {
 		margin: 0;
+		width: 100%;
 	}
 	a {
 		display: block;
 		margin-top: 10px;
-		width: 50%;
+		width: 100%;
 		margin: 0 auto;
 		padding: 10px;
-		color: darken(#ffffff, 45%);
+		color: #ffffff;
 		font-weight: bold;
-		border-left: 1px solid darken(#ffffff, 15%);
-		@include button-style(orange, 10%, 15%);
+		@extend .button-style;
 	}
 }
-
+.top-part {
+	height: 50%;
+	border-bottom: 3px solid rgba(8, 21, 85, 0.15);
+	padding-top: 10px;
+}
+.bottom-part {
+	height: 50%;
+	position: relative;
+}
+.ace {
+  font-family: 'Lobster', cursive;
+  font-size: 4em;
+  color: #606dac;
+}
 main {
 	height: 100%;
-	width: 50%;
-	margin: 0 auto;
-	padding: 10px;
+	width: 100%;
+	background-color: #b4bad9;
 }
 
 /* Scrollbars ---------------------*/

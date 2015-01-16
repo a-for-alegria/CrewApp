@@ -1,16 +1,18 @@
 - provide(:title, "#{@client.combine_names} profile")
-- c = @client
-.profile-client-main
-  %table.profile-table-settings
-    %tr
-      %td name
-      %td #{c.combine_names}
-    %tr
-      %td project
-      %td #{c.project}
-    %tr
-      %td budget
-      %td #{c.budget}$
-  -if c.descr
-    %p.descr-text #{c.descr}
+
+.signed-in-content  
+  - c = @client
+  .profile-client-main
+    %table.profile-table-settings
+      %tr
+        %td name
+        %td #{c.combine_names}
+      %tr
+        %td project
+        %td #{c.project}
+      %tr
+        %td budget
+        %td #{c.budget}$
+    -if c.descr
+      %p.descr-text #{c.descr}
     

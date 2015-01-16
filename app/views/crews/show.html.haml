@@ -1,27 +1,28 @@
 - provide(:title, "#{@crew.combine_names} profile")
 
-- c = @crew
-.profile-crew.clearfix
-  .profile-avatar
-    #{image_tag c.avatar.url}
-  .profile-crew-main.profile-table-settings
-    %table
-      %tr
-        %td name
-        %td #{c.combine_names}
-      %tr
-        %td date of birth
-        %td 21.12.1989
-      -if c.bank_card
+.signed-in-content
+  - c = @crew
+  .profile-crew.clearfix
+    .profile-avatar
+      #{image_tag c.avatar.url}
+    .profile-crew-main.profile-table-settings
+      %table
         %tr
-          %td bank card
-          %td #{c.bank_card}
-      -if c.client_project
+          %td name
+          %td #{c.combine_names}
         %tr
-          %td project
-          %td #{c.client_project}
-      %tr
-        %td salary
-        %td #{c.rate} $
+          %td date of birth
+          %td 21.12.1989
+        -if c.bank_card
+          %tr
+            %td bank card
+            %td #{c.bank_card}
+        -if c.client_project
+          %tr
+            %td project
+            %td #{c.client_project}
+        %tr
+          %td salary
+          %td #{c.rate} $
 
     

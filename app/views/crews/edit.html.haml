@@ -1,19 +1,20 @@
 - provide(:title, 'Edit panel')
 
-%h2 Edit panel
-%div.form-block
-  =form_for(@crew) do |f|
-    / =render 'shared/error_messages', object: f.object 
-    =f.label :name
-    =f.text_field :name, placeholder: "Enter name of new member"
-    =f.label :secondname
-    =f.text_field :secondname, placeholder: "Enter second name of new member"
-    =f.label :bank_card
-    =f.text_field :bank_card, placeholder: "xxxx xxxx xxxx xxxx"
-    =f.label :rate
-    =f.text_field :rate, placeholder: "e.g. 1000"
-    =f.file_field :avatar
-    =f.select(:client_project, @clients.pluck(:project), {prompt: "Select project"})
+.signed-in-content  
+  %h2 Edit panel
+  %div.form-block
+    =form_for(@crew) do |f|
+      / =render 'shared/error_messages', object: f.object 
+      =f.label :name
+      =f.text_field :name, placeholder: "Enter name of new member"
+      =f.label :secondname
+      =f.text_field :secondname, placeholder: "Enter second name of new member"
+      =f.label :bank_card
+      =f.text_field :bank_card, placeholder: "xxxx xxxx xxxx xxxx"
+      =f.label :rate
+      =f.text_field :rate, placeholder: "e.g. 1000"
+      =f.file_field :avatar
+      =f.select(:client_project, @clients.pluck(:project), {prompt: "Select project"})
 
-    =f.submit "Save"
-    %button #{link_to 'Cancel', crew_path(@crew)}
+      =f.submit "Save"
+      %button #{link_to 'Cancel', crew_path(@crew)}

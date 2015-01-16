@@ -3,6 +3,7 @@
 /* Dashboard ---------------------------------------*/
 
 /* Side panel */
+
 .core-data {
 	width: 20%;
 	height: 40%;
@@ -34,25 +35,36 @@
 	}
 }
 
-/* Border only for specific li */
+/* Main table */
 
-.main-list-item-crew,
-.main-list-item-client {
-	position: relative;
-  border-bottom: 1px solid darken(#ffffff, 15%);
-  margin-right: 10px;
-  text-align: center;
-  ol {
-  	display: inline-block;
-  }
-}
-.main-list-item-client {
-	margin-left: 10px;
+.index-list-crew table,
+.index-list-clients table {
+  background-color: lightgrey;
+	padding: 5px;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0.5rem;
+	border: 1px solid;
+	border-spacing: 1rem;
+	tr {
+		height: 40px;
+		&:first-child {
+			height: 20px;
+		}
+	}
+	td, th {
+		padding: 5px;
+		border: 1px solid black;
+	}
 }
 
-.index-list-crew {
-	float: left;
+.index-list-clients table {
+	td {
+		padding: 5px;
+		border-radius: 2px;
+	}
 }
+
 
 /* Show page ---------------------------------------*/
 .profile-crew {
@@ -75,7 +87,6 @@
 }
 .profile-crew-main {
   height: 100%;
-  border-left: 2px solid darken(#ffffff, 15%);
   padding-left: 25px;
   float: left;
 }
