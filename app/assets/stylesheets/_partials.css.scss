@@ -2,7 +2,7 @@
 
 .scrollable {
   font-size: 1em;
-  height: 92%;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -35,6 +35,7 @@
   line-height: 20px;  
 }
 .signed-in-content {
+  height: 100%;
   width: 79.67%;
   padding: 10px;
   display: inline-block;
@@ -53,4 +54,26 @@
 
 
 /* Mixins------------------*/
+
+@mixin tr-styling($color1, $color2) {
+  /* Setup */
+  $table-border: 2px solid darken($color2, 7.5%);
+  $table-hover-color: darken(#ffffff, 25%);
+  /* Actual code */
+  background-color: $color1;
+  cursor: pointer;
+  &:nth-child(odd) {
+    background-color: $color2;
+    &:hover {
+      // background-color:  $table-hover-color;
+      border-top: $table-border;
+      border-bottom: $table-border;
+    }
+  }
+  &:hover {
+    // background-color:  $table-hover-color;
+    border-top: $table-border;
+    border-bottom: $table-border;
+  }
+}
 

@@ -6,11 +6,10 @@
 
 .core-data {
 	width: 20%;
-	height: 40%;
+	height: 50%;
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	margin: 0 0 5px 5px;
 	text-align: center;
 }
 
@@ -18,21 +17,21 @@
 
 .index-list-crew,
 .index-list-clients {
-	width: 49%;
-	height: 100%;
-	display: inline-block;
+	height: 49%;
+	width: 70%;
 	text-align: center;
-	li, 
-	span {
-		padding: 10px;
-	}
+	display: inline-block;
 	li {
 		cursor: pointer;
+		padding: 10px;
 	}
-	span {
-		color: darken(#ffffff, 45%);
-		font-weight: bold;
-	}
+}
+.index-panel-crew,
+.index-panel-client {
+	height: 49%;
+	background-color: #639bf1;
+	width: 28%;
+	display: inline-block;
 }
 
 /* Main table */
@@ -40,31 +39,27 @@
 .index-list-crew table,
 .index-list-clients table {
   background-color: lightgrey;
-	padding: 5px;
 	width: 100%;
 	border-collapse: collapse;
-	border-spacing: 0.5rem;
-	border: 1px solid;
-	border-spacing: 1rem;
-	tr {
-		height: 40px;
-		&:first-child {
-			height: 20px;
-		}
-	}
-	td, th {
-		padding: 5px;
-		border: 1px solid black;
+	border-radius: 5px;
+}
+tr {
+	height: 40px;
+	@include tr-styling(rgba(119, 186, 155, 0.67), rgba(119, 186, 155, 0.47));
+	&:first-child:hover {
+		border: none;
 	}
 }
-
-.index-list-clients table {
-	td {
-		padding: 5px;
-		border-radius: 2px;
-	}
+td, th {
+	padding: 5px;
 }
-
+th {
+  background-color: lighten(#293e6a, 10%);
+  color: darken(#b4bad9, 10%);
+}
+.index-list-clients {
+  margin-top: 10px;
+}
 
 /* Show page ---------------------------------------*/
 .profile-crew {

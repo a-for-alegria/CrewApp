@@ -13,8 +13,7 @@
         %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
 
   // Index page itself
-  %div.index-list-crew
-    %h2 Crew members
+  .index-list-crew
     .scrollable
       %table
         %tr
@@ -27,8 +26,8 @@
             %td #{link_to 'edit', edit_crew_path(crew)}
             %td
               %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
-  %div.index-list-clients
-    %h2 Company clients
+  .index-panel-crew
+  .index-list-clients
     .scrollable
       %table
         %tr
@@ -41,5 +40,6 @@
             %td #{link_to 'edit', edit_client_path(client)}
             %td
               %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
+  .index-panel-client
 
     
