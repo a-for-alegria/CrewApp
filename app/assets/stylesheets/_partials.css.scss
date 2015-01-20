@@ -55,25 +55,5 @@
 
 /* Mixins------------------*/
 
-@mixin tr-styling($color1, $color2) {
-  /* Setup */
-  $table-border: 2px solid darken($color2, 7.5%);
-  $table-hover-color: darken(#ffffff, 25%);
-  /* Actual code */
-  background-color: $color1;
-  cursor: pointer;
-  &:nth-child(odd) {
-    background-color: $color2;
-    &:hover {
-      // background-color:  $table-hover-color;
-      border-top: $table-border;
-      border-bottom: $table-border;
-    }
-  }
-  &:hover {
-    // background-color:  $table-hover-color;
-    border-top: $table-border;
-    border-bottom: $table-border;
-  }
-}
+
 
