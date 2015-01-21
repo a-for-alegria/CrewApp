@@ -35,9 +35,10 @@
   &:hover {
     border-right: 5px solid #639bf1;
     background-color: #b4bad9;
+    padding: 15px;
   }
   &:active {
-    background-color: darken(#b4bad9, 5%);
+    background-color: darken(#b4bad9, 15%);
   }
 }
 /* Variables------------------*/

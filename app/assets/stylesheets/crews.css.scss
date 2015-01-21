@@ -65,8 +65,10 @@ table {
     background-color: rgb(55, 84, 143);
     color: rgb(146, 155, 200);
     width: 100%;
-    th {width: 100%;}
     padding-left: 0.5em;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    th {width: 100%;}
   }
   tbody {
     overflow-y: auto;
