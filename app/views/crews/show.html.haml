@@ -2,27 +2,46 @@
 
 .signed-in-content
   - c = @crew
-  .profile-crew.clearfix
-    .profile-avatar
-      #{image_tag c.avatar.url}
-    .profile-crew-main.profile-table-settings
-      %table
-        %tr
-          %td name
-          %td #{c.combine_names}
-        %tr
-          %td date of birth
-          %td 21.12.1989
-        -if c.bank_card
-          %tr
-            %td bank card
-            %td #{c.bank_card}
-        -if c.client_project
-          %tr
-            %td project
-            %td #{c.client_project}
-        %tr
-          %td salary
-          %td #{c.rate} $
+  .profile-crew
+    .profile-left  
+      .profile-avatar
+        #{image_tag c.avatar.url}
+      .profile-credentials  
+        %ul
+          %li #{c.combine_names}
+          %li #{c.rate}$/month
+    .profile-right  
+      .profile-crew-info
+        %h2 Personal info
+        %ul
+          %li 
+            %label date of birth
+            %span 21.12.1989
+          -if c.bank_card
+            %li 
+              %label bank card
+              %span #{c.bank_card}
+      .profile-crew-work
+        %h2 Statistics
+        %ul
+          -if c.client_project
+            %li
+              %label project
+              %span #{c.client_project}
+
+    /     %tr
+    /       %td date of birth
+    /       %td 21.12.1989
+    /     
+    /       %tr
+    /         %td bank card
+    /         %td #{c.bank_card}
+    /     -if c.client_project
+    /       %tr
+    /         %td project
+    /         %td #{c.client_project}
+    /     %tr
+    /       %td salary
+    /       %td #{c.rate}$/month
 
     

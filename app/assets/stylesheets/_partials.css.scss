@@ -18,15 +18,6 @@
     clear: both;
   }
 }
-.profile-table-settings {
-  td {
-    padding: 5px;
-    border-radius: 2px;
-    &:last-child {
-      background-color: darken(#ffffff, 5%);
-    }
-  }  
-}
 .descr-text {
   padding: 5px;
   display: block;

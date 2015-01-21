@@ -122,18 +122,12 @@ main {
 /* Scrollbars ---------------------*/
 
 ::-webkit-scrollbar {
-	width: 6px;
-	background-color: darken(#ffffff, 10%);
-} 
+  width: 0.5em;
+}
 
 ::-webkit-scrollbar-thumb {
-	background-color: darken(#ffffff, 30%);
-	&:hover {
-		background-color: darken(#ffffff, 35%);
-	}
-	&:active {
-		background-color: darken(#ffffff, 35%);
-	}
+  background-color: transparent;
+  outline: 1px solid transparent;
 }
 
 /* New and Edit forms ---------------------*/
