@@ -9,13 +9,11 @@
 	text-align: center;
 	background: radial-gradient(ellipse at center, rgba(180,186,217,1) 1%,rgba(26,43,119,1) 100%);
 	a {
+		transition: font-size 0.2s ease;
 		color: #ffffff;
 		font-size: 10em;
-    &:hover {
-	    color: darken(steelblue, 5%);
-	  }
 	  &:active {
-	    color: darken(steelblue, 10%);
+	    font-size: 8em;
 	  }
 	}
   p {
