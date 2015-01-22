@@ -27,7 +27,20 @@
               %td #{link_to 'edit', edit_crew_path(crew)}
               %td
                 %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
-    .index-panel-crew
+    .index-panel-top
+      %ul
+        %li 
+          %label income
+          %span #{@clients.pluck(:budget).sum}$
+        %li 
+          %label outcome
+          %span #{@crews.pluck(:rate).sum}$
+        %li 
+          - cl_vs_cr = Proc.new {(@clients.pluck(:budget).sum) - (@crews.pluck(:rate).sum)}
+          -if (@clients.pluck(:budget).sum) > (@crews.pluck(:rate).sum)
+            %span.profit #{cl_vs_cr.call}$
+          -else
+            %span.loss #{cl_vs_cr.call}$
   .index-container-client
     .index-list-client
       %table
@@ -42,6 +55,6 @@
               %td #{link_to 'edit', edit_client_path(client)}
               %td
                 %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
-    .index-panel-client
-
+    .index-panel-bottom
+      %h3 
     
