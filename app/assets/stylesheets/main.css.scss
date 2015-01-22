@@ -56,7 +56,16 @@ h4 {
 }
 
 li {
+	margin-bottom: 10px;
 	list-style: none;
+	label {
+	  color: #b4bad9;
+	  font-weight: bold;
+	}  
+	span {
+	  font-size: 1.5em;
+	  padding-left: 20px;
+	}
 }
 
 a {
@@ -112,6 +121,9 @@ nav {
 	height: 50%;
 	border-bottom: 3px solid rgba(8, 21, 85, 0.15);
 	padding-top: 10px;
+}
+.bottom-part {
+
 }
 .ace {
   font-family: 'Lobster', cursive;
@@ -193,4 +205,28 @@ input[id="client_budget"] {
 	margin-top: 10px;
 	height: 30px;
 	cursor: pointer;
+}
+
+/* Flash notice ---------------------*/
+
+.alert,
+.success {
+	height: 40px;
+	width: 250px;
+	display: block;
+	position: absolute;
+	top: 80%;
+	left: 2%;
+	text-align: center;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.18);
+	font-weight: bold;
+}
+.alert {
+	color: rgba(255, 255, 255, 0.18);
+	border-right: 10px solid rgba(255, 255, 255, 0.18);
+}
+.success {
+	color: rgba(0, 253, 0, 0.31);
+	border-right: 10px solid rgba(0, 253, 0, 0.31);
 }

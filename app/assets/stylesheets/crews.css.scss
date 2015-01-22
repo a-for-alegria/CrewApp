@@ -3,17 +3,7 @@
 /* Dashboard ---------------------------------------*/
 
 /* Mutual styles */
-li {
-  margin-bottom: 10px;
-  label {
-    color: lighten(#77ba9b, 10%);
-    font-weight: bold;
-  }  
-  span {
-    font-size: 1.5em;
-    padding-left: 20px;
-  }
-}
+
 
 /* Content left part*/
 
@@ -48,15 +38,17 @@ li {
 	float: right;
   padding: 10px;
   border-radius: 5px;
-  li {
-    &:last-child {
-      border-top: 3px solid rgba(8, 21, 85, 0.15);
-      padding-top: 20px;
-      span {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
+  ul.finance {
+    li {
+      &:last-child {
+        border-top: 3px solid rgba(8, 21, 85, 0.15);
+        padding-top: 20px;
+        span {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 10px;
+        }
       }
     }
   }

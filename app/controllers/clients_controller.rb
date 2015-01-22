@@ -14,6 +14,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     if @client.save
       redirect_to root_path
+      flash[:success] = "Successfully created"
     else
       render 'new'
     end
@@ -38,6 +39,7 @@ class ClientsController < ApplicationController
   def destroy
     client_finder.destroy
     redirect_to root_path
+    flash[:alert] = "Successfully deleted"
   end
 
   private

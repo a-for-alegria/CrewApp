@@ -18,12 +18,17 @@
               %li #{link_to "Sign out", signout_path, id: "sign_out"}
             - else
               %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
-        .bottom-part
+        .bottom-part 
           %ul
             %li 
               %label Signed in as 
               %br
               %span #{current_user.name}!
+        // Flash notice
+        - if flash[:alert]
+          .alert #{flash[:alert]}
+        -if flash[:success]
+          .success #{flash[:success]}
     %main
       = yield
 

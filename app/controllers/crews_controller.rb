@@ -15,6 +15,7 @@ class CrewsController < ApplicationController
     @crew = Crew.new(crew_params)
     if @crew.save
       redirect_to root_path
+      flash[:success] = "Successfully created"
     else
       render 'new'
     end
@@ -39,6 +40,7 @@ class CrewsController < ApplicationController
   def destroy
     crew_finder.destroy
     redirect_to root_path
+    flash[:alert] = "Successfully deleted"
   end
 
   private
