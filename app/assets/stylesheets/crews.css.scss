@@ -15,17 +15,6 @@ li {
   }
 }
 
-/* Side panel */
-
-.core-data {
-	width: 20%;
-	height: 50%;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	text-align: center;
-}
-
 /* Content left part*/
 
 .index-container-crew,
@@ -58,6 +47,7 @@ li {
 	width: 28%;
 	float: right;
   padding: 10px;
+  border-radius: 5px;
   li {
     &:last-child {
       border-top: 3px solid rgba(8, 21, 85, 0.15);
@@ -188,37 +178,7 @@ table {
   background-color: darken(#639bf1, 10%);
 }
 
-// .profile-crew {
-// 	padding: 10px;
-// 	height: 100%;
-// 	img {
-//   	height: auto;
-// 		width: 120px;
-// 		border-radius: 5px;
-//   }
-// }
-// .profile-avatar,
-// .profile-main {
-// 	float: left;
-// }
 
-// .profile-avatar {
-//   float: left;
-//   margin-right: 10px;
-// }
-// .profile-crew-main {
-//   height: 100%;
-//   padding-left: 25px;
-//   float: left;
-// }
-// .bank_account {
-// 	display: inline-block;
-// }
-// .bank_label {
-// 	vertical-align: super;
-// 	font-size: 0.7em;
-// 	font-style: italic;
-// }
 
 
 

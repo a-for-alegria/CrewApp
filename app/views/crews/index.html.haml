@@ -2,16 +2,7 @@
 
 .signed-in-content
   // Standalone section with company statistic
-  %section.core-data
-    %ul
-      %li Total members: #{@crews.count}
-      %li Total clients: #{@clients.count}
-      - if current_user
-        %li Signed in as #{current_user.name}!
-        %li #{link_to "Sign out", signout_path, id: "sign_out"}
-      - else
-        %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
-
+  
   // Index page itself
   .index-container-crew
     .index-list-crew
