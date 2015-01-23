@@ -48,7 +48,7 @@ class ClientsController < ApplicationController
     end
 
     def redirect
-      redirect_to start_pages_start_path unless signed_in?
+      redirect_to start_pages_start_path unless signed_in? 
     end
 
     def client_finder

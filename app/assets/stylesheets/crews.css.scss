@@ -41,7 +41,7 @@
   ul.finance {
     li {
       &:last-child {
-        border-top: 3px solid rgba(8, 21, 85, 0.15);
+        border-top: 3px dashed rgba(8, 21, 85, 0.15);
         padding-top: 20px;
         span {
           display: block;

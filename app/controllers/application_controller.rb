@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   def signed_in?
 		!current_user.nil?
   end
+  
+  def permited_user
+    current_user.uid == '313528822190863'
+  end
 end

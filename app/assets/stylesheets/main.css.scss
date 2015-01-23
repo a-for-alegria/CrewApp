@@ -24,7 +24,21 @@ body {
 body {
 	font-size: 14px;
 	font-family: 'Exo 2', sans-serif;
-	color: #081555;
+	color: #293e6a;
+	background-image: url(footer_lodyas.png);
+	background-size: cover;
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		// background-color: #262C4D;
+		background-color: rgba(38, 44, 77, 0.44);
+	}
 }
 
 h1,
@@ -87,8 +101,9 @@ nav {
 	float: left;
 	width: 20%;
 	text-align: center;
-	// background: linear-gradient(to bottom, #1a2b77 0%, #081555 100%);
 	background-color: rgba(8, 21, 85, 0.69);
+	position: relative;
+  z-index: 3;
 	ul {
 		margin-top: 30px;
 	}
@@ -119,11 +134,13 @@ nav {
 }
 .top-part {
 	height: 50%;
-	border-bottom: 3px solid rgba(8, 21, 85, 0.15);
+	border-bottom: 3px dashed rgba(8, 21, 85, 0.15);
 	padding-top: 10px;
 }
 .bottom-part {
-
+  span {
+  	color: #b6a754;
+  }
 }
 .ace {
   font-family: 'Lobster', cursive;
@@ -133,7 +150,8 @@ nav {
 main {
 	height: 99.7%;
 	width: 100%;
-	background-color: #b4bad9;
+	position: relative;
+  z-index: 2;
 }
 
 /* Scrollbars ---------------------*/
