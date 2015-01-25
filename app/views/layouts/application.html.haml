@@ -8,22 +8,14 @@
   %body
     -if signed_in?
       %nav
-        .top-part
-          %h1.ace Ace!
-          %ul
-            %li #{to_root}
-            %li #{link_to 'Add member', new_crew_path}
-            %li #{link_to 'Add client', new_client_path}
-            - if current_user
-              %li #{link_to "Sign out", signout_path, id: "sign_out"}
-            - else
-              %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
-        .bottom-part 
-          %ul
-            %li 
-              %label Signed in as 
-              %br
-              %span #{current_user.name}!
+        %ul
+          %li #{to_root}
+          %li #{link_to 'Add member', new_crew_path}
+          %li #{link_to 'Add client', new_client_path}
+          - if current_user
+            %li #{link_to "Sign out", signout_path, id: "sign_out"}
+          - else
+            %li #{link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"}
         // Flash notice
         - if flash[:alert]
           .alert #{flash[:alert]}

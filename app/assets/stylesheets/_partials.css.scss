@@ -1,3 +1,13 @@
+/* Variables------------------*/
+
+$main-black: #000000;
+$concrete-gray: #2d2d2d;
+$soft-gray: #ababab;
+$main-white: #ffffff;
+$secondary-violet: #634271;
+
+
+
 /* Classes------------------*/
 
 .scrollable {
@@ -33,17 +43,14 @@
 }
 .button-style {
   &:hover {
-    border-right: 5px solid #639bf1;
-    background-color: #b4bad9;
-    padding: 15px;
+    background-color: $main-white;
+    padding: 25px;
+    color: $soft-gray;
   }
   &:active {
-    background-color: darken(#b4bad9, 15%);
+    background-color: darken($main-white, 15%);
   }
 }
-/* Variables------------------*/
-
-
 
 /* Mixins------------------*/
 

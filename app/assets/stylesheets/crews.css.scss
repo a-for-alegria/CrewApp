@@ -33,15 +33,17 @@
 .index-panel-top,
 .index-panel-bottom {
 	height: 100%;
-	background-color: #639bf1;
+	background-color: $concrete-gray;
 	width: 28%;
+  font-weight: bold;
+  font-size: 1.5em;
 	float: right;
   padding: 10px;
   border-radius: 5px;
   ul.finance {
     li {
       &:last-child {
-        border-top: 3px dashed rgba(8, 21, 85, 0.15);
+        border-top: 2px solid rgba($main-black, 0.15);
         padding-top: 20px;
         span {
           display: block;
@@ -52,6 +54,9 @@
       }
     }
   }
+}
+.index-panel-bottom {
+  background-color: lighten($concrete-gray, 5%);
 }
 .profit {
   background-color: green;
@@ -64,37 +69,40 @@
 /* Main table */
 
 table {
-  background-color: darken(#ffffff, 10%);
+  background-color: $concrete-gray;
   border-radius: 5px;
   border-collapse: collapse;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
-	th { text-decoration: underline; }
   th, td {
     padding: 15px;
     text-align: left;
+    font-size: 1.5em;
   }
 	thead {
-    background-color: rgb(55, 84, 143);
-    color: rgb(146, 155, 200);
+    background-color: lighten($concrete-gray, 6%);
+    color: darken($soft-gray, 20%);
+    font-family: 'Fjalla One', sans-serif;
     width: 100%;
     padding-left: 0.5em;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
     th {width: 100%;}
   }
   tbody {
+    font-size: 0.8em;
     overflow-y: auto;
     overflow-x: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
 		-webkit-overflow-scrolling: touch;
     width: 100%;
     height: 100%;
-    tr:nth-child(even) {background-color: darken(#ffffff, 15%);}
+    tr:nth-child(even) {background-color: lighten($concrete-gray, 2%);}
     td {width: 100%;}
     padding-left: 0.5em;
+    a{
+      font-size: 0.7em;
+    }
   }
 }
 
