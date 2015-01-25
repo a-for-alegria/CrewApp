@@ -11,8 +11,4 @@ class Crew < ActiveRecord::Base
     a = [] << [self.name, self.secondname]
     a.join(' ')
   end
-
-  def rate_summ
-    self.all.pluck(:rate).sum
-  end
 end
