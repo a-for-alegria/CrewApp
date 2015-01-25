@@ -3,31 +3,30 @@
 .signed-in-content
   - c = @crew
   .profile-crew.scrollable
-    .profile-left  
-      .profile-avatar
-        #{image_tag c.avatar.url}
-      .profile-credentials  
-        %ul
-          %li #{c.combine_names}
-          %li #{c.rate}$/month
-    .profile-right  
-      .profile-crew-info
-        %h2 Personal info
-        %ul
+    #{image_tag c.avatar.url}
+    .profile-credentials  
+      %ul
+        %li #{c.combine_names}
+    .profile-crew-info
+      %h2 Personal info
+      %ul
+        %li 
+          %label Date of birth
+          %span 21.12.1989
+        -if c.bank_card
           %li 
-            %label date of birth
-            %span 21.12.1989
-          -if c.bank_card
-            %li 
-              %label bank card
-              %span #{c.bank_card}
-      .profile-crew-work
-        %h2 Statistics
-        %ul
-          -if c.client_project
-            %li
-              %label project
-              %span #{c.client_project}
+            %label Bank card
+            %span #{c.bank_card}
+        %li
+          %label Rate/month 
+          %span $#{c.rate}   
+    .profile-crew-work
+      %h2 Statistics
+      %ul
+        -if c.client_project
+          %li
+            %label Project
+            %span #{c.client_project}
 
 
     

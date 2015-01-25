@@ -19,11 +19,9 @@
     .index-panel-top
       %ul.finance
         %li 
-          %label income
-          %span #{@clients.pluck(:budget).sum}$
+          %span.profit-font $ #{@clients.pluck(:budget).sum}
         %li 
-          %label outcome
-          %span #{@crews.pluck(:rate).sum}$
+          %span.loss-font $ #{@crews.pluck(:rate).sum}
         %li 
           - cl_vs_cr = Proc.new {(@clients.pluck(:budget).sum) - (@crews.pluck(:rate).sum)}
           -if (@clients.pluck(:budget).sum) > (@crews.pluck(:rate).sum)

@@ -33,7 +33,7 @@
 .index-panel-top,
 .index-panel-bottom {
 	height: 100%;
-	background-color: $concrete-gray;
+	background-color: rgba($concrete-gray, 0.5);
 	width: 28%;
   font-weight: bold;
   font-size: 1.5em;
@@ -43,8 +43,8 @@
   ul.finance {
     li {
       &:last-child {
-        border-top: 2px solid rgba($main-black, 0.15);
-        padding-top: 20px;
+        border-top: 3px solid rgba($main-black, 0.1);
+        padding: 20px;
         span {
           display: block;
           width: 100%;
@@ -55,8 +55,20 @@
     }
   }
 }
+.index-panel-top {
+  span {
+    @extend .important-content;
+    padding-left: 20px;
+  }
+  .profit-font {
+    color: green;
+  }
+  .loss-font {
+    color: red;
+  }
+}
 .index-panel-bottom {
-  background-color: lighten($concrete-gray, 5%);
+  background-color: rgba(lighten($concrete-gray, 5%), 0.5);
 }
 .profit {
   background-color: green;
@@ -64,7 +76,7 @@
 }
 .loss {
   background-color: red;
-  color: darken(red, 10%);
+  color: darken(red, 15%);
 }
 /* Main table */
 
@@ -110,54 +122,36 @@ table {
 
 .profile-crew {
 	width: 70%;
-	background-color: #639bf1;
+	background-color: rgba($concrete-gray, 0.5);
 	height: 100%;
 	margin: 0 auto;
-}
-.profile-left,
-.profile-right {
-	display: inline-block;
-	vertical-align: top;
-}
-
-/* Content left part*/
-
-.profile-left {
-  width: 100%;
-	padding: 10px;
-	background-color: #639bf1;
-}
-.profile-avatar {
-	background-color: rgba(59, 89, 152, 0.31);
-	padding: 5px;
-	width: 160px;
+  padding-top: 20px;
   img {
-  	height: auto;
-		width: 150px;
-		
+    height: auto;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid lighten($concrete-gray, 2%)
+  }
+  label {
+    display: block;
+    padding-bottom: 5px;
   }
 }
+
 .profile-credentials {
-  padding: 5px;
-  margin-top: 10px;
+  margin: 20px 20px;
+  text-align: center;
   li {
     margin-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 2em;
     font-weight: bold;
   }
 }
 
-/* Content right part*/
-
-.profile-right {
-  width: 100%;
-  height: 100%;
-	background-color: darken(#639bf1, 5%);
-	display: inline-block;
-}
 .profile-crew-info,
 .profile-crew-work {
-  height: 50%;
+  padding-bottom: 20px;
   width: 100%;
   ul {
   	padding: 10px;
@@ -166,16 +160,14 @@ table {
 		display: block;
 		width: 100%;
 		padding: 10px;
-  	background-color: lighten(#639bf1, 5%);
-  	color: darken(#639bf1, 5%);
+  	background-color: lighten($concrete-gray, 6%);
+  	color: darken($soft-gray, 20%);
 	}
+  span {
+    @extend .important-content;
+  }
 }
-.profile-crew-info {
 
-}
-.profile-crew-work {
-  background-color: darken(#639bf1, 10%);
-}
 
 
 

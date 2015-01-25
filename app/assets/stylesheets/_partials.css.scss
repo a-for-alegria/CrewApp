@@ -52,7 +52,11 @@ $secondary-violet: #634271;
     background-color: darken($main-white, 15%);
   }
 }
-
+.important-content {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Oswald', sans-serif;
+}
 /* Mixins------------------*/
 
 
