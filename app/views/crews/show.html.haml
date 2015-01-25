@@ -2,7 +2,7 @@
 
 .signed-in-content
   - c = @crew
-  .profile-crew
+  .profile-crew.scrollable
     .profile-left  
       .profile-avatar
         #{image_tag c.avatar.url}
@@ -29,19 +29,5 @@
               %label project
               %span #{c.client_project}
 
-    /     %tr
-    /       %td date of birth
-    /       %td 21.12.1989
-    /     
-    /       %tr
-    /         %td bank card
-    /         %td #{c.bank_card}
-    /     -if c.client_project
-    /       %tr
-    /         %td project
-    /         %td #{c.client_project}
-    /     %tr
-    /       %td salary
-    /       %td #{c.rate}$/month
 
     
