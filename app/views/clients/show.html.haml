@@ -2,17 +2,38 @@
 
 .signed-in-content  
   - c = @client
-  .profile-client-main
-    %table.profile-table-settings
-      %tr
-        %td name
-        %td #{c.combine_names}
-      %tr
-        %td project
-        %td #{c.project}
-      %tr
-        %td budget
-        %td #{c.budget}$
-    -if c.descr
-      %p.descr-text #{c.descr}
+  .details-client.scrollable
+    .details-header
+      %h1 #{c.combine_names}
+    .details-content
+      %h2 Project details
+      %ul
+        %li 
+          %label Client name
+          %span #{c.combine_names}
+        %li
+          %label Project budget
+          %span $#{c.budget}
+        %li
+          %label Description
+          %span #{c.descr}
+    
+
+
+
+
+
+
+/ %table.profile-table-settings
+/   %tr
+/     %td name
+/     %td #{c.combine_names}
+/   %tr
+/     %td project
+/     %td #{c.project}
+/   %tr
+/     %td budget
+/     %td #{c.budget}$
+/ -if c.descr
+/   %p.descr-text #{c.descr}
     

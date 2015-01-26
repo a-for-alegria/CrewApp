@@ -1,3 +1,41 @@
 @import 'partials';
 
 /* Show page ---------------------------------------*/
+
+.details-client {
+	width: 70%;
+	background-color: rgba($concrete-gray, 0.5);
+	height: 100%;
+	margin: 0 auto;
+  padding-top: 20px;
+  label {
+    display: block;
+    padding-bottom: 5px;
+  }
+}
+.details-header {
+	padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+
+}
+.details-content {
+	 padding-bottom: 20px;
+  width: 100%;
+  ul {
+  	padding: 10px;
+  }
+  li {
+  	margin-bottom: 20px;
+  }
+  h2 {
+		display: block;
+		width: 100%;
+		padding: 10px;
+  	background-color: lighten($concrete-gray, 6%);
+  	color: darken($soft-gray, 20%);
+	}
+  span {
+    @extend .important-content;
+  }
+}
