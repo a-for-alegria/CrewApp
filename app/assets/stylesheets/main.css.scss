@@ -43,9 +43,7 @@ body {
 h1,
 h2,
 h3,
-h4 {
-	font-family: 'Fjalla One', sans-serif;
-}
+h4 {font-family: 'Fjalla One', sans-serif;}
 
 h1 {
 	font-size: 3em;
@@ -76,14 +74,10 @@ li {
 a {
 	text-decoration: none;
 	color: $soft-gray;
-	&:hover{
-		color: lighten($soft-gray, 10%);
-	}
+	&:hover{color: lighten($soft-gray, 10%);}
 }
 
-input {
-	box-sizing:border-box;
-}
+input {box-sizing:border-box;}
 
 /* Layout elements ---------------------*/
 
@@ -99,9 +93,7 @@ nav {
 		margin: 0;
 		width: 100%;
 		border-bottom: 2px solid rgba($main-black, 0.15);
-		&:last-child {
-			border: none;
-		}
+		&:last-child {border: none;}
 	}
 	a {
 		font-family: 'Arimo', sans-serif;
@@ -126,9 +118,7 @@ main {
 
 /* Scrollbars ---------------------*/
 
-::-webkit-scrollbar {
-  width: 0.5em;
-}
+::-webkit-scrollbar {width: 0.5em;}
 
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
@@ -141,22 +131,12 @@ main {
 	width: 50%;
   margin: 0 auto;
   form,
-  textarea {
-  	padding: 10px;
-  }
-  input {
-  	color: lighten($main-black, 30%);
-  }
-	button {
-		margin-left: 10px
-	}
-	label {
-		display: none;
-	}
+  textarea {padding: 10px;}
+  input {color: lighten($main-black, 30%);}
+	button {margin-left: 10px}
+	label {display: none;}
 	select,
-	textarea {
-		margin-bottom: 10px;
-	}
+	textarea {margin-bottom: 10px;}
 	textarea {
 		min-height: 100px;
 		width: 100%;
@@ -178,9 +158,7 @@ button {
 	display: inline-block;
 	padding: 2px;
 }
-input[id="crew_bank_card"] {
-	width: 50%;
-}
+input[id="crew_bank_card"] {width: 50%;}
 input[id="crew_rate"],
 input[id="client_budget"] {
 	width: 50%;

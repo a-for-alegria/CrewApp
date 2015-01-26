@@ -1,3 +1,4 @@
+
 /* Variables------------------*/
 
 $main-black: #000000;
@@ -25,16 +26,7 @@ $secondary-violet: #634271;
     content: " ";
     display: table;
   }
-  &:after {
-    clear: both;
-  }
-}
-.descr-text {
-  padding: 5px;
-  display: block;
-  margin-top: 10px;
-  text-indent: 20px;
-  line-height: 20px;  
+  &:after {clear: both;}
 }
 .signed-in-content {
   height: 100%;
@@ -48,14 +40,36 @@ $secondary-violet: #634271;
     padding: 25px;
     color: $soft-gray;
   }
-  &:active {
-    background-color: darken($main-white, 15%);
-  }
+  &:active {background-color: darken($main-white, 15%);}
 }
 .important-content {
   font-size: 1.5em;
   font-weight: normal;
   font-family: 'Oswald', sans-serif;
+}
+.show-pages-template {
+  width: 70%;
+  background-color: rgba($concrete-gray, 0.5);
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  label {
+    display: block;
+    padding-bottom: 5px;
+  }
+}
+.show-page-description-content {
+  padding-bottom: 20px;
+  width: 100%;
+  ul {padding: 10px;}
+  h2 {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: lighten($concrete-gray, 6%);
+    color: darken($soft-gray, 20%);
+  }
+  span {@extend .important-content;}
 }
 /* Mixins------------------*/
 
