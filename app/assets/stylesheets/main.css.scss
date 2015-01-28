@@ -109,12 +109,26 @@ nav {
 		@extend .button-style;
 	}
 }
+.new_member_modal {display: none;}
+.new-member:hover {
+  .new_member_modal {
+  	display: block;
+		width: 75%;
+		height: 100%;
+		background-color: black;
+		float: right;
+  }
+}
 main {
 	height: 99.5%;
 	width: 100%;
 	position: relative;
   z-index: 2;
 }
+
+/* Popups ---------------------*/
+
+
 
 /* Scrollbars ---------------------*/
 
