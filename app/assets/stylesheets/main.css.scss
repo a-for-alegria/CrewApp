@@ -126,10 +126,6 @@ main {
   z-index: 2;
 }
 
-/* Popups ---------------------*/
-
-
-
 /* Scrollbars ---------------------*/
 
 ::-webkit-scrollbar {width: 0.5em;}
@@ -189,24 +185,36 @@ input[id="client_budget"] {
 
 /* Flash notice ---------------------*/
 
+@mixin flash-style($color) {                  /* Flash mixin */
+	border-right: 10px solid rgba($color, 0.7);
+}
+
 .alert,
 .success {
 	height: 40px;
 	width: 250px;
 	display: block;
 	position: absolute;
+	z-index: 3;
 	top: 80%;
 	left: 2%;
 	text-align: center;
 	padding: 10px;
-	background-color: rgba(255, 255, 255, 0.18);
+	background-color: rgba($soft-gray, 0.18);
+	transition: background-color, 0.3s, ease;
+	color: rgba($main-white, 0.4);
 	font-weight: bold;
+	cursor: pointer;
+	&:active {
+		display: none; 
+	}
+	&:hover {
+		background-color: rgba($soft-gray, 0.38);
+	}
 }
 .alert {
-	color: rgba(255, 255, 255, 0.18);
-	border-right: 10px solid rgba(255, 255, 255, 0.18);
+	@include flash-style(red);
 }
 .success {
-	color: rgba(0, 253, 0, 0.31);
-	border-right: 10px solid rgba(0, 253, 0, 0.31);
+	@include flash-style(green);
 }

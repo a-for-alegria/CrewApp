@@ -1,12 +1,9 @@
 CrewApp::Application.routes.draw do
+  devise_for :users,controllers: { sessions: "user/sessions" }
   get "start_pages/start"
-  get 'auth/:provider/callback', to: 'sessions#create'
-	get 'auth/failure', to: redirect('/')
-	get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  resources :sessions, only: [:create, :destroy]
-	resources :crews
-	resources :clients
+  resources :crews
+  resources :clients
 
 	root 'crews#index'
 end

@@ -27,4 +27,5 @@ CrewApp::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   Paperclip.options[:command_path] = "/usr/local/bin/"
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

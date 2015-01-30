@@ -31,6 +31,7 @@ gem 'database_cleaner', github: 'bmabey/database_cleaner'
 gem 'pony'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'omniauth-facebook', '~> 1.4.1'
+gem 'devise'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
