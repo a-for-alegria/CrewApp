@@ -71,6 +71,9 @@ $secondary-violet: #634271;
   }
   span {@extend .important-content;}
 }
+
 /* Mixins------------------*/
 
-
+@mixin flash-style($color) {                  /* Flash mixin */
+  border-right: 10px solid rgba($color, 0.7);
+}

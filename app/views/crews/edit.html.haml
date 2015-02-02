@@ -17,4 +17,3 @@
       =f.select(:client_project, @clients.pluck(:project), {prompt: "Select project"})
 
       =f.submit "Save"
-      %button #{link_to 'Cancel', crew_path(@crew)}

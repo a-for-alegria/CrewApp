@@ -109,16 +109,6 @@ nav {
 		@extend .button-style;
 	}
 }
-.new_member_modal {display: none;}
-.new-member:hover {
-  .new_member_modal {
-  	display: block;
-		width: 75%;
-		height: 100%;
-		background-color: black;
-		float: right;
-  }
-}
 main {
 	height: 99.5%;
 	width: 100%;
@@ -135,59 +125,7 @@ main {
   outline: 1px solid transparent;
 }
 
-/* New and Edit forms ---------------------*/
-
-.form-block {
-	width: 50%;
-  margin: 0 auto;
-  form,
-  textarea {padding: 10px;}
-  input {color: lighten($main-black, 30%);}
-	button {margin-left: 10px}
-	label {display: none;}
-	select,
-	textarea {margin-bottom: 10px;}
-	textarea {
-		min-height: 100px;
-		width: 100%;
-	}
-}
-
-input[type="text"] {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 10px;
-	color: lighten(#000000, 30%);
-}
-input[type="submit"],
-button {
-	cursor: pointer;
-	width: 30%;
-	height: auto;
-	margin: 0 auto;
-	display: inline-block;
-	padding: 2px;
-}
-input[id="crew_bank_card"] {width: 50%;}
-input[id="crew_rate"],
-input[id="client_budget"] {
-	width: 50%;
-	display: block;
-}
-/* Custom select */
-
-#crew_client_project {
-	width: 100%;
-	margin-top: 10px;
-	height: 30px;
-	cursor: pointer;
-}
-
 /* Flash notice ---------------------*/
-
-@mixin flash-style($color) {                  /* Flash mixin */
-	border-right: 10px solid rgba($color, 0.7);
-}
 
 .alert,
 .success {

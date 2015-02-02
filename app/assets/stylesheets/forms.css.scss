@@ -1,0 +1,62 @@
+@import 'partials';
+
+/* Forms overall ---------------------------------------*/
+.form-block-user,
+.form-block {
+	/* vertical center */
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	position: absolute;
+	/*----------------*/
+	width: 20%;
+	margin: 0 auto;
+	background-color: #2d2d2d;
+	padding: 20px;
+	a {
+		display: inline-block;
+		margin: 5px 0 5px 0;
+	}
+}
+.form-block {width: 30%;}
+input,
+select,
+textarea {
+	width: 100%;
+	padding: 10px;
+	font-size: 1.2em;
+	color: darken($soft-gray, 10%);
+	margin-top: 5px;
+}
+select {cursor: pointer;}
+textarea {min-height: 200px;}
+label {display: none;}
+.remember_me_checkbox {
+  padding: 10px 0 10px 0;
+  span {vertical-align: middle;}
+}
+
+/* Input types ---------------------------------------*/
+
+button[type="submit"] {
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+  color: darken($soft-gray, 10%);
+	font-size: 1.2em;
+	margin: 10px 0 10px 0;
+	padding: 10px;
+	&:hover {
+		color: darken($soft-gray, 30%);
+		cursor: pointer;
+	}
+}
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+input[type="file"] {color: darken($soft-gray, 10%);}
