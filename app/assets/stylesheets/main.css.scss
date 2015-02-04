@@ -121,8 +121,7 @@ main {
 ::-webkit-scrollbar {width: 0.5em;}
 
 ::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  outline: 1px solid transparent;
+  background-color: darken($soft-gray, 20%);
 }
 
 /* Flash notice ---------------------*/

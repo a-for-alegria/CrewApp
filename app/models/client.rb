@@ -4,7 +4,6 @@ class Client < ActiveRecord::Base
 	validates :client_name, :client_secondname, :budget, presence: true
 
 	def combine_names
-    a = [] << [self.client_name, self.client_secondname]
-    a.join(' ')
+    (a = [] << [self.client_name, self.client_secondname]).join(' ')
   end
 end

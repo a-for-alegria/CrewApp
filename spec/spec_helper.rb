@@ -3,6 +3,8 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'devise'
+require 'factory_girl_rails'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -41,6 +43,8 @@ RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL
   config.include IntegrationSpecHelper, type: :request
+  include Warden::Test::Helpers
+  Warden.test_mode!
 end
 
 Capybara.default_host = 'http://0.0.0.0:3000'
@@ -55,3 +59,4 @@ OmniAuth.config.mock_auth[:facebook] = {
   'provider' => 'facebook',
   'credentials' => {'token' => 'token'}
 }
+
