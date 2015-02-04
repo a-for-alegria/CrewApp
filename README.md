@@ -4,28 +4,36 @@
 
 <ul>
   <li>Create standart Rails app</li>
-  <li>Configure Rakefile
+  <li>
+    <h4>Configure Rakefile</h4>
     <p>Install gems like Rspec, Selenium, Capybara, FactoryGirl for testing. Also add Haml and Sass gems to simplify markup and styles</p>
   </li>
-  <li>Add basic models
+  <li>
+    <h4>Add basic models</h4>
     <p>CRUD models Crew and Client. Main features tested via Rspec</p>
   </li>
-  <li>Create markup for basic functional
+  <li>
+    <h4>Create markup for basic functional</h4>
     <p>For markup use Haml on top of HTML and Scss as CSS preprocessor</>
   </li>
-  <li>Deploy to Heroku
+  <li>
+    <h4>Deploy to Heroku</h4>
     <p>Worked with Heroku shell and use logs to debug when failed to deploy</p>
   </li>
-  <li>Extend functionality for Models
+  <li>
+    <h4>Extend functionality for Models</h4>
     <p>Add some additional values to both models. Create first accounting methods, validations and tests for new features</p>
   </li>
-  <li>Add Omniauth 
+  <li>
+    <h4>Add Omniauth</h4> 
     <p>Authentication with Facebook. Was canceled later due to problems with testing Sessions</p>
   </li>
-  <li>Change design
+  <li>
+    <h4>Change design</h4>
     <p>Use new dark theme with help of <a href='http://paletton.com/'>Paletton</a> and <a         href='http://www.google.com/fonts' for set up colors and fonts>Google fonts</a></p>
   </li>
-  <li>Add Devise authentiation
+  <li>
+    <h4>Add Devise authentiation</h4>
     <p>Devise is easy to install and to configure but I had some problems with testing the authentication.
     Testing issues were resolved with help of <a href='stackoverflow.com'>Stackoverflow</a> community.
     </p>
