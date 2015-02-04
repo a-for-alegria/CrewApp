@@ -5,7 +5,7 @@
 <ul>
   <li>Create standart Rails app</li>
   <li>Configure Rakefile
-    <span>Install gems like Rspec, Selenium, Capybara, FactoryGirl for testing. Also add Haml and Sass gems to simplify markup and styles</span>
+    <p>Install gems like Rspec, Selenium, Capybara, FactoryGirl for testing. Also add Haml and Sass gems to simplify markup and styles</p>
   </li>
   <li></li>
   <li></li>
