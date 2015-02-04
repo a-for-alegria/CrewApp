@@ -1,8 +1,4 @@
-<style>
-  li {
-    list-style: none;
-  }
-</style>
+
 <h1>the Crew app</h1>
 <h2>ERP system for managing small teams of outsourcers</h2>
 <h3>Roadmap</h3>
@@ -39,7 +35,7 @@
     <h4>Change design</h4>
     <p>Use new dark theme with help of <a href='http://paletton.com/'>Paletton</a> and <a         href='http://www.google.com/fonts' for set up colors and fonts>Google fonts</a></p>
   </li>
-  </hr>
+  <hr>
   <li>
     <h4>Add Devise authentiation</h4>
     <p>Devise is easy to install and to configure but I had some problems with testing the authentication.
