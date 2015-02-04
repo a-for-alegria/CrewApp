@@ -3,10 +3,8 @@ require 'spec_helper'
 describe 'CrewPage' do
   subject {page}
   
-  before(:each) do 
-    @user = User.new(email: "alegria1634@gmail.com", password: 'password1634', password_confirmation: 'password1634')
-    login_as(@user)
-  end
+  let(:user) {FactoryGirl.create(:user)}
+  before {sign_in(user)}
 #==============================New page===========>>
 
   describe 'new crew member page' do
@@ -26,7 +24,7 @@ describe 'CrewPage' do
       before do
         fill_in 'Name',               with: 'Ace'
         fill_in 'Secondname',         with: 'Team'
-        fill_in 'Bank card',          with: '1122 3344 5566 7788'
+        fill_in 'Rate',               with: 1000
       end
       it 'should create crew member' do
         expect{click_button submit}.to change(Crew, :count).by(1)
@@ -38,9 +36,8 @@ describe 'CrewPage' do
 
   describe 'show page' do
     before do
-      @crew = Crew.create(name: 'Name', secondname: 'First')
-      visit root_path
-      click_link('Profile', crew_path(@crew))
+      @crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000)
+      visit crew_path(@crew)
     end
 
     it {should have_title("#{@crew.combine_names} profile")}
@@ -50,38 +47,20 @@ describe 'CrewPage' do
 
   describe 'edit page' do
     before do
-      @crew = Crew.create(name: 'Name', secondname: 'First')
+      @crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000)
       visit edit_crew_path(@crew)
     end
     it {should have_title('Edit panel')}
-    it {should have_link('Cancel', href: crew_path(@crew))}
 
     describe 'successfull edit' do
     	before do
-        fill_in 'Name',       with: 'Reloadname'
-        fill_in 'Secondname', with: 'Reloadsecondname'
+        fill_in 'Name',               with: 'Reloadname'
+        fill_in 'Secondname',         with: 'Reloadsecondname'
+        fill_in 'Rate',               with: 1000
         click_button('Save')
       end
       it {should have_content('Reloadname')}
       it {should have_content('Reloadsecondname')}
-    end
-
-    describe 'check \'in_charge\' checkbox' do
-      before do
-        visit edit_crew_path(@crew)
-        check "In charge"
-        click_button('Save')
-      end
-      it {should have_selector('li', text: 'Privileged member')}
-    end
-
-    describe 'uncheck \'in_charge\' checkbox' do
-      before do
-        visit edit_crew_path(@crew)
-        uncheck "In charge"
-        click_button('Save')
-      end
-      it {should_not have_content('Privileged member')}
     end
   end
 
@@ -89,7 +68,7 @@ describe 'CrewPage' do
 
 	describe 'delete action from index page' do
 		before do
-			@crew = Crew.create(name: 'Name', secondname: 'First')
+			@crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000)
 			visit root_path
 		end
 
