@@ -3,7 +3,9 @@
 <h3>Roadmap</h3>
 
 <ul>
-  <li>Create standart Rails app</li>
+  <li>
+    <h4>Create standart Rails app
+  </li>
   <li>
     <h4>Configure Rakefile</h4>
     <p>Install gems like Rspec, Selenium, Capybara, FactoryGirl for testing. Also add Haml and Sass gems to simplify markup and styles</p>
