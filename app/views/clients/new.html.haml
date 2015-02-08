@@ -4,7 +4,7 @@
   %h2 New client
   %div.form-block
     =form_for(@client) do |f|
-      / =render 'shared/error_messages', object: f.object 
+      =render 'shared/error_messages', object: f.object 
       =f.label :client_name
       =f.text_field :client_name, placeholder: "Enter name of new client"
       =f.label :client_secondname
@@ -16,4 +16,4 @@
       =f.label :budget
       =f.text_field :budget, placeholder: "e.g. 1000"
 
-      =f.submit "Create"
+      %button{type: 'submit'} Create

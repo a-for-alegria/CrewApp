@@ -1,13 +1,15 @@
 .form-block-user
   %h2 Forgot your password?
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-    = devise_error_messages!
+      =render 'shared/error_messages', object: f.object 
+    / = devise_error_messages!
       = f.label :email
       = f.email_field :email, autofocus: true
     %h2
       Edit #{resource_name.to_s.humanize}
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-      = devise_error_messages!
+        =render 'shared/error_messages', object: f.object 
+      / = devise_error_messages!
         = f.label :email
         = f.email_field :email, autofocus: true
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?

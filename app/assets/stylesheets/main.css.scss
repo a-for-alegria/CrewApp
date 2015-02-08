@@ -120,15 +120,12 @@ main {
 
 ::-webkit-scrollbar {width: 0.5em;}
 
-::-webkit-scrollbar-thumb {
-  background-color: darken($soft-gray, 20%);
-}
+::-webkit-scrollbar-thumb {background-color: darken($soft-gray, 20%);}
 
 /* Flash notice ---------------------*/
 
 .alert,
 .success {
-	height: 40px;
 	width: 250px;
 	display: block;
 	position: absolute;
@@ -142,16 +139,8 @@ main {
 	color: rgba($main-white, 0.4);
 	font-weight: bold;
 	cursor: pointer;
-	&:active {
-		display: none; 
-	}
-	&:hover {
-		background-color: rgba($soft-gray, 0.38);
-	}
+	//&:active {display: none; }
+	&:hover {background-color: rgba($soft-gray, 0.38);}
 }
-.alert {
-	@include flash-style(red);
-}
-.success {
-	@include flash-style(green);
-}
+.alert {@include flash-style(red);}
+.success {@include flash-style(green);}
