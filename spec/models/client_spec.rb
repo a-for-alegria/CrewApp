@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe Client do
-  before do
-  	@client = Client.create(client_name: 'Client', client_secondname: 'First')
-  end
-  subject {@client}
+  subject(:client) {Client.new(client_name: client_name, client_secondname: client_secondname)}
+
+  let(:client_name) {'Client'}
+  let(:client_secondname) {'First'}
 
   it {should respond_to(:client_name)}
   it {should respond_to(:client_secondname)}
@@ -12,23 +12,23 @@ describe Client do
   it {should respond_to(:project)}
   it {should respond_to(:budget)}
 
-  describe "Name should be present" do
-    before {@client.client_name = " "}
+  context "Name should be present" do
+    before{client.client_name = " "}
     it {should_not be_valid}
   end
   
-  describe "Secondname should be present" do
-    before {@client.client_secondname = " "}
+  context "Secondname should be present" do
+    before{client.client_secondname = " "}
     it {should_not be_valid}
   end
 
-  describe "Project should be present" do
-    before {@client.project = " "}
+  context "Project should be present" do
+    before {client.project = " "}
     it {should_not be_valid}
   end
 
-  describe "Budget should be present" do
-    before {@client.budget = " "}
+  context "Budget should be present" do
+    before {client.budget = " "}
     it {should_not be_valid}
   end
 end

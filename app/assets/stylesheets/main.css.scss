@@ -118,9 +118,15 @@ main {
 
 /* Scrollbars ---------------------*/
 
-::-webkit-scrollbar {width: 0.5em;}
+::-webkit-scrollbar {
+	width: 0.3em;
+	cursor: pointer;
+}
 
-::-webkit-scrollbar-thumb {background-color: darken($soft-gray, 20%);}
+::-webkit-scrollbar-thumb {
+	background-color: darken($soft-gray, 20%);
+  border-radius: 5px;
+}
 
 /* Flash notice ---------------------*/
 

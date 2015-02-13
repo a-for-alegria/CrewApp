@@ -4,9 +4,13 @@ describe 'CrewPage' do
   subject {page}
   
   let(:user) {FactoryGirl.create(:user)}
-  before {sign_in(user)}
-#==============================New page===========>>
+  let!(:crew) {Crew.create(name: name, secondname: secondname, rate: rate)}
+  let(:name) {'Name'}
+  let(:secondname) {'First'}
+  let(:rate) {1000}
 
+  before {sign_in(user)}
+  #==============================New page===========>>
   describe 'new crew member page' do
     before {visit new_crew_path}
 
@@ -14,17 +18,17 @@ describe 'CrewPage' do
 
     let(:submit) {"Create"}
 
-    describe 'invalid creation' do
+    context 'invalid creation' do
       it 'should not create crew member' do
         expect{click_button submit}.not_to change(Crew, :count)
       end
     end
 
-    describe 'valid crew member creation' do
+    context 'valid crew member creation' do
       before do
-        fill_in 'Name',               with: 'Ace'
-        fill_in 'Secondname',         with: 'Team'
-        fill_in 'Rate',               with: 1000
+        fill_in 'Name',               with: name
+        fill_in 'Secondname',         with: secondname
+        fill_in 'Rate',               with: rate
       end
       it 'should create crew member' do
         expect{click_button submit}.to change(Crew, :count).by(1)
@@ -32,43 +36,40 @@ describe 'CrewPage' do
     end
   end
 
-#==============================Show page===========>>
-
+  #==============================Show page===========>>
   describe 'show page' do
-    before do
-      @crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000)
-      visit crew_path(@crew)
-    end
+    before {visit crew_path(crew)}
 
-    it {should have_title("#{@crew.combine_names} profile")}
+    it {should have_title("#{crew.combine_names} profile")}
   end
 
-#==============================Edit page===========>>
-
+  #==============================Edit page===========>>
   describe 'edit page' do
-    before do
-      @crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000)
-      visit edit_crew_path(@crew)
-    end
+
+    let(:reload_n) {name*2}
+    let(:reload_sn) {secondname*2}
+    let(:reload_r) {rate*2}
+
+    before {visit edit_crew_path(crew)}
+
     it {should have_title('Edit panel')}
 
-    describe 'successfull edit' do
+    context 'successfull edit' do
     	before do
-        fill_in 'Name',               with: 'Reloadname'
-        fill_in 'Secondname',         with: 'Reloadsecondname'
-        fill_in 'Rate',               with: 1000
+        fill_in 'Name',               with: reload_n
+        fill_in 'Secondname',         with: reload_sn
+        fill_in 'Rate',               with: reload_r
         click_button('Save')
       end
-      it {should have_content('Reloadname')}
-      it {should have_content('Reloadsecondname')}
+      it {should have_content(reload_n)}
+      it {should have_content(reload_sn)}
+      it {should have_content(reload_r)}
     end
   end
 
-#==============================Delete action===========>>
-
+  #==============================Delete action===========>>
 	describe 'delete action from index page' do
 		before do
-			@crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000)
 			visit root_path
 		end
 

@@ -3,8 +3,13 @@ require 'spec_helper'
 describe 'ClientPage' do
   subject {page}
   let(:user) {FactoryGirl.create(:user)}
+  let(:client) {Client.create(client_name: client_name, client_secondname: client_secondname, budget: budget)}
+  let(:client_name) {'Client'}
+  let(:client_secondname) {'First'}
+  let(:budget) {3000}
+
   before {sign_in(user)}
-#==============================New page===========>>
+  #==============================New page===========>>
 
   describe 'new client page' do
 
@@ -13,63 +18,63 @@ describe 'ClientPage' do
     it {should have_title('New client')}
 
     let(:submit) {"Create"}
+    
+    describe 'create' do
+      context 'invalid creation' do
+        it 'should not create client' do
+          expect{click_button submit}.not_to change(Client, :count)
+        end
+      end
 
-    describe 'invalid creation' do
-      it 'should not create client' do
-        expect{click_button submit}.not_to change(Client, :count)
+      context 'valid client creation' do
+        before do
+          fill_in 'Client name',               with: client_name
+          fill_in 'Client secondname',         with: client_secondname
+          fill_in 'Budget',                    with: budget
+        end
+        it 'should create client' do
+          expect{click_button submit}.to change(Client, :count).by(1)
+        end
       end
-    end
-
-    describe 'valid client creation' do
-      before do
-        fill_in 'Client name',               with: 'Client'
-        fill_in 'Client secondname',         with: 'Rocks'
-        fill_in 'Budget',                    with: 3000
-      end
-      it 'should create client' do
-        expect{click_button submit}.to change(Client, :count).by(1)
-      end
-    end
+    end  
   end
 
-#==============================Show page===========>>
+  #==============================Show page===========>>
 
-  describe 'show page' do
-    before do
-      @client = Client.create(client_name: 'Client', client_secondname: 'First', budget: 3000)
-      visit client_path(@client)
-    end
-
-    it {should have_title("#{@client.combine_names} profile")}
+  describe 'show' do
+    before {visit client_path(client)}
+    it {should have_title("#{client.combine_names} profile")}
   end
 
-#==============================Edit page===========>>
+  #==============================Edit page===========>>
 
-  describe 'edit page' do
-    before do
-      @client = Client.create(client_name: 'Client', client_secondname: 'First', budget: 3000)
-      visit edit_client_path(@client)
-    end
+  describe 'edit' do
+    let(:reload_cn) {client_name*2}
+    let(:reload_csn) {client_secondname*2}
+    let(:reload_bgt) {client.budget*2}
+
+    before {visit edit_client_path(client)}
+    
     it {should have_title('Edit client panel')}
 
-    describe 'successfull edit' do
+    context 'successfull edit' do
     	before do
-        fill_in 'Client name',              with: 'Reloadclientname'
-        fill_in 'Client secondname',        with: 'Reloadclientsecondname'
-        fill_in 'Budget',                   with: 3000*2
+        fill_in 'Client name',              with: reload_cn
+        fill_in 'Client secondname',        with: reload_csn
+        fill_in 'Budget',                   with: reload_bgt
         click_button('Save')
       end
-      it {should have_content('Reloadclientname')}
-      it {should have_content('Reloadclientsecondname')}
-      it {should have_content(6000)}
+      it {should have_content(reload_cn)}
+      it {should have_content(reload_csn)}
+      it {should have_content(reload_bgt)}
     end
   end
 
-#==============================Delete action===========>>
+  #==============================Delete action===========>>
 
-	describe 'delete action from index page' do
+	describe 'delete' do
 		before do
-			@client = Client.create(client_name: 'Client', client_secondname: 'First', budget: 3000)
+			@client = Client.create(client_name: client_name, client_secondname: client_secondname, budget: budget)
 			visit root_path
 		end
 
