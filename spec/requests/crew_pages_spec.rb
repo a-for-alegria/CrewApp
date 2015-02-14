@@ -69,9 +69,7 @@ describe 'CrewPage' do
 
   #==============================Delete action===========>>
 	describe 'delete action from index page' do
-		before do
-			visit root_path
-		end
+		before {visit root_path}
 
 		it {should have_content('delete')}
 		it 'should delete crew member' do
