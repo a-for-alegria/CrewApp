@@ -130,13 +130,13 @@ main {
 
 /* Flash notice ---------------------*/
 
-.alert,
+.alert-message,
 .success {
 	width: 250px;
 	display: block;
 	position: absolute;
 	z-index: 3;
-	top: 80%;
+	bottom: 20%;
 	left: 2%;
 	text-align: center;
 	padding: 10px;
@@ -148,5 +148,5 @@ main {
 	//&:active {display: none; }
 	&:hover {background-color: rgba($soft-gray, 0.38);}
 }
-.alert {@include flash-style(red);}
+.alert-message {@include flash-style(red);}
 .success {@include flash-style(green);}

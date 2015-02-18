@@ -1,8 +1,5 @@
 -if object.errors.any? 
-  %div.alert{"data-alert" => ""}
-    %p 
-      %b The form contains #{pluralize(object.errors.count, "error")}.   
-    %ul
-      - object.errors.full_messages.each do |msg|
-        %li.error_message
-          #{msg}
+  - object.errors.full_messages.each do |msg|
+    %div.alert{"data-alert" => ""}  
+      %ul
+        %li #{msg}

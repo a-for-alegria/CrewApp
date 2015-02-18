@@ -4,16 +4,22 @@
   %h2 New client
   %div.form-block
     =form_for(@client) do |f|
-      =render 'shared/error_messages', object: f.object 
       =f.label :client_name
       =f.text_field :client_name, placeholder: "Enter name of new client"
       =f.label :client_secondname
       =f.text_field :client_secondname, placeholder: "Enter second name of new client"
       =f.label :project
       =f.text_field :project, placeholder: "Project title"
-      =f.label :descr
-      =f.text_area :descr, placeholder: "Enter brief description here"
       =f.label :budget
       =f.text_field :budget, placeholder: "e.g. 1000"
+      =f.label :descr
+      =f.text_area :descr, placeholder: "Enter brief description here"
 
       %button{type: 'submit'} Create
+
+%div
+  -if @client.errors.any?
+    %ul.alert-message
+    - @client.errors.full_messages.each do |msg|
+      %li #{msg}
+        

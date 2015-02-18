@@ -1,10 +1,10 @@
 class User::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
-before_filter   :flash_disabled
   # GET /resource/sign_up
   def new
     super
+    
   end
 
   # POST /resource
@@ -57,7 +57,4 @@ before_filter   :flash_disabled
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  def flash_disabled
-    flash.delete
-  end
 end

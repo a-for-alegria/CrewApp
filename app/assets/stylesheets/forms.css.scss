@@ -29,7 +29,13 @@ textarea {
 	margin-top: 5px;
 }
 select {cursor: pointer;}
-textarea {min-height: 200px;}
+textarea {
+	min-height: 100px;
+	transition: min-height, 0.5s, ease;
+  &:hover {
+  	min-height: 200px;
+  }
+}
 label {display: none;}
 .remember_me_checkbox {
   padding: 10px 0 10px 0;

@@ -3,7 +3,6 @@
 .form-block-user
   %h2 Log in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    =render 'shared/error_messages', object: f.object 
     = f.label :email
     = f.email_field :email, autofocus: true
     = f.label :password

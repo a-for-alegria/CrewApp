@@ -13,7 +13,7 @@
       =f.text_field :bank_card, placeholder: "xxxx xxxx xxxx xxxx"
       =f.label :rate
       =f.text_field :rate, placeholder: "e.g. 1000"
-      =f.file_field :avatar
       =f.select(:client_project, @clients.map(&:project), {prompt: "Select project"})
+      =f.file_field :avatar
 
       =f.submit "Create"
