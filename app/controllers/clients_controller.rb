@@ -31,6 +31,7 @@ class ClientsController < ApplicationController
     if @client.save
       @client.update_attributes(client_params)
       redirect_to @client
+      flash[:success] = "Changes saved successfully"
     else
       render 'edit'
     end

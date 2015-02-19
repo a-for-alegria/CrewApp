@@ -1,15 +1,15 @@
 - provide(:title, 'Sign In')
-
-.form-block-user
-  %h2 Log in
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    = f.label :email
-    = f.email_field :email, autofocus: true
-    = f.label :password
-    = f.password_field :password, autocomplete: "off"
-    - if devise_mapping.rememberable?
-      .remember_me_checkbox
-        = f.check_box :remember_me
-        %span Remember user
-    %button{type: "submit"} Log in
-    = render "devise/shared/links"
+.vertical-aligner
+  .form-block-user
+    %h2 Log in
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = f.label :email
+      = f.email_field :email, autofocus: true
+      = f.label :password
+      = f.password_field :password, autocomplete: "off"
+      - if devise_mapping.rememberable?
+        .remember_me_checkbox
+          = f.check_box :remember_me
+          %span Remember user
+      %button{type: "submit"} Log in
+      = render "devise/shared/links"

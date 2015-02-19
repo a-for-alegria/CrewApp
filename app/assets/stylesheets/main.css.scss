@@ -114,6 +114,11 @@ main {
 	width: 100%;
 	position: relative;
   z-index: 2;
+  .vertical-aligner {
+		padding: 10px;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 /* Scrollbars ---------------------*/
@@ -130,15 +135,33 @@ main {
 
 /* Flash notice ---------------------*/
 
-.alert-message,
-.success {
-	width: 250px;
+.alert-message {
+	position: fixed;
+	width: 15%;
 	display: block;
-	position: absolute;
+	// position: absolute;
 	z-index: 3;
-	bottom: 20%;
+	bottom: 10%;
 	left: 2%;
 	text-align: center;
+	li {
+		padding: 10px;
+		background-color: rgba($soft-gray, 0.18);
+		transition: background-color, 0.3s, ease;
+		color: rgba($main-white, 0.4);
+		font-weight: bold;
+		cursor: pointer;
+		//&:active {display: none; }
+		&:hover {background-color: rgba($soft-gray, 0.38);}
+	}
+} 
+.success,
+.alert {
+	position: absolute;
+	width: 15%;
+	z-index: 3;
+	bottom: 10%;
+	left: 2%;
 	padding: 10px;
 	background-color: rgba($soft-gray, 0.18);
 	transition: background-color, 0.3s, ease;
@@ -148,5 +171,6 @@ main {
 	//&:active {display: none; }
 	&:hover {background-color: rgba($soft-gray, 0.38);}
 }
-.alert-message {@include flash-style(red);}
+.alert-message li,
+.alert {@include flash-style(red);}
 .success {@include flash-style(green);}

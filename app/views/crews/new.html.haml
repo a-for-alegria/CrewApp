@@ -1,10 +1,10 @@
 - provide(:title, 'New member')
 
 .signed-in-content
-  %h2 New member
   %div.form-block
+    %h2 New member
     =form_for(@crew)do |f|
-      / =render 'shared/error_messages', object: f.object 
+      =render 'shared/error_messages', object: f.object 
       =f.label :name
       =f.text_field :name, placeholder: "Enter name of new member"
       =f.label :secondname
@@ -16,4 +16,4 @@
       =f.select(:client_project, @clients.map(&:project), {prompt: "Select project"})
       =f.file_field :avatar
 
-      =f.submit "Create"
+      %button{type: 'submit'} Create

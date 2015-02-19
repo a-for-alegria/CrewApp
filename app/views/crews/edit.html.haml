@@ -1,10 +1,10 @@
 - provide(:title, 'Edit panel')
 
 .signed-in-content  
-  %h2 Edit panel
   %div.form-block
+    %h2 Edit panel
     =form_for(@crew) do |f|
-      / =render 'shared/error_messages', object: f.object 
+      =render 'shared/error_messages', object: f.object 
       =f.label :name
       =f.text_field :name, placeholder: "Enter name of new member"
       =f.label :secondname
@@ -16,4 +16,4 @@
       =f.select(:client_project, @clients.pluck(:project), {prompt: "Select project"})
       =f.file_field :avatar
 
-      =f.submit "Save"
+      %button{type: 'submit'} Save

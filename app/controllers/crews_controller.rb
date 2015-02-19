@@ -32,6 +32,7 @@ class CrewsController < ApplicationController
     if @crew.save
       @crew.update_attributes(crew_params)
       redirect_to @crew
+      flash[:success] = "Changes saved successfully"
     else
       render 'edit'
     end

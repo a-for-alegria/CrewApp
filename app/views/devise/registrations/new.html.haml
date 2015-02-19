@@ -3,6 +3,7 @@
 .form-block-user
   %h2 Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
+    = render 'shared/error_messages', object: f.object 
     = f.label :emai
     = f.email_field :email, autofocus: true
     = f.label :password

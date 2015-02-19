@@ -1,8 +1,8 @@
 - provide(:title, 'New client')
 
 .signed-in-content
-  %h2 New client
   %div.form-block
+    %h2 New client
     =form_for(@client) do |f|
       =f.label :client_name
       =f.text_field :client_name, placeholder: "Enter name of new client"
@@ -14,12 +14,6 @@
       =f.text_field :budget, placeholder: "e.g. 1000"
       =f.label :descr
       =f.text_area :descr, placeholder: "Enter brief description here"
-
+      = render 'shared/error_messages', object: f.object 
       %button{type: 'submit'} Create
 
-%div
-  -if @client.errors.any?
-    %ul.alert-message
-    - @client.errors.full_messages.each do |msg|
-      %li #{msg}
-        

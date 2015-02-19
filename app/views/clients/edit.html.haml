@@ -1,8 +1,8 @@
 - provide(:title, 'Edit client panel')
 
 .signed-in-content  
-  %h2 Edit client
   %div.form-block
+    %h2 Edit client
     =form_for(@client) do |f|
       =f.label :client_name
       =f.text_field :client_name, placeholder: "Enter name of new client"
@@ -15,4 +15,4 @@
       =f.label :descr
       =f.text_area :descr, placeholder: "Enter brief description here"
 
-      =f.submit "Save"
+      %button{type: 'submit'} Save
