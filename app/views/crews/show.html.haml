@@ -3,13 +3,14 @@
 .signed-in-content
   - c = @crew
   .profile-crew.scrollable
-    #{image_tag c.avatar.url}
-    .profile-credentials  
-      %ul
-        %li #{c.combine_names}
+    .profile-crew-top
+      #{image_tag c.avatar.url}
     .profile-crew-info
       %h2 Personal info
       %ul
+        %li
+          %label Fullname
+          %span #{c.combine_names}
         %li 
           %label Date of birth
           %span 21.12.1989
@@ -21,7 +22,7 @@
           %label Rate/month 
           %span $#{c.rate}   
     .profile-crew-work
-      %h2 Statistics
+      %h2 Workflow
       %ul
         -if c.client_project
           %li

@@ -114,21 +114,10 @@ table {
 .profile-crew {
 	@extend .show-pages-template;
   img {
-    height: auto;
-    width: 300px;
+    height: 100%;
+    width: 100%;
     display: block;
     margin: 0 auto;
-    border: 5px solid lighten($concrete-gray, 2%)
-  }
-}
-
-.profile-credentials {
-  margin: 20px 20px;
-  text-align: center;
-  li {
-    margin-bottom: 20px;
-    font-size: 2em;
-    font-weight: bold;
   }
 }
 
