@@ -1,10 +1,16 @@
 $(document).ready(function(){
   
+  // Close alert messages on click 
+
   $('.alert').on('click', function(){
-  	$('.alert').remove();
+  	$(this).remove();
   })
 
   $('.success').on('click', function(){
-  	$('.success').remove();
+  	$(this).remove();
+  })
+
+  $('.alert-message li').on('click', function(){
+  	$(this).remove();
   })
 });
