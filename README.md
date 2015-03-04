@@ -1,5 +1,5 @@
 
-<h1>the Crew app</h1>
+<h1><a href='https://the-crew.herokuapp.com/', target='blank'>the Crew app</a></h1>
 <h2>ERP system for managing small teams of outsourcers</h2>
 <h3>Roadmap</h3>
 
