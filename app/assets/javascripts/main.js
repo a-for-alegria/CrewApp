@@ -2,15 +2,12 @@ $(document).ready(function(){
   
   // Close alert messages on click 
 
-  $('.alert').on('click', function(){
-  	$(this).remove();
-  })
+  alertClose($('.success, .alert, .alert-message li'));
 
-  $('.success').on('click', function(){
-  	$(this).remove();
-  })
-
-  $('.alert-message li').on('click', function(){
-  	$(this).remove();
-  })
 });
+
+function alertClose(selectors) {
+	selectors.on('click', function(){
+  	$(this).remove();
+  })
+}
