@@ -12,22 +12,9 @@
 
 .index-container-crew {margin-bottom: 10px;}
 
-.index-list-crew,
-.index-list-client {
-	height: 100%;
-	width: 70%;
-	text-align: center;
-	display: inline-block;
-	float: left;
-	li {
-		cursor: pointer;
-		padding: 10px;
-	}
-}
 /* Content right part*/
 
-.index-panel-top,
-.index-panel-bottom {
+.index-panel-top {
 	height: 100%;
 	background-color: rgba($concrete-gray, 0.5);
 	width: 28%;
@@ -56,9 +43,6 @@
 
 .loss-font {color: red;}
 
-.index-panel-bottom {
-  background-color: rgba(lighten($concrete-gray, 5%), 0.5);
-}
 .profit {
   background-color: green;
   color: darken(green, 10%);
@@ -67,47 +51,47 @@
   background-color: red;
   color: darken(red, 15%);
 }
-/* Main table */
+/* Main grid */
 
-table {
-  background-color: $concrete-gray;
-  border-radius: 5px;
-  border-collapse: collapse;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 100%;
-  th, td {
-    padding: 15px;
-    text-align: left;
-    font-size: 1.5em;
-    width: 100%;
-    padding-left: 0.5em;
-  }
-  thead, tbody {width: 100%;}
-	thead {
-    background-color: lighten($concrete-gray, 6%);
-    color: darken($soft-gray, 20%);
-    font-family: 'Fjalla One', sans-serif;
-  }
-  tbody {
-    font-size: 0.8em;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-		-webkit-overflow-scrolling: touch;
-    height: 100%;
-    a {font-size: 0.7em;}
-    tr:nth-child(even) {background-color: lighten($concrete-gray, 2%);}
-    tr {
-      cursor: pointer;
-      &:hover {
-        background-color: darken(rgba($main-white, 0.3), 20%);
-        transition: background-color, 0.5s, ease;
-      }
-    }
-  }
-}
+// table {
+//   background-color: $concrete-gray;
+//   border-radius: 5px;
+//   border-collapse: collapse;
+// 	display: flex;
+// 	flex-direction: column;
+// 	height: 100%;
+// 	width: 100%;
+//   th, td {
+//     padding: 15px;
+//     text-align: left;
+//     font-size: 1.5em;
+//     width: 100%;
+//     padding-left: 0.5em;
+//   }
+//   thead, tbody {width: 100%;}
+// 	thead {
+//     background-color: lighten($concrete-gray, 6%);
+//     color: darken($soft-gray, 20%);
+//     font-family: 'Fjalla One', sans-serif;
+//   }
+//   tbody {
+//     font-size: 0.8em;
+//     overflow-y: auto;
+//     overflow-x: hidden;
+//     -ms-overflow-style: -ms-autohiding-scrollbar;
+// 		-webkit-overflow-scrolling: touch;
+//     height: 100%;
+//     a {font-size: 0.7em;}
+//     tr:nth-child(even) {background-color: lighten($concrete-gray, 2%);}
+//     tr {
+//       cursor: pointer;
+//       &:hover {
+//         background-color: darken(rgba($main-white, 0.3), 20%);
+//         transition: background-color, 0.5s, ease;
+//       }
+//     }
+//   }
+// }
 
 /* Show page ---------------------------------------*/
 
@@ -126,6 +110,22 @@ table {
 
 
 
+/* Index page blocks ---------------------------------------*/
 
-
+.index-container-crew {
+  width: 70%;
+  float: left;
+  .index-block-crew {
+    
+    display: inline-block;
+    height: 100px;
+    background-color: brown;
+    width: 33%;
+    padding: 10px;
+    margin-bottom: 5px;
+    @media screen and (max-width: 1024px) {
+      width: 49.5%;
+    }
+  }
+}
 
