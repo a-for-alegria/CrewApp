@@ -2,10 +2,11 @@
 
 .signed-in-content
   // Index page itself
-  .index-container-crew
-    - array_merge = @crews.concat @clients
-    - array_merge.each do |i|
-      .index-block-crew #{i.combine_names}
+  .index-container-crew.scrollable
+    - @crews.each do |crew|
+      .index-block-crew #{crew.combine_names}
+    - @clients.each do |client|
+      .index-block-client #{client.combine_names}
     / .index-list-crew
     /   %table.index-table
     /     %thead
@@ -22,7 +23,7 @@
   .index-panel-top
     %ul.finance
       %li 
-        / %span.profit-font $ #{@clients.pluck(:budget).sum}
+        %span.profit-font $ #{@clients.pluck(:budget).sum}
       %li 
         %span.loss-font $ #{@crews.pluck(:rate).sum}
       %li 

@@ -82,6 +82,10 @@ input {box-sizing:border-box;}
 /* Layout elements ---------------------*/
 
 nav {
+	@media (max-width: 769px) {
+    width: 100%;
+    display: block;
+  }
 	float: left;
 	width: 20%;
 	padding-top: 10px;
@@ -124,12 +128,12 @@ main {
 /* Scrollbars ---------------------*/
 
 ::-webkit-scrollbar {
-	width: 0.3em;
+	width: 0.5em;
 	cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: darken($soft-gray, 20%);
+	background-color: rgba(darken($soft-gray, 20%), 0.5);
   border-radius: 5px;
 }
 

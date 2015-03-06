@@ -29,6 +29,9 @@ $secondary-violet: #634271;
   &:after {clear: both;}
 }
 .signed-in-content {
+  @media (max-width: 769px) {
+    width: 100%;
+  }
   height: 100%;
   width: 79.67%;
   padding: 10px;
