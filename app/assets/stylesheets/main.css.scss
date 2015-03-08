@@ -63,7 +63,7 @@ h3 {
 
 h4 {
 	font-size: 1.25em;
-	font-weight: 300;
+	font-weight: 200;
 }
 
 li {
@@ -85,10 +85,12 @@ nav {
 	@media (max-width: 769px) {
     width: 100%;
     display: block;
+    padding: 0;
   }
 	float: left;
 	width: 20%;
 	padding-top: 10px;
+	margin-bottom: 10px;
 	text-align: center;
 	background-color: rgba($concrete-gray, 0.5);
 	position: relative;
@@ -119,6 +121,7 @@ main {
 	position: relative;
   z-index: 2;
   .vertical-aligner {
+  	@media (max-width: 769px) {padding: 0;}
 		padding: 10px;
 		width: 100%;
 		height: 100%;
@@ -143,7 +146,6 @@ main {
 	position: fixed;
 	width: 15%;
 	display: block;
-	// position: absolute;
 	z-index: 3;
 	bottom: 10%;
 	left: 2%;
@@ -155,7 +157,6 @@ main {
 		color: rgba($main-white, 0.4);
 		font-weight: bold;
 		cursor: pointer;
-		//&:active {display: none; }
 		&:hover {background-color: rgba($soft-gray, 0.38);}
 	}
 } 

@@ -2,24 +2,25 @@
 
 .signed-in-content
   // Index page itself
-  .index-container-crew.scrollable
+  .index-container-crew
     - @crews.each do |crew|
-      .index-block-crew #{crew.combine_names}
+      .index-block-crew 
+        .index-block-header
+          %h3 #{crew.combine_names}
+          %h4 Frontend engineer
+        .index-block-nav
+          #{link_to 'profile' , crew_path(crew)}
+          #{link_to 'edit', edit_crew_path(crew)}
+          %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
     - @clients.each do |client|
-      .index-block-client #{client.combine_names}
-    / .index-list-crew
-    /   %table.index-table
-    /     %thead
-    /       %tr
-    /         %th Team members
-    /     %tbody
-    /       -@crews.each do |crew|
-    /         %tr
-    /           %td #{crew.combine_names}
-    /           %td #{link_to 'profile' , crew_path(crew)}
-    /           %td #{link_to 'edit', edit_crew_path(crew)}
-    /           %td
-    /             %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
+      .index-block-client 
+        .index-block-header
+          %h3 #{client.combine_names}
+          %h4 #{client.project}
+        .index-block-nav
+          #{link_to 'details' , client_path(client)}
+          #{link_to 'edit', edit_client_path(client)}
+          %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
   .index-panel-top
     %ul.finance
       %li 
@@ -32,24 +33,6 @@
           %span.profit #{cl_vs_cr.call}$
         -else
           %span.loss #{cl_vs_cr.call}$
-  / .index-container-client
-  /   .index-list-client
-  /     %table
-  /       %thead
-  /         %tr
-  /           %th Company clients
-  /       %tbody    
-  /         -@clients.each do |client|
-  /           %tr
-  /             %td #{client.combine_names}
-  /             %td #{link_to 'details' , client_path(client)}
-  /             %td #{link_to 'edit', edit_client_path(client)}
-  /             %td
-  /               %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
-  /   .index-panel-bottom
-  /     %ul
-  /       %li 
-  /         %label user
-  /         %span #{current_user.email}
+
         
     
