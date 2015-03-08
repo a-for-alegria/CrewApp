@@ -1,0 +1,1105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=Average);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Arimo);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+/* Variables------------------*/
+/* Classes------------------*/
+/* line 15, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.scrollable {
+  font-size: 1em;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 26, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.signed-in-content {
+  height: 100%;
+  width: 79.67%;
+  padding: 10px;
+  display: inline-block;
+}
+@media (max-width: 769px) {
+  /* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+  .signed-in-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+  }
+}
+
+/* line 45, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:hover {
+  background-color: white;
+  padding: 25px;
+  color: #ababab;
+}
+/* line 50, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:active {
+  background-color: #d9d9d9;
+}
+
+/* line 52, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.important-content, .show-page-description-content span {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 57, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template {
+  width: 40%;
+  background-color: rgba(45, 45, 45, 0.5);
+  height: 100%;
+  margin: 0 auto;
+}
+/* line 62, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* line 67, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content {
+  padding-bottom: 20px;
+  width: 100%;
+}
+/* line 70, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content ul {
+  padding: 10px;
+}
+/* line 71, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content h2 {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #787878;
+}
+
+/* Mixins------------------*/
+/* Variables------------------*/
+/* Classes------------------*/
+/* line 15, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.scrollable {
+  font-size: 1em;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 26, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.signed-in-content {
+  height: 100%;
+  width: 79.67%;
+  padding: 10px;
+  display: inline-block;
+}
+@media (max-width: 769px) {
+  /* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+  .signed-in-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+  }
+}
+
+/* line 45, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:hover {
+  background-color: white;
+  padding: 25px;
+  color: #ababab;
+}
+/* line 50, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:active {
+  background-color: #d9d9d9;
+}
+
+/* line 52, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.important-content, .show-page-description-content span, .details-content span {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 57, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template, .details-client {
+  width: 40%;
+  background-color: rgba(45, 45, 45, 0.5);
+  height: 100%;
+  margin: 0 auto;
+}
+/* line 62, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template label, .details-client label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* line 67, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content, .details-content {
+  padding-bottom: 20px;
+  width: 100%;
+}
+/* line 70, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content ul, .details-content ul {
+  padding: 10px;
+}
+/* line 71, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content h2, .details-content h2 {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #787878;
+}
+
+/* Mixins------------------*/
+/* Show page ---------------------------------------*/
+/* line 7, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/clients.css.scss */
+.details-header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+/* line 14, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/clients.css.scss */
+.details-content li {
+  margin-bottom: 20px;
+}
+/* Variables------------------*/
+/* Classes------------------*/
+/* line 15, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.scrollable {
+  font-size: 1em;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 26, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.signed-in-content {
+  height: 100%;
+  width: 79.67%;
+  padding: 10px;
+  display: inline-block;
+}
+@media (max-width: 769px) {
+  /* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+  .signed-in-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+  }
+}
+
+/* line 45, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:hover {
+  background-color: white;
+  padding: 25px;
+  color: #ababab;
+}
+/* line 50, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:active {
+  background-color: #d9d9d9;
+}
+
+/* line 52, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.important-content, .show-page-description-content span, .profile-crew-info span,
+.profile-crew-work span, .index-panel-top span {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 57, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template, .profile-crew {
+  width: 40%;
+  background-color: rgba(45, 45, 45, 0.5);
+  height: 100%;
+  margin: 0 auto;
+}
+/* line 62, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template label, .profile-crew label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* line 67, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content, .profile-crew-info,
+.profile-crew-work {
+  padding-bottom: 20px;
+  width: 100%;
+}
+/* line 70, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content ul, .profile-crew-info ul,
+.profile-crew-work ul {
+  padding: 10px;
+}
+/* line 71, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content h2, .profile-crew-info h2,
+.profile-crew-work h2 {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #787878;
+}
+
+/* Mixins------------------*/
+/* Dashboard ---------------------------------------*/
+/* Mutual styles */
+/* Content left part*/
+/* line 11, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-container-crew,
+.index-container-client {
+  height: 100%;
+}
+
+/* line 13, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-container-crew {
+  margin-bottom: 10px;
+}
+
+/* Content right part*/
+/* line 17, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-panel-top {
+  height: 100%;
+  background-color: rgba(45, 45, 45, 0.5);
+  width: 28%;
+  font-weight: bold;
+  font-size: 1.5em;
+  float: right;
+  padding: 10px;
+  border-radius: 5px;
+}
+@media (max-width: 769px) {
+  /* line 17, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+  .index-panel-top {
+    display: none;
+  }
+}
+/* line 27, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-panel-top ul.finance li:last-child {
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-panel-top ul.finance li:last-child span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+/* line 38, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-panel-top span {
+  padding-left: 20px;
+}
+
+/* line 43, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.profit-font {
+  color: green;
+}
+
+/* line 45, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.loss-font {
+  color: red;
+}
+
+/* line 47, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.profit {
+  background-color: green;
+  color: #004d00;
+}
+
+/* line 51, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.loss {
+  background-color: red;
+  color: #b30000;
+}
+
+/* Show page ---------------------------------------*/
+/* line 60, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.profile-crew img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Index page blocks ---------------------------------------*/
+/* line 75, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-container-crew {
+  width: 70%;
+  float: left;
+}
+@media (max-width: 769px) {
+  /* line 75, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+  .index-container-crew {
+    width: 100%;
+    float: none;
+  }
+}
+@media (min-width: 769px) {
+  /* line 75, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+  .index-container-crew {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* line 92, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-crew, .index-block-client {
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  background-color: brown;
+  transition: background-color 0.3s ease;
+  width: 33%;
+  margin-bottom: 5px;
+  position: relative;
+}
+@media (max-width: 1337px) {
+  /* line 92, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+  .index-block-crew, .index-block-client {
+    width: 49.5%;
+  }
+}
+@media (max-width: 769px) {
+  /* line 92, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+  .index-block-crew, .index-block-client {
+    width: 100%;
+  }
+}
+/* line 103, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-crew:hover, .index-block-client:hover {
+  cursor: pointer;
+  background-color: #7c2020;
+}
+/* line 106, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-crew:hover .index-block-nav, .index-block-client:hover .index-block-nav {
+  display: block;
+}
+/* line 110, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-crew :after, .index-block-client :after {
+  position: absolute;
+  background-color: green;
+  height: inherit;
+  width: inherit;
+}
+
+/* line 118, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-client {
+  background-color: teal;
+}
+/* line 121, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-client:hover {
+  cursor: pointer;
+  background-color: #004d4d;
+}
+
+/* line 126, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-nav {
+  display: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+}
+/* line 133, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-nav a {
+  display: inline-block;
+  width: 32.3%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+  padding: 10px;
+}
+/* line 140, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 145, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/crews.css.scss */
+.index-block-header h3,
+.index-block-header h4 {
+  padding: 10px 0 0 10px;
+}
+/* Variables------------------*/
+/* Classes------------------*/
+/* line 15, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.scrollable {
+  font-size: 1em;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 26, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.signed-in-content {
+  height: 100%;
+  width: 79.67%;
+  padding: 10px;
+  display: inline-block;
+}
+@media (max-width: 769px) {
+  /* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+  .signed-in-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+  }
+}
+
+/* line 45, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:hover {
+  background-color: white;
+  padding: 25px;
+  color: #ababab;
+}
+/* line 50, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:active {
+  background-color: #d9d9d9;
+}
+
+/* line 52, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.important-content, .show-page-description-content span {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 57, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template {
+  width: 40%;
+  background-color: rgba(45, 45, 45, 0.5);
+  height: 100%;
+  margin: 0 auto;
+}
+/* line 62, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* line 67, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content {
+  padding-bottom: 20px;
+  width: 100%;
+}
+/* line 70, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content ul {
+  padding: 10px;
+}
+/* line 71, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content h2 {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #787878;
+}
+
+/* Mixins------------------*/
+/* Forms overall ---------------------------------------*/
+/* line 5, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+.form-block-user,
+.form-block {
+  width: 30%;
+  margin: 0 auto;
+  background-color: #2d2d2d;
+  padding: 20px;
+}
+@media (max-width: 769px) {
+  /* line 5, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+  .form-block-user,
+  .form-block {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* line 14, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+.form-block-user h2,
+.form-block h2 {
+  text-align: center;
+}
+/* line 15, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+.form-block-user a,
+.form-block a {
+  display: inline-block;
+  margin: 5px 0 5px 0;
+}
+
+/* line 20, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+.form-block {
+  width: 50%;
+}
+@media (max-width: 769px) {
+  /* line 20, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+  .form-block {
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+}
+
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  color: #919191;
+  margin-top: 5px;
+}
+
+/* line 37, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+select {
+  cursor: pointer;
+}
+
+/* line 38, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+textarea {
+  min-height: 100px;
+  transition: min-height, 0.5s, ease;
+}
+@media (min-width: 769px) {
+  /* line 42, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+  textarea:hover {
+    min-height: 200px;
+  }
+}
+
+/* line 47, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+label {
+  display: none;
+}
+
+/* line 48, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+.remember_me_checkbox {
+  padding: 10px 0 10px 0;
+}
+/* line 50, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+.remember_me_checkbox span {
+  vertical-align: middle;
+}
+
+/* Input types ---------------------------------------*/
+/* line 55, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+button[type="submit"] {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  color: #919191;
+  font-size: 1.2em;
+  margin-top: 10px;
+  padding: 10px;
+}
+/* line 63, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+button[type="submit"]:hover {
+  color: #5e5e5e;
+  cursor: pointer;
+}
+
+/* line 68, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* line 76, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/forms.css.scss */
+input[type="file"] {
+  color: #919191;
+}
+/* Variables------------------*/
+/* Classes------------------*/
+/* line 15, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.scrollable {
+  font-size: 1em;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 26, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.signed-in-content {
+  height: 100%;
+  width: 79.67%;
+  padding: 10px;
+  display: inline-block;
+}
+@media (max-width: 769px) {
+  /* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+  .signed-in-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+  }
+}
+
+/* line 45, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:hover, nav a:hover {
+  background-color: white;
+  padding: 25px;
+  color: #ababab;
+}
+/* line 50, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:active, nav a:active {
+  background-color: #d9d9d9;
+}
+
+/* line 52, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.important-content, .show-page-description-content span {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 57, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template {
+  width: 40%;
+  background-color: rgba(45, 45, 45, 0.5);
+  height: 100%;
+  margin: 0 auto;
+}
+/* line 62, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* line 67, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content {
+  padding-bottom: 20px;
+  width: 100%;
+}
+/* line 70, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content ul {
+  padding: 10px;
+}
+/* line 71, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content h2 {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #787878;
+}
+
+/* Mixins------------------*/
+/* CSS Reset ---------------------*/
+/* line 5, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+/* Global styles ---------------------*/
+/* line 19, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 24, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+body {
+  font-size: 14px;
+  font-family: 'Average', serif;
+  color: #ababab;
+  background-image: url(footer_lodyas.png);
+  background-size: cover;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+body:after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 46, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+/* line 48, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+/* line 53, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+h2 {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* line 59, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+/* line 64, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+h4 {
+  font-size: 1.25em;
+  font-weight: 200;
+}
+
+/* line 69, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+/* line 74, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+a {
+  text-decoration: none;
+  color: #ababab;
+}
+/* line 77, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+a:hover {
+  color: #c4c4c4;
+}
+
+/* line 80, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+input {
+  box-sizing: border-box;
+}
+
+/* Layout elements ---------------------*/
+/* line 84, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+nav {
+  float: left;
+  width: 20%;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgba(45, 45, 45, 0.5);
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 769px) {
+  /* line 84, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+  nav {
+    width: 100%;
+    display: block;
+    padding: 0;
+  }
+}
+/* line 98, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+nav li {
+  margin: 0;
+  width: 100%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+/* line 102, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+nav li:last-child {
+  border: none;
+}
+/* line 104, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+nav a {
+  font-family: 'Arimo', sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  color: #ffffff;
+  padding: 20px;
+  transition: background-color 0.3s ease, border-right 0.5s ease,  padding 0.3s ease;
+}
+
+/* line 118, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+main {
+  height: 99.5%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+/* line 123, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+main .vertical-aligner {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 769px) {
+  /* line 123, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+  main .vertical-aligner {
+    padding: 0;
+  }
+}
+
+/* Scrollbars ---------------------*/
+/* line 133, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+::-webkit-scrollbar {
+  width: 0.5em;
+  cursor: pointer;
+}
+
+/* line 138, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.5);
+  border-radius: 5px;
+}
+
+/* Flash notice ---------------------*/
+/* line 145, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+.alert-message {
+  position: fixed;
+  width: 15%;
+  display: block;
+  z-index: 3;
+  bottom: 10%;
+  left: 2%;
+  text-align: center;
+}
+/* line 153, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+.alert-message li {
+  padding: 10px;
+  background-color: rgba(171, 171, 171, 0.18);
+  transition: background-color, 0.3s, ease;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 160, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+.alert-message li:hover {
+  background-color: rgba(171, 171, 171, 0.38);
+}
+
+/* line 164, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+.success,
+.alert {
+  position: absolute;
+  width: 15%;
+  z-index: 3;
+  bottom: 10%;
+  left: 2%;
+  padding: 10px;
+  background-color: rgba(171, 171, 171, 0.18);
+  transition: background-color, 0.3s, ease;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 177, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+.success:hover,
+.alert:hover {
+  background-color: rgba(171, 171, 171, 0.38);
+}
+
+/* line 180, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+.alert-message li,
+.alert {
+  border-right: 10px solid rgba(255, 0, 0, 0.7);
+}
+
+/* line 181, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/main.css.scss */
+.success {
+  border-right: 10px solid rgba(0, 128, 0, 0.7);
+}
+/* Variables------------------*/
+/* Classes------------------*/
+/* line 15, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.scrollable {
+  font-size: 1em;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 26, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 30, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.signed-in-content {
+  height: 100%;
+  width: 79.67%;
+  padding: 10px;
+  display: inline-block;
+}
+@media (max-width: 769px) {
+  /* line 32, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+  .signed-in-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+  }
+}
+
+/* line 45, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:hover {
+  background-color: white;
+  padding: 25px;
+  color: #ababab;
+}
+/* line 50, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.button-style:active {
+  background-color: #d9d9d9;
+}
+
+/* line 52, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.important-content, .show-page-description-content span {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 57, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template {
+  width: 40%;
+  background-color: rgba(45, 45, 45, 0.5);
+  height: 100%;
+  margin: 0 auto;
+}
+/* line 62, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-pages-template label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+/* line 67, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content {
+  padding-bottom: 20px;
+  width: 100%;
+}
+/* line 70, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content ul {
+  padding: 10px;
+}
+/* line 71, /home/dimadev/rails_projects/CrewApp/app/assets/stylesheets/_partials.css.scss */
+.show-page-description-content h2 {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #787878;
+}
+
+/* Mixins------------------*/
