@@ -3,8 +3,8 @@
 .signed-in-content
   - c = @crew
   .profile-crew.scrollable
-    .profile-crew-top
-      #{image_tag c.avatar.url}
+    .details-header-crew
+      %h1 #{c.combine_names}
     .profile-crew-info
       %h2 Personal info
       %ul
@@ -21,13 +21,11 @@
         %li
           %label Rate/month 
           %span $#{c.rate}   
-    .profile-crew-work
-      %h2 Workflow
-      %ul
-        -if c.client_project
-          %li
-            %label Project
-            %span #{c.client_project}
+        %li
+          %label Project
+          %span #{c.client_project}
+
+          
 
 
     

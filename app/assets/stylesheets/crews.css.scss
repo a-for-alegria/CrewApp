@@ -57,17 +57,13 @@
 
 .profile-crew {
 	@extend .show-pages-template;
-  img {
-    height: 100%;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
 }
 
-.profile-crew-info,
-.profile-crew-work {@extend .show-page-description-content;}
+.profile-crew-info {@extend .show-page-description-content;}
 
+.details-header-crew {
+  @include show-header(brown);
+}
 
 
 /* Index page blocks ---------------------------------------*/

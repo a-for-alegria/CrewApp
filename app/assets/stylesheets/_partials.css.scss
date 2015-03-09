@@ -48,13 +48,17 @@ $secondary-violet: #634271;
   }
   &:active {background-color: darken($main-white, 15%);}
 }
+
+// Styles for show pages of crew and clients====================//
+
 .important-content {
   font-size: 1.5em;
   font-weight: normal;
   font-family: 'Oswald', sans-serif;
 }
 .show-pages-template {
-  width: 40%;
+  @media (max-width: 769px) {width: 100%;}
+  width: 60%;
   background-color: rgba($concrete-gray, 0.5);
   height: 100%;
   margin: 0 auto;
@@ -81,3 +85,10 @@ $secondary-violet: #634271;
 /* Mixins------------------*/
 
 @mixin flash-style($color) {border-right: 10px solid rgba($color, 0.7);}
+
+@mixin show-header ($color) {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: $color;
+}

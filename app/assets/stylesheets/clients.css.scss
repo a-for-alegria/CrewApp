@@ -4,11 +4,10 @@
 
 .details-client {@extend .show-pages-template;}
 
-.details-header {
-	padding-top: 40px;
-  padding-bottom: 40px;
-  text-align: center;
+.details-header-client {
+  @include show-header(teal);
 }
+
 .details-content {
 	@extend .show-page-description-content;
   li {margin-bottom: 20px;}
