@@ -17,10 +17,10 @@ describe 'DashboardPage' do
     it {should have_link('Add member', href: new_crew_path)}
     it {should have_link('Add client', href: new_client_path)}
     it 'should list all the crew members' do
-      expect(page).to have_selector('td', text: @crew.name)
+      expect(page).to have_selector('div', text: @crew.name)
     end
     it 'should list all the clients' do
-      expect(page).to have_selector('td', text: @client.client_name)
+      expect(page).to have_selector('div', text: @client.client_name)
     end
   end
 end

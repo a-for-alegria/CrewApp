@@ -11,7 +11,7 @@
       =f.label :project
       =f.text_field :project, placeholder: "Project title"
       =f.label :budget
-      =f.text_field :budget, placeholder: "e.g. 1000"
+      =f.number_field :budget, placeholder: "e.g. 1000"
       =f.label :descr
       =f.text_area :descr, placeholder: "Enter brief description here"
       = render 'shared/error_messages', object: f.object 

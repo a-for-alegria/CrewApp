@@ -99,15 +99,9 @@
   &:hover {
     cursor: pointer;
     background-color: darken(brown, 10%);
-    .index-block-nav {
-      display: block;
-    }
-  }
-  :after {
-    position: absolute;
-    background-color: green;
-    height: inherit;
-    width: inherit;
+    // .index-block-nav {
+    //   display: block;
+    // }
   }
 }
 
