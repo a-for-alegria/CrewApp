@@ -4,16 +4,27 @@ $(document).ready(function(){
 
   alertClose($('.success, .alert, .alert-message li'));
 
-  $('.index-container-crew').on('mouseenter', '.index-block-crew', function() {
-  	$(this).find('.index-block-nav').slideToggle();
-  })
-  $('.index-container-crew').on('mouseleave', '.index-block-crew', function() {
-  	$(this).find('.index-block-nav').slideToggle();
-  })
+  // Toggle index blocks navbar
+    // Crew
+  indexClientCrewBlocksToggle('crew');
+    // Clients
+  indexClientCrewBlocksToggle('client');
+
 });
+
+// Standalone functions------------------------------------//
 
 function alertClose(selectors) {
 	selectors.on('click', function(){
   	$(this).remove();
   })
+}
+
+function indexClientCrewBlocksToggle(obj) {
+	$('.index-container-crew').on('mouseenter', ".index-block-"+obj, 
+  	  indexBlockToggle).on('mouseleave', ".index-block-"+obj, indexBlockToggle)
+}
+
+function indexBlockToggle() {
+  $(this).find('.index-block-nav').slideToggle();
 }
