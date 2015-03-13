@@ -4,11 +4,15 @@ $(document).ready(function(){
 
   alertClose($('.success, .alert, .alert-message li'));
 
+  indexBlockParam('enter');
+  indexBlockParam('leave');
+	
+
   // Toggle index blocks navbar
     // Crew
-  indexClientCrewBlocksToggle('crew');
+  //indexClientCrewBlocksToggle();
     // Clients
-  indexClientCrewBlocksToggle('client');
+  //indexClientCrewBlocksToggle('client');
 
 });
 
@@ -20,11 +24,12 @@ function alertClose(selectors) {
   })
 }
 
-function indexClientCrewBlocksToggle(obj) {
-	$('.index-container-crew').on('mouseenter', ".index-block-"+obj, 
-  	  indexBlockToggle).on('mouseleave', ".index-block-"+obj, indexBlockToggle)
+function indexBlockParam(obj) {
+	$('.index-block-crew, .index-block-client').on('mouse'+obj, function() {
+		indexBlockToggle(this);
+	});
 }
 
-function indexBlockToggle() {
-  $(this).find('.index-block-nav').slideToggle();
+function indexBlockToggle(el) {
+  $(el).find('.index-block-nav').slideToggle();
 }
