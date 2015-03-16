@@ -7,7 +7,7 @@
       .index-block-crew 
         .index-block-header
           %h3 #{crew.combine_names}
-          %h4 Frontend engineer
+          %h4 #{crew.spec}
         .index-block-nav
           #{link_to 'profile' , crew_path(crew)}
           #{link_to 'edit', edit_crew_path(crew)}

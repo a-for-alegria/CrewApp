@@ -9,7 +9,7 @@ describe 'DashboardPage' do
 
   describe 'main page/index' do
     before do
-      @crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000)
+      @crew = Crew.create(name: 'Name', secondname: 'First', rate: 1000, spec: 'Frontend')
       @client = Client.create(client_name: 'Client', client_secondname: 'First', budget: 3000)
       visit root_path
     end

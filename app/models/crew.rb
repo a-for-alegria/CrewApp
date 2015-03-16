@@ -1,7 +1,7 @@
 class Crew < ActiveRecord::Base
   belongs_to :client
 
-  validates :name, :secondname, :rate, presence: true
+  validates :name, :secondname, :rate, :spec, presence: true
   has_attached_file :avatar
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   BANK_CARD_REGEX = /\A\d\d\d\d\s\d\d\d\d\s\d\d\d\d\s\d\d\d\d\z/

@@ -4,13 +4,12 @@ namespace :deploy do
 	task :add do 
 		puts '  --> Adding untracked/deleted files'
 		stdout = %x{git add --all}
-		puts '  --> Complete'
 	end
 
 	desc 'Provide commit with message'
 	task :commit_message do 
 		puts '  --> Describe content'
-		message = STDIN.gets
+		message = STDIN.gets.chomp
 		stdout = %x{git commit -m "#{message}"}
 	end
 
@@ -18,6 +17,12 @@ namespace :deploy do
 	task :push do 
 		puts '  --> Uploading to repository......'
 		stdout = %x{git push}
+	end
+
+  desc 'Migrate production DB'
+	task :migrate do 
+		puts '  --> Migrating database......'
+		stdout = %x{heroku run rake db:migrate}
 	end
 
   desc 'Precompile assets for production'
@@ -29,11 +34,18 @@ namespace :deploy do
 	desc 'Deploy to Heroku'
 	task :deploy_heroku do 
 		puts '  --> Deploying to Heroku......'
-		stdout = %x{git push heroku master}
+		puts 'Which branch do you wanna use?'
+		branch = STDIN.gets.chomp
+		stdout = %x{git push heroku #{branch}}
+	end
+
+	desc 'Ensure that there is no untracked files'
+	task :ensure do
+		stdout = %x{git st}
 	end
 
 	desc 'Launch deploy process'
-	task start: [:add, :commit_message, :push, :precompile, :deploy_heroku] do 
+	task start: [:add, :commit_message, :push, :migrate, :precompile, :deploy_heroku, :ensure] do 
 		puts '  --> Complete!'
 	end
 end
