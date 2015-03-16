@@ -81,6 +81,8 @@ $secondary-violet: #634271;
   }
   span {@extend .important-content;}
 }
+//responsive flash messages====================//
+.responsive-flash-messages {@media (max-width: 769px){display: none;}}
 
 /* Mixins------------------*/
 
@@ -92,3 +94,4 @@ $secondary-violet: #634271;
   text-align: center;
   background-color: $color;
 }
+

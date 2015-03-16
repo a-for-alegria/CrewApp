@@ -160,8 +160,10 @@ main {
 		&:hover {background-color: rgba($soft-gray, 0.38);}
 	}
 } 
+
 .success,
 .alert {
+	@extend .responsive-flash-messages;
 	position: absolute;
 	width: 15%;
 	z-index: 3;
@@ -173,9 +175,13 @@ main {
 	color: rgba($main-white, 0.4);
 	font-weight: bold;
 	cursor: pointer;
-	//&:active {display: none; }
 	&:hover {background-color: rgba($soft-gray, 0.38);}
 }
+
+.alert-message li {
+	@extend .responsive-flash-messages;
+}
+
 .alert-message li,
 .alert {@include flash-style(red);}
 .success {@include flash-style(green);}
