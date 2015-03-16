@@ -8,7 +8,7 @@ namespace :deploy do
 
 	desc 'Provide commit with message'
 	task :commit_message do 
-		puts '  --> Describe content'
+		puts '------> Describe content'
 		message = STDIN.gets.chomp
 		stdout = %x{git commit -m "#{message}"}
 	end
@@ -34,18 +34,13 @@ namespace :deploy do
 	desc 'Deploy to Heroku'
 	task :deploy_heroku do 
 		puts '  --> Deploying to Heroku......'
-		puts 'Which branch do you wanna use?'
+		puts '------> Which branch do you wanna use?'
 		branch = STDIN.gets.chomp
 		stdout = %x{git push heroku #{branch}}
 	end
 
-	desc 'Ensure that there is no untracked files'
-	task :ensure do
-		stdout = %x{git st}
-	end
-
 	desc 'Launch deploy process'
-	task start: [:add, :commit_message, :push, :migrate, :precompile, :deploy_heroku, :ensure] do 
+	task start: [:add, :commit_message, :push, :migrate, :precompile, :deploy_heroku] do 
 		puts '  --> Complete!'
 	end
 end
