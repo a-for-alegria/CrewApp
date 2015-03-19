@@ -6,13 +6,6 @@ $(document).ready(function(){
 
   indexBlockParam('enter');
   indexBlockParam('leave');
-	
-
-  // Toggle index blocks navbar
-    // Crew
-  //indexClientCrewBlocksToggle();
-    // Clients
-  //indexClientCrewBlocksToggle('client');
 
 });
 
