@@ -38,11 +38,7 @@ select {cursor: pointer;}
 textarea {
 	min-height: 100px;
 	transition: min-height, 0.5s, ease;
-	@media (min-width: 769px) {
-    &:hover {
-	  	min-height: 200px;
-	  } 
-	}
+	@media (min-width: 769px) {&:hover {min-height: 200px;} }
 }
 label {display: none;}
 .remember_me_checkbox {
@@ -74,4 +70,7 @@ input[type="checkbox"] {
 	margin-right: 5px;
 }
 input[type="file"] {color: darken($soft-gray, 50%);}
-input[type="number"] {width: 30%;}
+input[type="number"] {
+	@media (max-width: 769px) {width: 100%;}
+	width: 30%;
+}
