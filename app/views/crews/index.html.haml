@@ -15,8 +15,10 @@
     - @clients.each do |client|
       .index-block-client 
         .index-block-header
-          %h3 #{client.combine_names}
-          %h4 #{client.project}
+          .index-block-header-left
+            %h3 #{client.combine_names}
+            %h4 #{client.project}
+          .index-block-header-right
         .index-block-nav
           #{link_to 'details' , client_path(client)}
           #{link_to 'edit', edit_client_path(client)}
