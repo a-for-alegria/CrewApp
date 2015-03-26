@@ -1,40 +1,33 @@
 - provide(:title, 'Dashboard')
 
-.signed-in-content
-  // Index page itself
-  .index-container-crew
+// Index page itself
+.crew-list.clearfix
+  %ul.scrollable
     - @crews.each do |crew|
-      .index-block-crew 
-        .index-block-header
-          %h3 #{crew.combine_names}
-          %h4 #{crew.spec}
-        .index-block-nav
-          #{link_to 'profile' , crew_path(crew)}
-          #{link_to 'edit', edit_crew_path(crew)}
-          %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete
+      %li 
+        %h3 #{crew.combine_names}
+        #{link_to image_tag('png/menu33.png'), crew_path(crew), class: 'profile-button'}
+        #{link_to image_tag('png/configuration12.png'), crew_path(crew), class: 'edit-button'}
+        #{link_to image_tag('png/close33.png'), crew_path(crew), class: 'delete-button'}
+.client-list.clearfix
+  %ul.scrollable
     - @clients.each do |client|
-      .index-block-client 
-        .index-block-header
-          .index-block-header-left
-            %h3 #{client.combine_names}
-            %h4 #{client.project}
-          .index-block-header-right
-        .index-block-nav
-          #{link_to 'details' , client_path(client)}
-          #{link_to 'edit', edit_client_path(client)}
-          %a.delete-button{"data-method" => "delete", href: client_path(client), confirm: "Delete #{client.combine_names}?"} delete
-  .index-panel-top
-    %ul.finance
-      %li 
-        %span.profit-font $ #{@clients.pluck(:budget).sum}
-      %li 
-        %span.loss-font $ #{@crews.pluck(:rate).sum}
-      %li 
-        - cl_vs_cr = Proc.new {(@clients.pluck(:budget).sum) - (@crews.pluck(:rate).sum)}
-        -if (@clients.pluck(:budget).sum) > (@crews.pluck(:rate).sum)
-          %span.profit #{cl_vs_cr.call}$
-        -else
-          %span.loss #{cl_vs_cr.call}$
+      %li
+        %h3 #{client.combine_names}
+        %h4 #{client.project}
+.bottom_part
+  .botom-part-finance
+    %span.profit-font $ #{@clients.pluck(:budget).sum}
+    %span.loss-font $ #{@crews.pluck(:rate).sum} 
+    - cl_vs_cr = Proc.new {(@clients.pluck(:budget).sum) - (@crews.pluck(:rate).sum)}
+    -if (@clients.pluck(:budget).sum) > (@crews.pluck(:rate).sum)
+      %span.profit #{cl_vs_cr.call}$
+    -else
+      %span.loss #{cl_vs_cr.call}$
 
-        
+
+/ .index-block-nav
+/   #{link_to 'profile' , crew_path(crew)}
+/   #{link_to 'edit', edit_crew_path(crew)}
+/   %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete        
     

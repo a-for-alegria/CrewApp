@@ -66,10 +66,7 @@ h4 {
 	font-weight: 200;
 }
 
-li {
-	margin-bottom: 10px;
-	list-style: none;
-}
+li {list-style: none;}
 
 a {
 	text-decoration: none;
@@ -82,29 +79,19 @@ input {box-sizing:border-box;}
 /* Layout elements ---------------------*/
 
 nav {
-	@media (max-width: 769px) {
-    width: 100%;
-    display: block;
-    padding: 0;
-  }
 	float: left;
-	width: 20%;
-	padding-top: 10px;
-	margin-bottom: 10px;
+	width: 5%;
+	height: 100%;
 	text-align: center;
-	background-color: rgba($concrete-gray, 0.5);
+	background-color: rgba($concrete-gray, 1);
 	position: relative;
   z-index: 3;
 	li {
 		margin: 0;
 		width: 100%;
 		border-bottom: 2px solid rgba($main-black, 0.15);
-		&:last-child {border: none;}
 	}
 	a {
-		font-family: 'Arimo', sans-serif;
-		font-size: 1.5em;
-		font-weight: bold;
 		display: block;
 		width: 100%;
 		margin: 0 auto;
@@ -116,16 +103,11 @@ nav {
 	}
 }
 main {
-	height: 99.5%;
-	width: 100%;
+	height: 100%;
+	width: 95%;
 	position: relative;
-  z-index: 2;
-  .vertical-aligner {
-  	@media (max-width: 769px) {padding: 0;}
-		padding: 10px;
-		width: 100%;
-		height: 100%;
-	}
+  z-index: 3;
+  float: right;
 }
 
 /* Scrollbars ---------------------*/

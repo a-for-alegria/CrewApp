@@ -36,23 +36,20 @@ $secondary-violet: #634271;
     display: block;
   }
   height: 100%;
-  width: 79.67%;
-  padding: 10px;
-  display: inline-block;
+  width: 95%;
 }
 .button-style {
   &:hover {
-    background-color: $main-white;
-    padding: 25px;
+    background-color: darken($main-white, 10%);
     color: $soft-gray;
   }
-  &:active {background-color: darken($main-white, 15%);}
+  &:active {background-color: darken($main-white, 25%);}
 }
 
 // Styles for show pages of crew and clients====================//
 
 .important-content {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: normal;
   font-family: 'Oswald', sans-serif;
 }

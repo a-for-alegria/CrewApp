@@ -10,15 +10,14 @@
     -if signed_in?
       %nav
         %ul
-          %li #{to_root}
-          %li #{link_to 'Add member', new_crew_path, class: 'new_member'}
-          .new_member_modal
-          %li #{link_to 'Add client', new_client_path}
+          %li #{link_to image_tag('png/house112.png'), root_path}
+          %li #{link_to image_tag('png/office-worker2.png'), new_crew_path, class: 'new_member'}
+          %li #{link_to image_tag('png/budget2.png'), new_client_path}
 
           - if current_user
-            %li #{link_to "Sign out", destroy_user_session_path, method: :delete}
+            %li #{link_to image_tag('png/shut-down2.png'), destroy_user_session_path, method: :delete}
           - else
-            %li #{link_to "Sign in with Facebook", new_user_session_path}
+            %li #{link_to "5", new_user_session_path}
     // Flash notice
     - if flash[:alert]
       .alert #{flash[:alert]}

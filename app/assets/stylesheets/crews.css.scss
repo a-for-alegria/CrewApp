@@ -4,38 +4,82 @@
 
 /* Mutual styles */
 
+/* Index page blocks ---------------------------------------*/
 
-/* Content left part*/
+.crew-list,
+.client-list {
+  width: 50%;
+  float: left;
+  height: 85%;
+  padding: 2px;
+}
 
-.index-container-crew,
-.index-container-client {height: 100%;}
-
-/* Content right part*/
-
-.index-panel-top {
-  @media (max-width: 769px) {display: none;}
-	height: 100%;
-	background-color: rgba($concrete-gray, 0.5);
-	width: 28%;
-  font-weight: bold;
-  font-size: 1.5em;
-	float: right;
-  padding: 10px;
-  border-radius: 5px;
-  ul.finance li:last-child {
-    border-top: 3px solid rgba($main-black, 0.1);
-    padding: 20px;
-    span {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 10px;
+.crew-list {
+  h3 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  ul {
+    width: 100%;
+    height: 100%;
+  }
+  li {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba($soft-gray, 0.5);
+    transition: background-color, 0.3s ease;
+    margin-bottom: 1px;
+    &:hover {
+      background-color: rgba($soft-gray, 0.4);
     }
   }
+  a {
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    &:hover {
+      background-color: red;
+    }
+  }
+  img {
+    vertical-align: middle;
+  }
 }
-.index-panel-top span {
-  @extend .important-content;
-  padding-left: 20px;
+
+.profile-button,
+.edit-button,
+.delete-button {
+  float: right;
+  margin-right: 5px;
+}
+
+.client-list {
+  background-color: blue;
+}
+
+/* Bottom wide block */
+
+.bottom_part {
+  background-color: rgba($concrete-gray, 0.3);
+  width: 100%;
+  height: 15%;
+  clear: left;
+}
+
+/* Financial block */
+
+.botom-part-finance {
+  height: 100%;
+  width: 20%;
+  float: right;
+  font-size: 1.5em;
+  padding: 10px;
+  text-align: center;
+  background-color: $concrete-gray;
+  span {
+    display: block;
+    padding: 5px;
+  }
 }
 
 .profit-font {color: green;}
@@ -50,7 +94,6 @@
   background-color: red;
   color: darken(red, 15%);
 }
-
 /* Show page ---------------------------------------*/
 
 .profile-crew {
@@ -64,94 +107,5 @@
 }
 
 
-/* Index page blocks ---------------------------------------*/
-
-.index-container-crew {
-  @media (max-width: 769px) {
-    width: 100%;
-    float: none;
-  }
-  // add scrollable to desktop
-  @media (min-width: 769px) {
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-  }
-  width: 70%;
-  height: 100%;
-  float: left;
-}
-
-.index-block-crew {
-  position: relative;
-  display: inline-block;
-  height: 150px;
-  background-color: brown;
-  transition: background-color 0.3s ease;
-  width: 100%;
-  margin-bottom: 5px;
-  position: relative;
-  &:hover {
-    cursor: pointer;
-    background-color: darken(brown, 10%);
-  }
-}
-
-.index-block-client {
-  @extend .index-block-crew;
-  background-color: teal;
-  height: 300px;
-  font-size: 0;
-  &:hover {
-    cursor: pointer;
-    background-color: darken(teal, 10%)
-  }
-}
-
-.index-block-header{
-  height: 100%;
-  padding: 2px;
-  h3,
-  h4 {padding: 10px 0 0 10px;}
-}
-
-.index-block-header-left {
-  width: 30%;
-  display: inline-block;
-  height: 100%;
-  vertical-align: top;
-  font-size: initial;
-}
-.index-block-header-right {
-  width: 70%;
-  height: 100%;
-  display: inline-block;
-  background-color: green;
-  vertical-align: top;
-  background-image: url(myagkov.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: initial;
-}
 
 
-.index-block-nav {
-  display: none;
-  width: 100%;
-  background-color: rgba($main-white, 0);
-  padding: 5px;
-  position: absolute;
-  bottom: 0;
-  font-size: initial;
-  a {
-    display: inline-block;
-    width: 32.3%;
-    text-align: center;
-    background-color: rgba($main-white, 0.1);
-    transition: background-color 0.3s ease;
-    padding: 10px;
-    &:hover {background-color: rgba($main-white, 0.15);}
-  }
-} 
