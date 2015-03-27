@@ -32,7 +32,7 @@ namespace :deploy do
 	end
 
 	desc 'Deploy to Heroku'
-	task :deploy_heroku do 
+	task :heroku do 
 		puts '  --> Deploying to Heroku......'
 		puts '------> Which branch do you wanna use?'
 		branch = STDIN.gets.chomp
