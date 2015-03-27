@@ -7,14 +7,16 @@
       %li 
         %h3 #{crew.combine_names}
         #{link_to image_tag('png/menu33.png'), crew_path(crew), class: 'profile-button'}
-        #{link_to image_tag('png/configuration12.png'), crew_path(crew), class: 'edit-button'}
-        #{link_to image_tag('png/close33.png'), crew_path(crew), class: 'delete-button'}
+        #{link_to image_tag('png/configuration12.png'), edit_crew_path(crew), class: 'edit-button'}
+        #{link_to image_tag('png/close33.png'), crew_path(crew), "data-method" => "delete", href: crew_path(crew), confirm: "Delete \"#{crew.combine_names}?\"", class: 'delete-button'}
 .client-list.clearfix
   %ul.scrollable
     - @clients.each do |client|
       %li
-        %h3 #{client.combine_names}
-        %h4 #{client.project}
+        %h3 #{client.project}
+        #{link_to image_tag('png/menu33.png'), client_path(client), class: 'profile-button'}
+        #{link_to image_tag('png/configuration12.png'), edit_client_path(client), class: 'edit-button'}
+        #{link_to image_tag('png/close33.png'), client_path(client), "data-method" => "delete", href: client_path(client), confirm: "Delete \"#{client.combine_names}?\"", class: 'delete-button'}
 .bottom_part
   .botom-part-finance
     %span.profit-font $ #{@clients.pluck(:budget).sum}

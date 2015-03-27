@@ -14,7 +14,8 @@
   padding: 2px;
 }
 
-.crew-list {
+.crew-list,
+.client-list {
   h3 {
     display: inline-block;
     vertical-align: middle;
@@ -25,20 +26,13 @@
   }
   li {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     background-color: rgba($soft-gray, 0.5);
     transition: background-color, 0.3s ease;
     margin-bottom: 1px;
+    cursor: pointer;
     &:hover {
       background-color: rgba($soft-gray, 0.4);
-    }
-  }
-  a {
-    height: 100%;
-    border-radius: 50%;
-    background-color: white;
-    &:hover {
-      background-color: red;
     }
   }
   img {
@@ -51,10 +45,21 @@
 .delete-button {
   float: right;
   margin-right: 5px;
+  height: 100%;
+  border-radius: 50%;
+  transition: background-color, 0.3s, ease;
+  &:hover {
+    background-color: rgba($main_white, 0.4);
+  }
 }
 
 .client-list {
-  background-color: blue;
+  li {
+    background-color: rgba($secondary-violet, 0.5);
+    &:hover {
+      background-color: rgba($secondary-violet, 0.4);
+    }
+  }
 }
 
 /* Bottom wide block */
