@@ -19,17 +19,13 @@
         #{link_to image_tag('png/menu33.png'), client_path(client), class: 'profile-button'}
 .bottom_part
   .botom-part-finance
-    %span.profit-font $ #{@clients.pluck(:budget).sum}
-    %span.loss-font $ #{@crews.pluck(:rate).sum} 
-    - cl_vs_cr = Proc.new {(@clients.pluck(:budget).sum) - (@crews.pluck(:rate).sum)}
-    -if (@clients.pluck(:budget).sum) > (@crews.pluck(:rate).sum)
-      %span.profit #{cl_vs_cr.call}$
+    %span.profit-font $ #{@client_budget}
+    %span.loss-font $ #{@crew_rate} 
+    - cl_vs_cr = Proc.new {(@client_budget) - (@crew_rate)}
+    -if (@client_budget) > (@crew_rate)
+      %span.profit $ #{cl_vs_cr.call}
     -else
-      %span.loss #{cl_vs_cr.call}$
+      %span.loss $ #{cl_vs_cr.call}
 
-
-/ .index-block-nav
-/   #{link_to 'profile' , crew_path(crew)}
-/   #{link_to 'edit', edit_crew_path(crew)}
-/   %a.delete-button{"data-method" => "delete", href: crew_path(crew), confirm: "Delete #{crew.combine_names}?"} delete        
+     
     

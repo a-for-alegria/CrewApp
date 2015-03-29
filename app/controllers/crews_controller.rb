@@ -5,6 +5,8 @@ class CrewsController < ApplicationController
 
   def index
 		@crews = Crew.all
+    @client_budget = Client.all.pluck(:budget).sum
+    @crew_rate = Crew.all.pluck(:rate).sum
 	end
 
 	def new
