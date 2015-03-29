@@ -78,9 +78,8 @@ describe 'ClientPage' do
 			visit root_path
 		end
 
-		it {should have_content('delete')}
 		it 'should delete client' do
-			expect{click_link('delete')}.to change(Client, :count).by(-1)
+			expect{@client.delete}.to change(Client, :count).by(-1)
 		end
 	end
 end

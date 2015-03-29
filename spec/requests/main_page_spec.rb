@@ -14,13 +14,11 @@ describe 'DashboardPage' do
       visit root_path
     end
     it {should have_title('Dashboard')}
-    it {should have_link('Add member', href: new_crew_path)}
-    it {should have_link('Add client', href: new_client_path)}
     it 'should list all the crew members' do
-      expect(page).to have_selector('div', text: @crew.name)
+      expect(page).to have_selector('li', text: @crew.name)
     end
     it 'should list all the clients' do
-      expect(page).to have_selector('div', text: @client.client_name)
+      expect(page).to have_selector('li', text: @client.project)
     end
   end
 end

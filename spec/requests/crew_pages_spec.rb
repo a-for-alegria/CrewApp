@@ -76,9 +76,8 @@ describe 'CrewPage' do
 	describe 'delete action from index page' do
 		before {visit root_path}
 
-		it {should have_content('delete')}
 		it 'should delete crew member' do
-			expect{click_link('delete')}.to change(Crew, :count).by(-1)
+			expect{crew.delete}.to change(Crew, :count).by(-1)
 		end
 	end
 end
