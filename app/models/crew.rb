@@ -1,4 +1,5 @@
 class Crew < ActiveRecord::Base
+  belongs_to :user
   belongs_to :client
 
   validates :name, :secondname, :rate, :spec, presence: true

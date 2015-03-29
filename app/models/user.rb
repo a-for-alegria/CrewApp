@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :crews
+  has_many :clients
+  
+  validates :email, :password, :password_confirmation,  presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -11,7 +11,7 @@ class ClientsController < ApplicationController
 	end
 
 	def create
-    @client = Client.new(client_params)
+    @client = current_user.clients.build(client_params)
     if @client.save
       redirect_to root_path
       flash[:success] = "Successfully created"
@@ -45,7 +45,7 @@ class ClientsController < ApplicationController
 
   private
     def parce_clients
-      @clients = Client.all
+      @clients = Client.where(user_id: current_user.id).load
     end
 
     def redirect

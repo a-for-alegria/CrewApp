@@ -43,6 +43,7 @@ RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL
   config.include IntegrationSpecHelper, type: :request
+  config.include Devise::TestHelpers, type: :controller
   include Warden::Test::Helpers
   Warden.test_mode!
 end

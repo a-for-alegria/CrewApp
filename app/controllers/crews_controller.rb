@@ -14,7 +14,7 @@ class CrewsController < ApplicationController
 	end
 
 	def create
-    @crew = Crew.new(crew_params)
+    @crew = current_user.crews.build(crew_params)
     if @crew.save
       redirect_to root_path
       flash[:success] = "Successfully created"
@@ -48,11 +48,11 @@ class CrewsController < ApplicationController
 
   private
     def parce_clients
-      @clients = Client.all
+      @clients = Client.where(user_id: current_user.id).load
     end
 
     def parce_crew
-      @crews = Crew.all
+      @crews = Crew.where(user_id: current_user.id).load
     end
 
     def redirect

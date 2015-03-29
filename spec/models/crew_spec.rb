@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 describe Crew do
-
-  subject (:crew) {Crew.new(name: name, secondname: secondname, rate: budget, spec: spec)}
+  
+  let(:user) {FactoryGirl.create(:user)}
+  subject (:crew) {user.crews.build(name: name, secondname: secondname, rate: rate, spec: spec)}
 
   let(:name) {'Name'}
   let(:secondname) {'Second'}
-  let(:budget) {2000}
+  let(:rate) {2000}
   let(:spec) {'Frontend'}
 
   it {should respond_to(:name)}
@@ -15,6 +16,11 @@ describe Crew do
   it {should respond_to(:client)}
   it {should respond_to(:client_project)}
   it {should respond_to(:spec)}
+  it {should respond_to(:user_id)}
+  it {should respond_to(:user)}
+  its(:user) {should eq user}
+
+  it {should be_valid}
 
   context '#name' do
     before {crew.name = " "}
