@@ -1,12 +1,12 @@
 class CrewsController < ApplicationController
 	before_filter :crew_finder, only: [:show, :edit, :update]
   before_filter :parce_clients, only: [:index, :new, :edit, :update, :create]
+  before_filter :parce_crew, only: [:index]
   before_filter :redirect
 
   def index
-		@crews = Crew.all
-    @client_budget = Client.all.pluck(:budget).sum
-    @crew_rate = Crew.all.pluck(:rate).sum
+    @client_budget = parce_clients.pluck(:budget).sum
+    @crew_rate = parce_crew.pluck(:rate).sum
 	end
 
 	def new
@@ -49,6 +49,10 @@ class CrewsController < ApplicationController
   private
     def parce_clients
       @clients = Client.all
+    end
+
+    def parce_crew
+      @crews = Crew.all
     end
 
     def redirect
