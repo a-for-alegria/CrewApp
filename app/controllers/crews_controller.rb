@@ -48,11 +48,11 @@ class CrewsController < ApplicationController
 
   private
     def parce_clients
-      @clients = Client.where(user_id: current_user.id).load
+      @clients = current_user.clients
     end
 
     def parce_crew
-      @crews = Crew.where(user_id: current_user.id).load
+      @crews = current_user.crews
     end
 
     def redirect
