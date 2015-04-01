@@ -4,11 +4,11 @@ describe 'ClientPage' do
   subject {page}
   let(:user) {FactoryGirl.create(:user)}
   let(:client) {user.clients.build(client_name: client_name, client_secondname: client_secondname, 
-      budget: budget, project: project)}
+      budget: budget, project_name: project)}
   let(:client_name) {'Client'}
   let(:client_secondname) {'First'}
   let(:budget) {3000}
-  let(:project) {'Project'}
+  let(:project_name) {'Project'}
 
   before {sign_in(user)}
   #==============================New page===========>>
@@ -33,7 +33,7 @@ describe 'ClientPage' do
           fill_in 'Client name',               with: client_name
           fill_in 'Client secondname',         with: client_secondname
           fill_in 'Budget',                    with: budget
-          fill_in 'Project',                   with: project
+          fill_in 'Project name',              with: project_name
         end
         it 'should create client' do
           expect{click_button submit}.to change(Client, :count).by(1)
@@ -55,7 +55,7 @@ describe 'ClientPage' do
     let(:reload_cn) {client_name*2}
     let(:reload_csn) {client_secondname*2}
     let(:reload_bgt) {client.budget*2}
-    let(:reload_prg) {client.project*2}
+    let(:reload_prg) {client.project_name*2}
 
     before {visit edit_client_path(client)}
     
@@ -66,7 +66,7 @@ describe 'ClientPage' do
         fill_in 'Client name',              with: reload_cn
         fill_in 'Client secondname',        with: reload_csn
         fill_in 'Budget',                   with: reload_bgt
-        fill_in 'Project',                  with: reload_prg
+        fill_in 'Project name',                  with: reload_prg
         click_button('Save')
       end
       it {should have_content(reload_cn)}
