@@ -3,8 +3,8 @@ require 'spec_helper'
 describe 'ClientPage' do
   subject {page}
   let(:user) {FactoryGirl.create(:user)}
-  let(:client) {user.clients.build(client_name: client_name, client_secondname: client_secondname, 
-      budget: budget, project_name: project)}
+  let(:client) {user.clients.create(client_name: client_name, client_secondname: client_secondname, 
+      budget: budget, project_name: project_name)}
   let(:client_name) {'Client'}
   let(:client_secondname) {'First'}
   let(:budget) {3000}
@@ -46,6 +46,7 @@ describe 'ClientPage' do
 
   describe 'show' do
     before {visit client_path(client)}
+
     it {should have_title("#{client.combine_names} profile")}
   end
 
@@ -66,13 +67,11 @@ describe 'ClientPage' do
         fill_in 'Client name',              with: reload_cn
         fill_in 'Client secondname',        with: reload_csn
         fill_in 'Budget',                   with: reload_bgt
-        fill_in 'Project name',                  with: reload_prg
         click_button('Save')
       end
       it {should have_content(reload_cn)}
       it {should have_content(reload_csn)}
       it {should have_content(reload_bgt)}
-      it {should have_content(reload_prg)}
     end
   end
 
@@ -80,7 +79,7 @@ describe 'ClientPage' do
 
 	describe 'delete' do
 		before do
-			@client = user.clients.build(client_name: client_name, client_secondname: client_secondname, budget: budget, project: project)
+			@client = user.clients.create(client_name: client_name, client_secondname: client_secondname, budget: budget, project_name: project_name)
 			visit root_path
 		end
 
