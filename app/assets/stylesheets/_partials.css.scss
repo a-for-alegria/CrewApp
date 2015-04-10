@@ -7,9 +7,6 @@ $soft-gray: #ababab;
 $main-white: #ffffff;
 $secondary-violet: #634271;
 
-
-
-
 /* Classes------------------*/
 
 .scrollable {
@@ -47,49 +44,5 @@ $secondary-violet: #634271;
   &:active {background-color: darken($main-white, 25%);}
 }
 
-// Styles for show pages of crew and clients====================//
 
-.important-content {
-  font-size: 1em;
-  font-weight: normal;
-  font-family: 'Oswald', sans-serif;
-}
-.show-pages-template {
-  @media (max-width: 769px) {width: 100%;}
-  width: 60%;
-  background-color: rgba($concrete-gray, 0.5);
-  height: 100%;
-  margin: 0 auto;
-  label {
-    display: block;
-    padding-bottom: 5px;
-  }
-}
-.show-page-description-content {
-  padding-bottom: 20px;
-  width: 100%;
-  ul {padding: 10px;}
-  h2 {
-    text-align: center;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: lighten($concrete-gray, 6%);
-    color: darken($soft-gray, 20%);
-  }
-  span {@extend .important-content;}
-}
-//responsive flash messages====================//
-.responsive-flash-messages {@media (max-width: 769px){display: none;}}
-
-/* Mixins------------------*/
-
-@mixin flash-style($color) {border-right: 10px solid rgba($color, 0.7);}
-
-@mixin show-header ($color) {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  text-align: center;
-  background-color: $color;
-}
 

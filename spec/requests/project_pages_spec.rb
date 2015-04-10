@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe 'ClientPage' do
+describe 'ProjectPage' do
   subject {page}
   let(:user) {FactoryGirl.create(:user)}
-  let(:client) {user.clients.create(client_name: client_name, client_secondname: client_secondname, 
+  let(:project) {user.projects.create(client_name: client_name, client_secondname: client_secondname, 
       budget: budget, project_name: project_name)}
   let(:client_name) {'Client'}
   let(:client_secondname) {'First'}
@@ -13,30 +13,30 @@ describe 'ClientPage' do
   before {sign_in(user)}
   #==============================New page===========>>
 
-  describe 'new client page' do
+  describe 'new project page' do
 
-    before {visit new_client_path}
+    before {visit new_project_path}
 
-    it {should have_title('New client')}
+    it {should have_title('New project')}
 
     let(:submit) {"Create"}
     
     describe 'create' do
       context 'invalid creation' do
-        it 'should not create client' do
-          expect{click_button submit}.not_to change(Client, :count)
+        it 'should not create project' do
+          expect{click_button submit}.not_to change(Project, :count)
         end
       end
 
-      context 'valid client creation' do
+      context 'valid project creation' do
         before do
           fill_in 'Client name',               with: client_name
           fill_in 'Client secondname',         with: client_secondname
           fill_in 'Budget',                    with: budget
           fill_in 'Project name',              with: project_name
         end
-        it 'should create client' do
-          expect{click_button submit}.to change(Client, :count).by(1)
+        it 'should create project' do
+          expect{click_button submit}.to change(Project, :count).by(1)
         end
       end
     end  
@@ -45,9 +45,9 @@ describe 'ClientPage' do
   #==============================Show page===========>>
 
   describe 'show' do
-    before {visit client_path(client)}
+    before {visit project_path(project)}
 
-    it {should have_title("#{client.combine_names} profile")}
+    it {should have_title("#{project.combine_names} page")}
   end
 
   #==============================Edit page===========>>
@@ -55,12 +55,12 @@ describe 'ClientPage' do
   describe 'edit' do
     let(:reload_cn) {client_name*2}
     let(:reload_csn) {client_secondname*2}
-    let(:reload_bgt) {client.budget*2}
-    let(:reload_prg) {client.project_name*2}
+    let(:reload_bgt) {project.budget*2}
+    let(:reload_prg) {project.project_name*2}
 
-    before {visit edit_client_path(client)}
+    before {visit edit_project_path(project)}
     
-    it {should have_title('Edit client panel')}
+    it {should have_title('Edit project panel')}
 
     context 'successfull edit' do
     	before do
@@ -79,12 +79,12 @@ describe 'ClientPage' do
 
 	describe 'delete' do
 		before do
-			@client = user.clients.create(client_name: client_name, client_secondname: client_secondname, budget: budget, project_name: project_name)
+			@project = user.projects.create(client_name: client_name, client_secondname: client_secondname, budget: budget, project_name: project_name)
 			visit root_path
 		end
 
-		it 'should delete client' do
-			expect{@client.delete}.to change(Client, :count).by(-1)
+		it 'should delete project' do
+			expect{@project.delete}.to change(Project, :count).by(-1)
 		end
 	end
 end

@@ -24,20 +24,27 @@ body {
 body {
 	font-size: 14px;
 	font-family: 'Average', serif;
-	color: $soft-gray;
-	background-image: url(footer_lodyas.png);
-	background-size: cover;
-	&:after {
-		content: '';
-		display: block;
-		position: absolute;
-		z-index: 0;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		background-color: rgba($main-black, 0.4);
-	}
+	color: #000000;
+	background-color: #cecece;
+	// background-image: url(footer_lodyas.png);
+	// background-size: cover;
+	// &:after {
+	// 	content: '';
+	// 	display: block;
+	// 	position: absolute;
+	// 	z-index: 0;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	right: 0;
+	// 	left: 0;
+	// 	background-color: rgba($main-black, 0.7);
+	// }
+}
+
+.main-wrapper {
+	height: 100%;
+	width: 50%;
+	margin: 0 auto;
 }
 
 h1,
@@ -70,8 +77,10 @@ li {list-style: none;}
 
 a {
 	text-decoration: none;
-	color: $soft-gray;
-	&:hover{color: lighten($soft-gray, 10%);}
+	color: #000000;
+	&:hover {
+		color: lighten(#000000, 10%);
+	}
 }
 
 input {box-sizing:border-box;}
@@ -80,12 +89,10 @@ input {box-sizing:border-box;}
 
 nav {
 	float: left;
-	width: 5%;
+	width: 15%;
 	height: 100%;
 	text-align: center;
-	background-color: rgba($concrete-gray, 1);
-	position: relative;
-  z-index: 3;
+	background-color: darken(#a2a0a0, 20%);
 	li {
 		margin: 0;
 		width: 100%;
@@ -110,10 +117,10 @@ nav {
 }
 main {
 	height: 100%;
-	width: 95%;
-	position: relative;
-  z-index: 2;
+	width: 85%;
   float: right;
+  background-color: #a2a0a0;
+  border-left: 4px solid #cecece;
 }
 
 /* Scrollbars ---------------------*/
@@ -128,45 +135,3 @@ main {
   border-radius: 5px;
 }
 
-/* Flash notice ---------------------*/
-
-.alert-message {
-	position: fixed;
-	width: 15%;
-	display: block;
-	z-index: 3;
-	bottom: 10%;
-	left: 2%;
-	text-align: center;
-	li {
-		padding: 10px;
-		background-color: rgba($soft-gray, 0.18);
-		transition: background-color, 0.3s, ease;
-		color: rgba($main-white, 0.4);
-		font-weight: bold;
-		cursor: pointer;
-		&:hover {background-color: rgba($soft-gray, 0.38);}
-	}
-} 
-
-.success,
-.alert {
-	@extend .responsive-flash-messages;
-	position: absolute;
-	width: 15%;
-	z-index: 3;
-	bottom: 10%;
-	left: 2%;
-	padding: 10px;
-	background-color: rgba($soft-gray, 0.18);
-	transition: background-color, 0.3s, ease;
-	color: rgba($main-white, 0.4);
-	font-weight: bold;
-	cursor: pointer;
-	&:hover {background-color: rgba($soft-gray, 0.38);}
-}
-
-.alert-message li {@extend .responsive-flash-messages;}
-.alert-message li,
-.alert {@include flash-style(red);}
-.success {@include flash-style(green);}

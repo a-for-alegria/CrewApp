@@ -13,7 +13,7 @@ describe Crew do
   it {should respond_to(:name)}
   it {should respond_to(:secondname)}
   it {should respond_to(:avatar)}
-  it {should respond_to(:client)}
+  it {should respond_to(:project)}
   it {should respond_to(:client_project)}
   it {should respond_to(:spec)}
   it {should respond_to(:user_id)}

@@ -15,7 +15,7 @@
       =f.text_field :bank_card, placeholder: "xxxx xxxx xxxx xxxx"
       =f.label :rate
       =f.number_field :rate, placeholder: "e.g. 1000"
-      =f.select(:client_project, @clients.map(&:project_name), {prompt: "Select project"})
+      =f.select(:client_project, @projects.map(&:project_name), {prompt: "Select project"})
       =f.file_field :avatar
 
       %button{type: 'submit'} Create

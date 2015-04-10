@@ -1,14 +1,2 @@
 @import 'partials';
 
-/* Show page ---------------------------------------*/
-
-.details-client {@extend .show-pages-template;}
-
-.details-header-client {
-  @include show-header(teal);
-}
-
-.details-content {
-	@extend .show-page-description-content;
-  li {margin-bottom: 20px;}
-}

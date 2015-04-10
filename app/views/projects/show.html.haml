@@ -1,22 +1,22 @@
-- provide(:title, "#{@client.combine_names} profile")
+- provide(:title, "#{@project.combine_names} page")
 
 .signed-in-content  
-  - c = @client
+  - p = @project
   .details-client.scrollable
     .details-header-client
-      %h1 #{c.combine_names}
+      %h1 #{p.combine_names}
     .details-content
       %h2 Project details
       %ul
         %li 
           %label Client name
-          %span #{c.combine_names}
+          %span #{p.combine_names}
         %li
           %label Project budget
-          %span $#{c.budget}
+          %span $#{p.budget}
         %li
           %label Description
-          %span #{c.descr}
+          %span #{p.descr}
     
 
 

@@ -2,7 +2,7 @@ CrewApp::Application.routes.draw do
   devise_for :users,controllers: {sessions: "user/sessions"}
 
   resources :crews
-  resources :clients
+  resources :projects
 
   root 'crews#index'
 end

@@ -1,6 +1,6 @@
 class Crew < ActiveRecord::Base
   belongs_to :user
-  belongs_to :client
+  belongs_to :project
 
   validates :name, :secondname, :rate, :spec, presence: true
   has_attached_file :avatar

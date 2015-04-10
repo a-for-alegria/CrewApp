@@ -7,23 +7,24 @@
     = javascript_include_tag "myDirectiveJSfile"
     = csrf_meta_tags
   %body
-    -if signed_in?
-      %nav
-        %ul
-          %li #{link_to image_tag('png/house112.png'), root_path, title: 'Dashboard'}
-          %li #{link_to image_tag('png/office-worker2.png'), new_crew_path, class: 'new_member', title: 'Add new crew member'}
-          %li #{link_to image_tag('png/budget2.png'), new_client_path, title: 'Add new client'}
-          - if current_user
-            %li #{link_to image_tag('png/shut-down2.png'), destroy_user_session_path, method: :delete, title: 'Sign out'}
-          - else
-            %li #{link_to "5", new_user_session_path}
-    // Flash notice
-    - if flash[:alert]
-      .alert #{flash[:alert]}
-    -if flash[:success]
-      .success #{flash[:success]}
-    %main
-      = yield
-
+    .main-wrapper
+      -if signed_in?
+        %nav
+          %ul
+            %li #{link_to image_tag('png/house112.png'), root_path, title: 'Dashboard'}
+            %li #{link_to image_tag('png/office-worker2.png'), new_crew_path, class: 'new_member', title: 'Add new crew member'}
+            %li #{link_to image_tag('png/budget2.png'), new_project_path, title: 'Add new project'}
+            - if current_user
+              %li #{link_to image_tag('png/shut-down2.png'), destroy_user_session_path, method: :delete, title: 'Sign out'}
+            - else
+              %li #{link_to "5", new_user_session_path}
+      // Flash notice
+      - if flash[:alert]
+        .alert #{flash[:alert]}
+      -if flash[:success]
+        .success #{flash[:success]}
+      %main
+        = yield
+        
 
 

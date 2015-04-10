@@ -1,36 +1,44 @@
 - provide(:title, 'Dashboard')
 
 // Index page itself
-.crew-list.clearfix
-  %ul.scrollable
-    - @crews.each do |crew|
-      %li 
-        %h3 #{crew.combine_names}
-        #{link_to image_tag('png/close33.png'), crew_path(crew), "data-method" => "delete", href: crew_path(crew), data: {confirm: "Delete \"#{crew.combine_names}?\""}, class: 'delete-button', title: 'Remove'}
-        #{link_to image_tag('png/configuration12.png'), edit_crew_path(crew), class: 'edit-button', title: 'Settings'}
-        #{link_to image_tag('png/menu33.png'), crew_path(crew), class: 'profile-button', title: 'View profile'}
-.client-list.clearfix
-  %ul.scrollable
-    - @clients.each do |client|
-      %li
-        %h3 #{client.project_name}
-        #{link_to image_tag('png/close33.png'), client_path(client), "data-method" => "delete", href: client_path(client), data: {confirm: "Delete \"#{client.combine_names}?\" project"}, class: 'delete-button', title: 'Remove'}
-        #{link_to image_tag('png/configuration12.png'), edit_client_path(client), class: 'edit-button', title: 'Settings'}
-        #{link_to image_tag('png/menu33.png'), client_path(client), class: 'profile-button', title: 'View details'}
-.bottom_part
-  .bottom-part-statistics
-    %ul
-      %li Clients: #{@clients.count}
-      %li Crew: #{@crews.count}
-      %li Projects: 
-  .botom-part-finance
-    %span.profit-font $ #{@client_budget}
-    %span.loss-font $ #{@crew_rate} 
-    - cl_vs_cr = Proc.new {(@client_budget) - (@crew_rate)}
-    -if (@client_budget) > (@crew_rate)
-      %span.profit $ #{cl_vs_cr.call}
-    -else
-      %span.loss $ #{cl_vs_cr.call}
-
-     
-    
+%ul.nav.nav-tabs.dashboard
+  %li.active
+    %a{"data-toggle" => "tab", href: "#sectionA"} Crew
+  %li
+    %a{"data-toggle" => "tab", href: "#sectionB"} Projects
+.tab-content
+  #sectionA.tab-pane.fade.in.active
+    %ul.scrollable
+      - @crews.each do |crew|
+        %li #{crew.combine_names}
+  #sectionB.tab-pane.fade
+    %ul.scrollable
+      - @projects.each do |project|
+        %li #{project.project_name}
+/     - @crews.each do |crew|
+/       %li 
+/         %h3 #{crew.combine_names}
+/         #{link_to image_tag('png/close33.png'), crew_path(crew), "data-method" => "delete", href: crew_path(crew), data: {confirm: "Delete \"#{crew.combine_names}?\""}, class: 'delete-button', title: 'Remove'}
+/         #{link_to image_tag('png/configuration12.png'), edit_crew_path(crew), class: 'edit-button', title: 'Settings'}
+/         #{link_to image_tag('png/menu33.png'), crew_path(crew), class: 'profile-button', title: 'View profile'}
+/ .client-list.clearfix
+/   %ul.scrollable
+/     - @projects.each do |project|
+/       %li
+/         %h3 #{project.project_name}
+/         #{link_to image_tag('png/close33.png'), project_path(project), "data-method" => "delete", href: project_path(project), data: {confirm: "Delete \"#{project.combine_names}?\" project"}, class: 'delete-button', title: 'Remove'}
+/         #{link_to image_tag('png/configuration12.png'), edit_project_path(project), class: 'edit-button', title: 'Settings'}
+/         #{link_to image_tag('png/menu33.png'), project_path(project), class: 'profile-button', title: 'View details'}
+/ .bottom_part
+/   .bottom-part-statistics
+/     %ul
+/       %li Projects: #{@projects.count}
+/       %li Crew: #{@crews.count}
+/   .botom-part-finance
+/     %span.profit-font $ #{@project_budget}
+/     %span.loss-font $ #{@crew_rate} 
+/     - cl_vs_cr = Proc.new {(@project_budget) - (@crew_rate)}
+/     -if (@project_budget) > (@crew_rate)
+/       %span.profit $ #{cl_vs_cr.call}
+/     -else
+/       %span.loss $ #{cl_vs_cr.call}

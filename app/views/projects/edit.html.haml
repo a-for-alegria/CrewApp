@@ -1,9 +1,9 @@
-- provide(:title, 'Edit client panel')
+- provide(:title, 'Edit project panel')
 
 .signed-in-content  
   %div.form-block
-    %h2 Edit client
-    =form_for(@client) do |f|
+    %h2 Edit project
+    =form_for(@project) do |f|
       =f.label :client_name
       =f.text_field :client_name, placeholder: "Jackie"
       =f.label :client_secondname

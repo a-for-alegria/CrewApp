@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :crews
-  has_many :clients
+  has_many :projects
   
   validates :email, :password, :password_confirmation,  presence: true
   # Include default devise modules. Others available are:

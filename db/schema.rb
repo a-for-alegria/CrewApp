@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401134333) do
-
-  create_table "clients", force: true do |t|
-    t.string   "client_name"
-    t.string   "client_secondname"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "project_name"
-    t.integer  "budget"
-    t.text     "descr"
-    t.integer  "user_id"
-  end
+ActiveRecord::Schema.define(version: 20150403074825) do
 
   create_table "crews", force: true do |t|
     t.string   "name"
@@ -37,6 +26,17 @@ ActiveRecord::Schema.define(version: 20150401134333) do
     t.string   "client_project"
     t.integer  "rate"
     t.string   "spec"
+    t.integer  "user_id"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "client_name"
+    t.string   "client_secondname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "project_name"
+    t.integer  "budget"
+    t.text     "descr"
     t.integer  "user_id"
   end
 
