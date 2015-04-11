@@ -1,11 +1,19 @@
 
 /* Variables------------------*/
 
-$main-black: #000000;
-$concrete-gray: #2d2d2d;
-$soft-gray: #ababab;
 $main-white: #ffffff;
-$secondary-violet: #634271;
+$main-white-soft: darken($main-white, 5%);
+$main-white-medium: darken($main-white, 10%);
+$main-white-intence: darken($main-white, 15%);
+$main-white-hard: darken($main-white, 20%);
+$main-white-hardcore: darken($main-white, 25%);
+
+$main-black: #000000;
+$main-black-trans-soft: rgba($main-black, 0.5);
+$main-black-trans-medium: rgba($main-black, 0.4);
+$main-black-trans-intence: rgba($main-black, 0.3);
+$main-black-trans-hard: rgba($main-black, 0.2);
+$main-black-trans-hardcore: rgba($main-black, 0.1);
 
 /* Classes------------------*/
 
@@ -38,10 +46,10 @@ $secondary-violet: #634271;
 }
 .button-style {
   &:hover {
-    background-color: darken($main-white, 10%);
-    color: $soft-gray;
+    background-color: $main-white-medium;
+    color: #000000;
   }
-  &:active {background-color: darken($main-white, 25%);}
+  &:active {background-color: $main-white-hardcore;}
 }
 
 

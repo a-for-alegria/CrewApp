@@ -25,25 +25,11 @@ body {
 	font-size: 14px;
 	font-family: 'Average', serif;
 	color: #000000;
-	background-color: #cecece;
-	// background-image: url(footer_lodyas.png);
-	// background-size: cover;
-	// &:after {
-	// 	content: '';
-	// 	display: block;
-	// 	position: absolute;
-	// 	z-index: 0;
-	// 	top: 0;
-	// 	bottom: 0;
-	// 	right: 0;
-	// 	left: 0;
-	// 	background-color: rgba($main-black, 0.7);
-	// }
 }
 
 .main-wrapper {
 	height: 100%;
-	width: 50%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -77,10 +63,6 @@ li {list-style: none;}
 
 a {
 	text-decoration: none;
-	color: #000000;
-	&:hover {
-		color: lighten(#000000, 10%);
-	}
 }
 
 input {box-sizing:border-box;}
@@ -89,14 +71,15 @@ input {box-sizing:border-box;}
 
 nav {
 	float: left;
-	width: 15%;
+	width: 5%;
 	height: 100%;
 	text-align: center;
-	background-color: darken(#a2a0a0, 20%);
+	background-color: $main-white-hard;
+	border-right: 2px solid $main-black-trans-hardcore;
 	li {
 		margin: 0;
 		width: 100%;
-		border-bottom: 2px solid rgba($main-black, 0.15);
+		border-bottom: 2px solid $main-black-trans-hardcore;
 	}
 	a {
 		display: block;
@@ -109,18 +92,15 @@ nav {
 		@extend .button-style;
 	}
 	img {
-		@media(max-width: 1024px) {
-			height: 16px;
-			width: 16px;
-		}
+		height: 16px;
+		width: 16px;
 	}
 }
 main {
 	height: 100%;
-	width: 85%;
+	width: 95%;
   float: right;
-  background-color: #a2a0a0;
-  border-left: 4px solid #cecece;
+  border-right: 4px solid #cecece;
 }
 
 /* Scrollbars ---------------------*/
@@ -131,7 +111,7 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: rgba(darken($soft-gray, 20%), 0.5);
+	background-color: rgba($main-white-hard, 0.5);
   border-radius: 5px;
 }
 

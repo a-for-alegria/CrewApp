@@ -2,55 +2,69 @@
 
 /* Dashboard ---------------------------------------*/
 
-.dashboard {
-  border: none;
-  border-bottom: 4px solid #cecece;
-  li,
-  li.active {
-    width: 100%;
-    border: none;
-    text-align: center;
-    a {
-      border-radius: 0;
-      border: none;
-      margin: 0;
-      background-color: #a2a0a0;
-      &:hover {
-        border: none;
-        background-color: darken(#a2a0a0, 5%);
-      }
-      &:active,
-      &:focus {
-        background-color: darken(#a2a0a0, 10%);
-        border: none;
-      }
-    }
-  }
-
+.dashboard-main {
+  height: 95%;
+  width: 80%;
+  float: left;
+  padding: 5px;
+  background-color: $main-white-medium;
+  border-right: 2px solid $main-black-trans-hardcore;
 }
 
-/* Bottom wide block */
-
-.bottom_part {
-  background-color: rgba($concrete-gray, 0.3);
-  width: 100%;
-  height: 15%;
-  clear: left;
-}
-
-/* Financial block */
-
-.botom-part-finance {
+.dashboard-main-right {
+  width: 40%;
   height: 100%;
-  width: 20%;
   float: right;
-  font-size: 1.5em;
   padding: 10px;
-  text-align: center;
-  background-color: $concrete-gray;
+}
+.dashboard-main-left {
+  width: 60%;
+  height: 100%;
+  float: left;
+  li {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 2px;
+    background-color: $main-black-trans-hardcore;
+    &:nth-child(n+2) {background-color: $main-black-trans-hard;}
+  }
+  a {
+    float: right;
+    vertical-align: middle;
+  }
+  img {
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+}
+
+.dummy-block {
+  background-color: $main-black-trans-hardcore;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-top {
+  border-bottom: 2px solid $main-black-trans-hardcore;
+  background-color: $main-white-soft;
+  height: 5%;
+  a {
+    display: inline-block;
+    padding: 10px;
+    color: #000000;
+  }
+}
+
+.dashboard-statistics {
+  width: 20%;
+  height: 95%;
+  float: right;
+  background-color: $main-white-intence;
   span {
     display: block;
-    padding: 5px;
   }
 }
 
