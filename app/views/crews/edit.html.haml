@@ -18,4 +18,4 @@
       =f.select(:client_project, @projects.pluck(:project_name), {prompt: "Select project"})
       =f.file_field :avatar
 
-      %button{type: 'submit'} Save
+      %button.btn.btn-default.form-submit{type: 'submit'} Save

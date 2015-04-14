@@ -18,4 +18,4 @@
       =f.select(:client_project, @projects.map(&:project_name), {prompt: "Select project"})
       =f.file_field :avatar
 
-      %button{type: 'submit'} Create
+      %button.btn.btn-default.form-submit{type: 'submit'} Create
