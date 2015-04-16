@@ -1,0 +1,29 @@
+#crewModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h2#crewModalLabel.modal-title New member
+      .modal-body
+        =form_for(@crew, remote: true)do |f|
+          =render 'shared/error_messages', object: f.object 
+          =f.label :name
+          =f.text_field :name, placeholder: "Clint"
+          =f.label :secondname
+          =f.text_field :secondname, placeholder: "Eastwood"
+          =f.label :spec
+          =f.text_field :spec, placeholder: "Engineer"
+          =f.label :bank_card
+          =f.text_field :bank_card, placeholder: "xxxx xxxx xxxx xxxx"
+          =f.label :rate
+          =f.number_field :rate, placeholder: "e.g. 1000"
+          =f.select(:client_project, @projects.map(&:project_name), {prompt: "Select project"})
+          =f.file_field :avatar
+          %button.btn.btn-default.form-submit{type: 'submit'} Create
+      
+
+        
+
+
+    

@@ -10,11 +10,10 @@
       #sectionA.tab-pane.fade.in.active
         %ul.scrollable
           - @crews.each do |crew|
-            %li 
-              #{crew.combine_names}
-              #{link_to image_tag('png/close33.png'), crew_path(crew), "data-method" => "delete", href: crew_path(crew), data: {confirm: "Delete \"#{crew.combine_names}?\""}, class: 'delete-button', title: 'Remove'}
-              #{link_to image_tag('png/configuration12.png'), edit_crew_path(crew), class: 'edit-button', title: 'Settings'}
-              #{link_to image_tag('png/menu33.png'), crew_path(crew), class: 'profile-button', title: 'View profile'}
+            = render partial: 'crew_row', locals: {crew: crew}
+        %button.btn.btn-default.btn-lg{"data-target" => "#crewModal", "data-toggle" => "modal", :type => "button"}
+          Add new member
+        = render 'crew_modal'
       #sectionB.tab-pane.fade
         %ul.scrollable
           - @projects.each do |project|
@@ -35,26 +34,3 @@
     %span.profit $ #{cl_vs_cr.call}
   -else
     %span.loss $ #{cl_vs_cr.call}
-/     - @crews.each do |crew|
-/       %li 
-/         %h3 #{crew.combine_names}
-
-/ .client-list.clearfix
-/   %ul.scrollable
-/     - @projects.each do |project|
-/       %li
-/         %h3 #{project.project_name}
-        
-/ .bottom_part
-/   .bottom-part-statistics
-/     %ul
-/       %li Projects: #{@projects.count}
-/       %li Crew: #{@crews.count}
-/   .botom-part-finance
-/     %span.profit-font $ #{@project_budget}
-/     %span.loss-font $ #{@crew_rate} 
-/     - cl_vs_cr = Proc.new {(@project_budget) - (@crew_rate)}
-/     -if (@project_budget) > (@crew_rate)
-/       %span.profit $ #{cl_vs_cr.call}
-/     -else
-/       %span.loss $ #{cl_vs_cr.call}

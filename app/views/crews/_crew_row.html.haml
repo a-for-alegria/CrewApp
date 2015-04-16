@@ -1,0 +1,5 @@
+%li 
+	#{crew.combine_names}
+	#{link_to image_tag('png/close33.png'), crew_path(crew), "data-method" => "delete", href: crew_path(crew), data: {confirm: "Delete \"#{crew.combine_names}?\""}, class: 'delete-button', title: 'Remove'}
+	#{link_to image_tag('png/configuration12.png'), edit_crew_path(crew), class: 'edit-button', title: 'Settings'}
+	#{link_to image_tag('png/menu33.png'), crew_path(crew), class: 'profile-button', title: 'View profile'}

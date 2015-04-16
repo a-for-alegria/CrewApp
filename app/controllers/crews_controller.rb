@@ -7,10 +7,7 @@ class CrewsController < ApplicationController
   def index
     @project_budget = parce_projects.pluck(:budget).sum
     @crew_rate = parce_crew.pluck(:rate).sum
-	end
-
-	def new
-		@crew = Crew.new
+    @crew = Crew.new
 	end
 
 	def create

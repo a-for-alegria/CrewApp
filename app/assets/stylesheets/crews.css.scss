@@ -27,7 +27,7 @@
     padding: 10px;
     margin-bottom: 2px;
     background-color: $main-black-trans-hardcore;
-    &:nth-child(n+2) {background-color: $main-black-trans-hard;}
+    &:nth-child(odd) {background-color: $main-black-trans-hard;}
   }
   a {
     float: right;
