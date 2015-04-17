@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 	before_filter :project_finder, only: [:show, :edit, :update]
-  before_filter :parce_projects, only: [:index, :new, :edit]
+  before_filter :parce_projects, only: [:new, :edit]
   before_filter :redirect
 
   def index

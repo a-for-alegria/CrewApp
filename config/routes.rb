@@ -4,5 +4,5 @@ CrewApp::Application.routes.draw do
   resources :crews
   resources :projects
 
-  root 'crews#index'
+  root 'dashboard#main_page'
 end

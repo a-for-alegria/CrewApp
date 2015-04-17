@@ -12,8 +12,8 @@
           Add new member
         %ul#crew-list.scrollable
           - @crews.each do |crew|
-            = render partial: 'crew_row', locals: {crew: crew}
-        = render 'crew_modal'
+            = render partial: 'crews/crew_row', locals: {crew: crew}
+        = render 'crews/crew_modal'
       #sectionB.tab-pane.fade
         %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
           Add new project

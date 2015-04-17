@@ -1,14 +1,11 @@
 class CrewsController < ApplicationController
 	before_filter :crew_finder, only: [:show, :edit, :update]
-  before_filter :parce_projects, only: [:index, :new, :edit, :update, :create]
-  before_filter :parce_crew, only: [:index]
+  before_filter :parce_projects, only: [:new, :edit, :update, :create]
+  #before_filter :parce_crew, only: [:index]
   before_filter :redirect
 
   def index
-    @project_budget = parce_projects.pluck(:budget).sum
-    @crew_rate = parce_crew.pluck(:rate).sum
-    @crew = Crew.new
-    @project = Project.new
+
 	end
 
 	def create

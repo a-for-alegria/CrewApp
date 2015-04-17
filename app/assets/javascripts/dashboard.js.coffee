@@ -1,7 +1,3 @@
-$(document).ready ->
-# Hide/show edit panel
-  $(".main0list0item-crew").on "click", ->
-    $this = $(this)
-    $this.siblings(".edit-panel").slideToggle(600)
-    return
-  return
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
