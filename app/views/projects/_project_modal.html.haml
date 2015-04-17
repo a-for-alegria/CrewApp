@@ -1,0 +1,24 @@
+#projectModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h2#projectModalLabel.modal-title New project
+      .modal-body
+        =form_for(@project, remote: true, html: {role: :form, 'data-model' => 'project'}) do |f|
+          .form-group  
+            =f.label :client_name
+            =f.text_field :client_name, placeholder: "Enter name of new client", class: 'form-control'
+            =f.label :client_secondname
+            =f.text_field :client_secondname, placeholder: "Enter second name of new client", class: 'form-control'
+            =f.label :project_name
+            =f.text_field :project_name, placeholder: "Project title", class: 'form-control'
+            =f.label :budget
+            =f.number_field :budget, placeholder: "e.g. 1000", class: 'form-control'
+            =f.label :descr
+            =f.text_area :descr, placeholder: "Enter brief description here", class: 'form-control'
+            = render 'shared/error_messages', object: f.object 
+            %button.btn.btn-default.form-submit{type: 'submit'} Create
+
+         

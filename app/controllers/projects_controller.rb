@@ -6,17 +6,18 @@ class ProjectsController < ApplicationController
   def index
 	end
 
-	def new
-		@project = Project.new
-	end
-
 	def create
     @project = current_user.projects.build(project_params)
-    if @project.save
-      redirect_to root_path
-      flash[:success] = "Successfully created"
-    else
-      render 'new'
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to root_path, notice: 'Project was successfully created.' }
+        format.json { render action: 'index', status: :created, location: @project }
+        format.js   { render action: 'index', status: :created, location: @project }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.js   { render json: @project.errors, status: :unprocessable_entity }
+      end
     end
   end
 
