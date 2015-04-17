@@ -24,12 +24,6 @@ class CrewsController < ApplicationController
         format.js   { render json: @crew.errors, status: :unprocessable_entity }
       end
     end
-    # if @crew.save
-    #   redirect_to root_path
-    #   flash[:success] = "Successfully created"
-    # else
-    #   render 'new'
-    # end
   end
 
   def show

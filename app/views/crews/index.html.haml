@@ -8,18 +8,18 @@
   .dashboard-main-left
     .tab-content
       #sectionA.tab-pane.fade.in.active
+        %button.btn.btn-default.btn-sm{"data-target" => "#crewModal", "data-toggle" => "modal", :type => "button"}
+          Add new member
         %ul#crew-list.scrollable
           - @crews.each do |crew|
             = render partial: 'crew_row', locals: {crew: crew}
-        %button.btn.btn-default.btn-sm{"data-target" => "#crewModal", "data-toggle" => "modal", :type => "button"}
-          Add new member
         = render 'crew_modal'
       #sectionB.tab-pane.fade
+        %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
+          Add new project
         %ul#project-list.scrollable
           - @projects.each do |project|
             = render partial: 'projects/project_row', locals: {project: project}
-        %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
-          Add new project
         = render 'projects/project_modal'
   .dashboard-main-right
     .dummy-block
