@@ -12,12 +12,23 @@ class CrewsController < ApplicationController
 
 	def create
     @crew = current_user.crews.build(crew_params)
-    if @crew.save
-      redirect_to root_path
-      flash[:success] = "Successfully created"
-    else
-      render 'new'
+    respond_to do |format|
+      if @crew.save
+        format.html { redirect_to root_path, notice: 'Crew was successfully created.' }
+        format.json { render action: 'index', status: :created, location: @crew }
+        format.js   { render action: 'index', status: :created, location: @crew }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @crew.errors, status: :unprocessable_entity }
+        format.js   { render json: @crew.errors, status: :unprocessable_entity }
+      end
     end
+    # if @crew.save
+    #   redirect_to root_path
+    #   flash[:success] = "Successfully created"
+    # else
+    #   render 'new'
+    # end
   end
 
   def show

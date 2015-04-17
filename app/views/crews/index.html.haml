@@ -8,7 +8,7 @@
   .dashboard-main-left
     .tab-content
       #sectionA.tab-pane.fade.in.active
-        %ul.scrollable
+        %ul#crew-list.scrollable
           - @crews.each do |crew|
             = render partial: 'crew_row', locals: {crew: crew}
         %button.btn.btn-default.btn-sm{"data-target" => "#crewModal", "data-toggle" => "modal", :type => "button"}
