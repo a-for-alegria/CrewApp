@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'ProjectPage' do
   subject {page}
   let(:user) {FactoryGirl.create(:user)}
-  let(:project) {user.projects.create(client_name: client_name, client_secondname: client_secondname, 
+  let!(:project) {user.projects.create(client_name: client_name, client_secondname: client_secondname, 
       budget: budget, project_name: project_name)}
   let(:client_name) {'Client'}
   let(:client_secondname) {'First'}
@@ -15,9 +15,9 @@ describe 'ProjectPage' do
 
   describe 'new project page' do
 
-    before {visit new_project_path}
+    before {visit root_path}
 
-    it {should have_title('New project')}
+    it {should have_title('Dashboard')}
 
     let(:submit) {"Create"}
     

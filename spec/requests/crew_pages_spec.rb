@@ -12,18 +12,12 @@ describe 'CrewPage' do
 
   before {sign_in(user)}
   #==============================New page===========>>
-  describe 'new crew member page' do
-    before {visit new_crew_path}
+  describe 'new crew member' do
+    before {visit root_path}
 
-    it {should have_title('New member')}
+    it {should have_title('Dashboard')}
 
-    let(:submit) {"Create"}
-
-    context 'invalid creation' do
-      it 'should not create crew member' do
-        expect{click_button submit}.not_to change(Crew, :count)
-      end
-    end
+    let(:submit) {"Create crew member"}
 
     context 'valid crew member creation' do
       before do
