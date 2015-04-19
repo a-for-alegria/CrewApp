@@ -26,8 +26,8 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 2px;
-    background-color: $main-black-trans-hardcore;
-    &:nth-child(odd) {background-color: $main-black-trans-hard;}
+    background-color: darken($main-white-medium, 3%);
+    &:nth-child(odd) {background-color: darken($main-white-medium, 6%);}
   }
   a {
     float: right;
