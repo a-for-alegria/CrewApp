@@ -26,10 +26,10 @@
 .dashboard-statistics
   %span Projects: #{@projects.count}
   %span Crew: #{@crews.count}
-  %span.profit-font $ #{@project_budget}
-  %span.loss-font $ #{@crew_rate} 
+  .profit-font $ #{@project_budget}
+  .loss-font $ #{@crew_rate} 
   - cl_vs_cr = Proc.new {(@project_budget) - (@crew_rate)}
   -if (@project_budget) > (@crew_rate)
-    %span.profit $ #{cl_vs_cr.call}
+    .profit $ #{cl_vs_cr.call}
   -else
-    %span.loss $ #{cl_vs_cr.call}
+    .loss $ #{cl_vs_cr.call}

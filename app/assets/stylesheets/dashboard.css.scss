@@ -1,3 +1,111 @@
-// Place all the styles related to the Dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'partials';
+
+/* Dashboard ---------------------------------------*/
+
+.dashboard-main {
+  height: 95%;
+  width: 80%;
+  float: left;
+  padding: 5px;
+  background-color: $main-white-medium;
+  border-right: 2px solid $main-black-trans-hardcore;
+}
+
+.dashboard-main-right {
+  width: 40%;
+  height: 100%;
+  float: right;
+  padding: 10px;
+}
+.dashboard-main-left {
+  width: 60%;
+  height: 100%;
+  float: left;
+  li {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 2px;
+    background-color: $main-black-trans-hardcore;
+    &:nth-child(odd) {background-color: $main-black-trans-hard;}
+  }
+  a {
+    float: right;
+    vertical-align: middle;
+  }
+  img {
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+}
+
+.dummy-block {
+  background-color: $main-black-trans-hardcore;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-top {
+  border-bottom: 2px solid $main-black-trans-hardcore;
+  background-color: $main-white-soft;
+  height: 5%;
+  a {
+    display: inline-block;
+    padding: 10px;
+    color: #000000;
+  }
+}
+
+/* Statistics block */
+
+.dashboard-statistics {
+  width: 20%;
+  height: 95%;
+  float: right;
+  background-color: $main-white-intence;
+  span {
+    display: block;
+    padding: 5px;
+    background-color: $main-white-medium;
+    margin-bottom: 2px;
+  }
+}
+
+.bottom-part-statistics {
+  width: 80%;
+  float: left;
+  padding: 10px;
+}
+
+.profit-font,
+.loss-font,
+.profit,
+.loss {
+	font-size: 1.5em;
+	padding: 5px;
+}
+
+.profit-font {
+	color: green;
+	background-color: $main-white-medium;
+  margin-bottom: 2px;
+}
+
+.loss-font {
+	color: red;
+	background-color: $main-white-medium;
+  margin-bottom: 2px;
+}
+
+.profit {
+  background-color: green;
+  color: darken(green, 15%);
+  text-align: center;
+}
+.loss {
+  background-color: red;
+  color: darken(red, 20%);
+  text-align: center;
+}
