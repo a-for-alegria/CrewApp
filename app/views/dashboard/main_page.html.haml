@@ -21,12 +21,16 @@
           - @crews.each do |crew|
             %iframe{src: "#{crew_path(crew)}", height: '100%', width: '100%'}
       #sectionB.tab-pane.fade
-        %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
-          Add new project
-        %ul#project-list.scrollable
+        .dashboard-B-tab-left
+          %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
+            Add new project
+          %ul#project-list.scrollable
+            - @projects.each do |project|
+              = render partial: 'projects/project_row', locals: {project: project}
+          = render 'projects/project_modal'
+        .dashboard-B-tab-right.scrollable
           - @projects.each do |project|
-            = render partial: 'projects/project_row', locals: {project: project}
-        = render 'projects/project_modal'
+            %iframe{src: "#{project_path(project)}", height: '100%', width: '100%'}
     // Dashboard tab
 .dashboard-statistics
   %span Projects: #{@projects.count}

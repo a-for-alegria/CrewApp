@@ -48,13 +48,15 @@
   }
 }
 
-.dashboard-A-tab-left {
+.dashboard-A-tab-left,
+.dashboard-B-tab-left {
   width: 60%;
   // height: 100%;
   float: left;
 }
 
-.dashboard-A-tab-right {
+.dashboard-A-tab-right,
+.dashboard-B-tab-right {
   width: 40%;
   height: 100%;
   float: right;
