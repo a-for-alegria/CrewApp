@@ -31,6 +31,10 @@
     margin-bottom: 2px;
     background-color: darken($main-white-medium, 3%);
     &:nth-child(odd) {background-color: darken($main-white-medium, 6%);}
+    &:hover {
+      border-left: 3px solid orange;
+      cursor: pointer;
+    }
   }
   a {
     float: right;
@@ -46,7 +50,7 @@
 
 .dashboard-A-tab-left {
   width: 60%;
-  height: 100%;
+  // height: 100%;
   float: left;
 }
 
