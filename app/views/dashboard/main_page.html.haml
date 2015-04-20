@@ -1,19 +1,25 @@
 - provide(:title, 'Dashboard')
 
 // Index page itself
+= render 'layouts/navbar'
 .dashboard-top
   %a{"data-toggle" => "tab", href: "#sectionA"} Crew
   %a{"data-toggle" => "tab", href: "#sectionB"} Projects
 .dashboard-main
-  .dashboard-main-left
+  .dashboard-main-screen
+    // Dashboard tab
     .tab-content
       #sectionA.tab-pane.fade.in.active
-        %button.btn.btn-default.btn-sm{"data-target" => "#crewModal", "data-toggle" => "modal", :type => "button"}
-          Add new member
-        %ul#crew-list.scrollable
+        .dashboard-A-tab-left
+          %button.btn.btn-default.btn-sm{"data-target" => "#crewModal", "data-toggle" => "modal", :type => "button"}
+            Add new member
+          %ul#crew-list.scrollable
+            - @crews.each do |crew|
+              = render partial: 'crews/crew_row', locals: {crew: crew}
+          = render 'crews/crew_modal'
+        .dashboard-A-tab-right.scrollable
           - @crews.each do |crew|
-            = render partial: 'crews/crew_row', locals: {crew: crew}
-        = render 'crews/crew_modal'
+            %iframe{src: "#{crew_path(crew)}", height: '100%', width: '100%'}
       #sectionB.tab-pane.fade
         %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
           Add new project
@@ -21,8 +27,7 @@
           - @projects.each do |project|
             = render partial: 'projects/project_row', locals: {project: project}
         = render 'projects/project_modal'
-  .dashboard-main-right
-    .dummy-block
+    // Dashboard tab
 .dashboard-statistics
   %span Projects: #{@projects.count}
   %span Crew: #{@crews.count}
