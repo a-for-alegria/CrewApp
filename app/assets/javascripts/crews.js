@@ -1,3 +1,6 @@
+
+// Modal window--------------------------------------------------------------//
+
 $(document).ready(function(){
 
   $(document).bind('ajaxError', 'form#new_crew', function(event, jqxhr, settings, exception){
@@ -45,3 +48,14 @@ $(document).ready(function(){
   }
 
 }(jQuery));
+
+// Show/hide Edit form on click --------------------------------------------------------------//
+
+// $(document).ready ->
+// # Hide/show edit panel
+//   $(".edit-button").on "click", ->
+//     $this = $(this)
+//     $this.siblings(".crew-edit-form").slideToggle(600)
+//     return
+
+ 

@@ -36,30 +36,20 @@
       cursor: pointer;
     }
   }
-  a {
-    float: right;
-    vertical-align: middle;
-  }
   img {
     height: 18px;
     width: 18px;
     margin-right: 5px;
+    float: right;
     vertical-align: middle;
   }
 }
 
-.dashboard-A-tab-left,
-.dashboard-B-tab-left {
-  width: 60%;
-  // height: 100%;
-  float: left;
-}
-
-.dashboard-A-tab-right,
-.dashboard-B-tab-right {
-  width: 40%;
+.dashboard-A-tab-main,
+.dashboard-B-tab-main {
+  width: 100%;
   height: 100%;
-  float: right;
+  float: left;
 }
 
 .dashboard-top {
@@ -71,6 +61,10 @@
     padding: 10px;
     color: #000000;
   }
+}
+
+.crew-edit-form {
+  display: none;
 }
 
 /* Statistics block */

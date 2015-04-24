@@ -128,3 +128,12 @@ main {
 	left: 0;
 	width: 100%;
 }
+
+.alert-halfsize {
+	position: absolute;
+	z-index: 3;
+	bottom: 10%;
+	right: 1%;
+	width: 30%;
+	border: 1px solid $main-green;
+}

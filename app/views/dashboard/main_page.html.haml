@@ -1,5 +1,10 @@
 - provide(:title, 'Dashboard')
 
+// Modal windows
+
+= render 'crews/crew_modal'
+= render 'projects/project_modal'
+
 // Index page itself
 = render 'layouts/navbar'
 .dashboard-top
@@ -10,27 +15,21 @@
     // Dashboard tab
     .tab-content
       #sectionA.tab-pane.fade.in.active
-        .dashboard-A-tab-left
+        .dashboard-A-tab-main
           %button.btn.btn-default.btn-sm{"data-target" => "#crewModal", "data-toggle" => "modal", :type => "button"}
             Add new member
           %ul#crew-list.scrollable
             - @crews.each do |crew|
               = render partial: 'crews/crew_row', locals: {crew: crew}
-          = render 'crews/crew_modal'
-        .dashboard-A-tab-right.scrollable
-          - @crews.each do |crew|
-            %iframe{src: "#{crew_path(crew)}", height: '100%', width: '100%'}
+              / .crew-edit-form
+              /   = render partial: 'crews/crew_edit_form', locals: {crew: crew}
       #sectionB.tab-pane.fade
-        .dashboard-B-tab-left
+        .dashboard-B-tab-main
           %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
             Add new project
           %ul#project-list.scrollable
             - @projects.each do |project|
               = render partial: 'projects/project_row', locals: {project: project}
-          = render 'projects/project_modal'
-        .dashboard-B-tab-right.scrollable
-          - @projects.each do |project|
-            %iframe{src: "#{project_path(project)}", height: '100%', width: '100%'}
     // Dashboard tab
 .dashboard-statistics
   %span Projects: #{@projects.count}

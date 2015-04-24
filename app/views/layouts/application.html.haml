@@ -10,12 +10,12 @@
     .main-wrapper
       // Flash notice
       - if flash[:alert]
-        .alert.alert-warning.alert-dismissible.alert-fullsize{:role => "alert"} 
+        .alert.alert-warning.alert-dismissible.alert-halfsize{:role => "alert"} 
           %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
             %span{"aria-hidden" => "true"} ×
           #{flash[:alert]}
       -if flash[:success]
-        .alert.alert-success.alert-dismissible.alert-fullsize{:role => "alert"} 
+        .alert.alert-success.alert-dismissible.alert-halfsize{:role => "alert"} 
           %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
             %span{"aria-hidden" => "true"} ×
           #{flash[:success]}

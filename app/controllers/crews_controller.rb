@@ -1,7 +1,6 @@
 class CrewsController < ApplicationController
-	before_filter :crew_finder, only: [:show, :edit, :update]
-  before_filter :parce_projects, only: [:new, :edit, :update, :create]
-  #before_filter :parce_crew, only: [:index]
+	before_filter :crew_finder, only: [:show, :update]
+  before_filter :parce_projects, only: [:update, :create]
   before_filter :redirect
 
   def index
@@ -27,16 +26,15 @@ class CrewsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
     if @crew.save
       @crew.update_attributes(crew_params)
-      redirect_to @crew
+      redirect_to root_path
       flash[:success] = "Changes saved successfully"
     else
-      render 'edit'
+      render root_path
     end
   end
 
