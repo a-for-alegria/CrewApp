@@ -1,0 +1,19 @@
+%li
+  %label Fullname
+  %span #{@crew.combine_names}
+%li 
+  %label Date of birth
+  %span 21.12.1989
+%li
+  %label Specialization
+  %span #{@crew.spec}
+-if @crew.bank_card
+  %li 
+    %label Bank card
+    %span #{@crew.bank_card}
+%li
+  %label Rate/month 
+  %span $#{@crew.rate}   
+%li
+  %label Project
+  %span #{@crew.client_project}

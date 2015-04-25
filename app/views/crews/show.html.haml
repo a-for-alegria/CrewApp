@@ -1,32 +1,22 @@
 - provide(:title, "#{@crew.combine_names} profile")
 
+// Modal window
+= render 'crew_edit_form'
+
+//Sidebar
+= render 'layouts/navbar'
+
 .signed-in-content
-  - c = @crew
   .profile-crew.scrollable
     .details-header-crew
-      %h1 #{c.combine_names}
+      %h1 #{@crew.combine_names}
     .profile-crew-info
       %h2 Personal info
-      %ul
-        %li
-          %label Fullname
-          %span #{c.combine_names}
-        %li 
-          %label Date of birth
-          %span 21.12.1989
-        %li
-          %label Specialization
-          %span #{c.spec}
-        -if c.bank_card
-          %li 
-            %label Bank card
-            %span #{c.bank_card}
-        %li
-          %label Rate/month 
-          %span $#{c.rate}   
-        %li
-          %label Project
-          %span #{c.client_project}
+      %ul#crew_info
+        = render 'crew_show'
+    %button.btn.btn-default.btn-sm{"data-target" => "#crewEditModal", "data-toggle" => "modal", :type => "button"}
+      Edit 
+    
 
           
 

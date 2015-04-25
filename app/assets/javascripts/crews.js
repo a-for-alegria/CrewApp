@@ -9,6 +9,13 @@ $(document).ready(function(){
     $(event.data).render_form_errors( $.parseJSON(jqxhr.responseText) );
 
   });
+  
+  $(document).bind('ajaxError', 'form#edit_crew', function(event, jqxhr, settings, exception){
+
+    // note: jqxhr.responseJSON undefined, parsing responseText instead
+    $(event.data).render_form_errors( $.parseJSON(jqxhr.responseText) );
+
+  });
 
 });
 

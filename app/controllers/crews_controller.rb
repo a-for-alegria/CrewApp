@@ -1,10 +1,9 @@
 class CrewsController < ApplicationController
 	before_filter :crew_finder, only: [:show, :update]
-  before_filter :parce_projects, only: [:update, :create]
+  before_filter :parce_projects, only: [:update, :create, :show]
   before_filter :redirect
 
   def index
-
 	end
 
 	def create
@@ -31,10 +30,10 @@ class CrewsController < ApplicationController
   def update
     if @crew.save
       @crew.update_attributes(crew_params)
-      redirect_to root_path
+      redirect_to @crew
       flash[:success] = "Changes saved successfully"
     else
-      render root_path
+      redirect_to @crew
     end
   end
 
