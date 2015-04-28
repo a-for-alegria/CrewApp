@@ -37,9 +37,10 @@
 
 .dashboard-li-left {
   width: 95%;
+  height: 100%;
   float: left;
-  padding: 10px;
   margin-bottom: 2px;
+  display: block;
   border-right: 2px solid $main-white-medium;
   background-color: darken($main-white-medium, 6%);
   transition: background-color 0.3s ease;
@@ -48,6 +49,7 @@
     background-color: darken($main-white-medium, 10%);
   }
   &:active {background-color: darken($main-white-medium, 14%);}
+  a {padding: 10px;}
 }
 .dashboard-li-right {
   width: 5%;
