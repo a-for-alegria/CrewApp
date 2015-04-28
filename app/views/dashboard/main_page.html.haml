@@ -33,8 +33,8 @@
   %span Crew: #{@crews.count}
   .profit-font $ #{@project_budget}
   .loss-font $ #{@crew_rate} 
-  - cl_vs_cr = Proc.new {(@project_budget) - (@crew_rate)}
+  - pr_vs_cr = Proc.new {(@project_budget) - (@crew_rate)}
   -if (@project_budget) > (@crew_rate)
-    .profit $ #{cl_vs_cr.call}
+    .profit $ #{pr_vs_cr.call}
   -else
-    .loss $ #{cl_vs_cr.call}
+    .loss $ #{pr_vs_cr.call}

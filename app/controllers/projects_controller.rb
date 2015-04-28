@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
       redirect_to @project
       flash[:success] = "Changes saved successfully"
     else
-      render 'edit'
+      redirect_to @project
     end
   end
 

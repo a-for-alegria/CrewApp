@@ -1,7 +1,7 @@
 - provide(:title, "#{@project.combine_names} page")
 
 // Modal window
-/ = render 'project_edit_form'
+= render 'project_edit_form'
 
 //Sidebar
 = render 'layouts/navbar'
@@ -14,6 +14,9 @@
       %h2 Project details
       %ul
         = render 'project_show'
+    %button.btn.btn-default.btn-sm{"data-target" => "#projectEditModal", "data-toggle" => "modal", :type => "button"}
+      Edit 
+
     
 
 
