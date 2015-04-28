@@ -1,5 +1,5 @@
 %li 
-  #{project.project_name}
-  #{link_to image_tag('png/close33.png'), project_path(project), "data-method" => "delete", href: project_path(project), data: {confirm: "Delete \"#{project.project_name}?\" project"}, class: 'delete-button', title: 'Remove'}
-  #{link_to image_tag('png/configuration12.png'), edit_project_path(project), class: 'edit-button', title: 'Settings'}
-  #{link_to image_tag('png/menu33.png'), project_path(project), class: 'profile-button', title: 'View details'}
+  .dashboard-li-left
+    #{link_to project.project_name, project_path(project)}
+  .dashboard-li-right  
+    #{link_to 'delete', project_path(project), "data-method" => "delete", href: project_path(project), data: {confirm: "Delete \"#{project.project_name}?\" project"}, class: 'delete-button', title: 'Remove'}

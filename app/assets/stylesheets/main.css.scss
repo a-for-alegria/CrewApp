@@ -61,8 +61,13 @@ h4 {
 
 li {list-style: none;}
 
-a {
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
 	text-decoration: none;
+	color: #000000;
 }
 
 input {box-sizing:border-box;}

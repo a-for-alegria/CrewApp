@@ -12,7 +12,7 @@
   %a{"data-toggle" => "tab", href: "#sectionB"} Projects
 .dashboard-main
   .dashboard-main-screen
-    // Dashboard tab
+    // Dashboard tabs
     .tab-content
       #sectionA.tab-pane.fade.in.active
         .dashboard-A-tab-main
@@ -21,8 +21,6 @@
           %ul#crew-list.scrollable
             - @crews.each do |crew|
               = render partial: 'crews/crew_row', locals: {crew: crew}
-              / .crew-edit-form
-              /   = render partial: 'crews/crew_edit_form', locals: {crew: crew}
       #sectionB.tab-pane.fade
         .dashboard-B-tab-main
           %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
@@ -30,7 +28,6 @@
           %ul#project-list.scrollable
             - @projects.each do |project|
               = render partial: 'projects/project_row', locals: {project: project}
-    // Dashboard tab
 .dashboard-statistics
   %span Projects: #{@projects.count}
   %span Crew: #{@crews.count}

@@ -1,22 +1,19 @@
 - provide(:title, "#{@project.combine_names} page")
 
+// Modal window
+/ = render 'project_edit_form'
+
+//Sidebar
+= render 'layouts/navbar'
+
 .signed-in-content  
-  - p = @project
   .details-client.scrollable
     .details-header-client
-      %h1 #{p.project_name}
+      %h1 #{@project.project_name}
     .details-content
       %h2 Project details
       %ul
-        %li 
-          %label Client name
-          %span #{p.combine_names}
-        %li
-          %label Project budget
-          %span $#{p.budget}
-        %li
-          %label Description
-          %span #{p.descr}
+        = render 'project_show'
     
 
 
