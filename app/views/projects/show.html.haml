@@ -7,12 +7,13 @@
 = render 'layouts/navbar'
 
 .signed-in-content  
-  .details-client.scrollable
+  .details-project.scrollable
     .details-header-project
       %h1 #{@project.project_name}
+      - if @project.descr?
+        .project_descr #{@project.descr}
     .details-content-project
-      %h2 Project details
-      %ul
+      %table#project_info.table.table-hover.project-table
         = render 'project_show'
     %button.btn.btn-default.btn-sm{"data-target" => "#projectEditModal", "data-toggle" => "modal", :type => "button"}
       Edit 

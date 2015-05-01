@@ -1,13 +1,14 @@
-%li 
-  %label Client name
-  %span #{@project.combine_names}
-%li
-  %label Project budget
-  %span $#{@project.budget}
-%li
-  %label Description
-  %span #{@project.descr}
-%li
-  %label Colaborators
-  - @collaborators.each do |col|
-    #{link_to col.combine_names, crew_path(col), style: 'text-decoration: underline;'}
+%tbody
+  %tr 
+    %td Client name
+    %td 
+      %strong #{@project.combine_names}
+  %tr
+    %td Project budget
+    %td 
+      %strong $#{@project.budget}
+  %tr  
+    %td Colaborators
+    - @collaborators.each do |col|
+      %td
+        #{link_to col.combine_names, crew_path(col), style: 'text-decoration: underline;'}

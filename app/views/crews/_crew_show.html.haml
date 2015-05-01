@@ -21,27 +21,3 @@
       - @assigned_projects.each do |proj|
         %td
           %strong #{link_to proj.project_name, project_path(proj)}
-    
-
-
-
-
-
-
-/ %li 
-/   %label Date of birth
-/   %span 21.12.1989
-/ %li
-/   %label Specialization
-/   %span #{@crew.spec}
-/ -if @crew.bank_card
-/   %li 
-/     %label Bank card
-/     %span #{@crew.bank_card}
-/ %li
-/   %label Rate/month 
-/   %span $#{@crew.rate}   
-/ %li
-/   %label Project
-/   - @assigned_projects.each do |proj|
-/     #{link_to proj.project_name, project_path(proj), style: 'text-decoration: underline;'}

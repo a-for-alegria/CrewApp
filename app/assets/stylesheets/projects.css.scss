@@ -1,15 +1,25 @@
 @import 'partials';
 
+#project-list {margin-top: 5px;}
+
 /* Show page ---------------------------------------*/
 
+.details-project {padding: 5px;}
+
 .details-header-project {
-
+	padding: 10px;
+	padding-bottom: 20px;
 }
 
-.details-content-project {
-
+.project_descr {
+	width: 50%;
+	line-height: 1.5;
 }
 
-#project-list {
-  margin-top: 5px;
+.project-table {
+	width: 50%;
+	td,
+	th {border: 1px solid $main-white-hard;}
+	a {text-decoration: underline;}
 }
+
