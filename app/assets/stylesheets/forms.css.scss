@@ -37,6 +37,12 @@ textarea {
   margin: 0 auto;
 }
 
-// .crew-edit-form {
-//   display: none;
-// }
+/* Devise forms ---------------------------------------*/
+
+.vertical-aligner {height: 100%;}
+
+.form-block-user {
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @collaborators = Crew.where(client_project: @project.project_name)
   end
 
   def edit

@@ -7,3 +7,7 @@
 %li
   %label Description
   %span #{@project.descr}
+%li
+  %label Colaborators
+  - @collaborators.each do |col|
+    #{link_to col.combine_names, crew_path(col), style: 'text-decoration: underline;'}
