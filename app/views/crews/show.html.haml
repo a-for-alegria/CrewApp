@@ -9,10 +9,11 @@
 .signed-in-content
   .profile-crew.scrollable
     .details-header-crew
+      - if @crew.avatar?
+        %img.crew_avatar{src: "#{@crew.avatar}"}
       %h1 #{@crew.combine_names}
     .profile-info-crew
-      %h2 Personal info
-      %ul#crew_info
+      %table#crew_info.table.table-hover.crew-table
         = render 'crew_show'
     %button.btn.btn-default.btn-sm{"data-target" => "#crewEditModal", "data-toggle" => "modal", :type => "button"}
       Edit 

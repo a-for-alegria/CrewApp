@@ -22,6 +22,7 @@ class CrewsController < ApplicationController
   end
 
   def show
+    @assigned_projects = Project.where(project_name: @crew.client_project)
   end
 
   def edit
