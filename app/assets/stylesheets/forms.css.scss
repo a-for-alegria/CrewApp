@@ -1,5 +1,7 @@
 @import 'partials';
 
+form {padding: 15px;}
+
 form label {display: none;}
 input {
 	display: block;
@@ -23,14 +25,15 @@ textarea {
 .form-block-user {
 	width: 30%;
 	margin: 0 auto;
-	padding: 5px;
 	background-color: $main-white-medium;
 	h2 {
 		text-align: center;
-	}
-	a {
-		display: inline-block;
-	}
+    border-bottom: 2px solid $main-white-hard;
+    background-color: $main-white-hard;
+    padding: 20px;
+    margin: 0;
+ 	}
+	a {display: inline-block;}
 }
 .form-submit {
 	display: block;
@@ -45,4 +48,5 @@ textarea {
 	position: relative;
   top: 50%;
   transform: translateY(-50%);
+  border: 2px solid $main-white-hard;
 }
