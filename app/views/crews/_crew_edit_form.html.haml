@@ -11,14 +11,22 @@
           .form-group 
             =f.label :name
             =f.text_field :name, placeholder: "Clint"
+            
             =f.label :secondname
             =f.text_field :secondname, placeholder: "Eastwood"
+            
+            =f.label :dob
+            =f.date_field :dob, class: 'form-control'
+
             =f.label :spec
             =f.text_field :spec, placeholder: "Engineer"
+            
             =f.label :bank_card
             =f.text_field :bank_card, placeholder: "xxxx xxxx xxxx xxxx"
+            
             =f.label :rate
             =f.number_field :rate, placeholder: "e.g. 1000"
+            
             =f.select(:client_project, @projects.pluck(:project_name), {prompt: "Select project"})
             =f.file_field :avatar
             %button.btn.btn-default.form-submit{type: 'submit'} Save changes

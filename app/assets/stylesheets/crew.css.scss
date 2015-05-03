@@ -8,7 +8,7 @@
 	padding: 5px;
   h1 {
   	display: inline-block;
-  	vertical-align: middle;
+  	vertical-align: top;
   	padding-left: 5px;
   }
 }
@@ -18,11 +18,15 @@
 	padding-bottom: 20px;
 }
 
-.crew_avatar {
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
+.crew_avatar_container {
+	display: inline-block;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
 }
+
+.crew_avatar {width: 80px;}
 
 .crew-table {
 	width: 50%;

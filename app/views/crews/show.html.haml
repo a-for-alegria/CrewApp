@@ -10,7 +10,8 @@
   .profile-crew.scrollable
     .details-header-crew
       - if @crew.avatar?
-        %img.crew_avatar{src: "#{@crew.avatar}"}
+        .crew_avatar_container  
+          %img.crew_avatar{src: "#{@crew.avatar}"}
       %h1 #{@crew.combine_names}
     .profile-info-crew
       %table#crew_info.table.table-hover.crew-table

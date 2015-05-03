@@ -19,7 +19,7 @@ describe 'ProjectPage' do
 
     it {should have_title('Dashboard')}
 
-    let(:submit) {"Create"}
+    let(:submit) {"Create project"}
     
     describe 'create' do
       context 'invalid creation' do

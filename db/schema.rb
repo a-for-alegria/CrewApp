@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502090209) do
+ActiveRecord::Schema.define(version: 20150503113329) do
 
   create_table "crews", force: true do |t|
     t.string   "name"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150502090209) do
     t.integer  "rate"
     t.string   "spec"
     t.integer  "user_id"
-    t.string   "dob"
+    t.date     "dob",                 limit: 255
   end
 
   create_table "projects", force: true do |t|

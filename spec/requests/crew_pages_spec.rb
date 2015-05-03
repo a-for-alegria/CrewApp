@@ -4,11 +4,12 @@ describe 'CrewPage' do
   subject {page}
   
   let(:user) {FactoryGirl.create(:user)}
-  let!(:crew) {Crew.create(name: name, secondname: secondname, rate: rate, spec: spec)}
+  let!(:crew) {Crew.create(name: name, secondname: secondname, rate: rate, spec: spec, dob: dob)}
   let(:name) {'Name'}
   let(:secondname) {'First'}
   let(:rate) {1000}
   let(:spec) {'Frontend'}
+  let(:dob) {Time.now.to_date}
 
   before {sign_in(user)}
   #==============================New page===========>>
@@ -25,6 +26,7 @@ describe 'CrewPage' do
         fill_in 'Secondname',         with: secondname
         fill_in 'Rate',               with: rate
         fill_in 'Spec',               with: spec
+        fill_in 'Spec',               with: dob
       end
       it 'should create crew member' do
         expect{click_button submit}.to change(Crew, :count).by(1)
@@ -56,7 +58,7 @@ describe 'CrewPage' do
         fill_in 'Name',               with: reload_n
         fill_in 'Secondname',         with: reload_sn
         fill_in 'Rate',               with: reload_r
-        fill_in 'Spec',     with: reload_s
+        fill_in 'Spec',               with: reload_s
         click_button('Save')
       end
       it {should have_content(reload_n)}
