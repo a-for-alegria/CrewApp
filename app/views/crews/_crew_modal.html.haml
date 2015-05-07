@@ -27,12 +27,10 @@
             =f.label :rate
             =f.number_field :rate, placeholder: "e.g. 1000", class: 'form-control'
             
-            =f.select(:client_project, @projects.map(&:project_name), {prompt: "Select project"})
+            =f.select(:client_project, @projects.map(&:project_name), {prompt: "Select project", class: "selectpicker"})
             =f.file_field :avatar
+
           %button.btn.btn-default.form-submit{type: 'submit'} Create crew member
       
 
         
-
-
-    

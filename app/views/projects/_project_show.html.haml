@@ -8,7 +8,7 @@
     %td 
       %strong $#{@project.budget}
   %tr  
-    %td Colaborators
-    - @collaborators.each do |col|
-      %td
-        #{link_to col.combine_names, crew_path(col)}
+    - if @collaborators.any? 
+      - @collaborators.each do |col|
+        %td Collaborators
+        %td #{link_to col.combine_names, crew_path(col)}
