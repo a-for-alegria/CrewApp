@@ -127,15 +127,15 @@ main {
 /*Flash messages ---------------------*/
 
 .alert-warning {
-	background-color: #fafad2;
-	border: 2px solid darken(#fafad2, 30%);
-	color: darken(#fafad2, 60%);
+	background-color: $secondary-yellow;
+	border: 2px solid darken($secondary-yellow, 30%);
+	color: darken($secondary-yellow, 60%);
 }
 
 .alert-success {
-	background-color: #98fb98;
-	border: 2px solid darken(#98fb98, 30%);
-	color: darken(#98fb98, 60%);
+	background-color: $secondary-green;
+	border: 2px solid darken($secondary-green, 30%);
+	color: darken($secondary-green, 60%);
 }
 
 .alert-fullsize {
