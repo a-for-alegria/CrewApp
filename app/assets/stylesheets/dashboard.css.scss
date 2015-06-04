@@ -83,6 +83,12 @@
   }
 }
 
+.active,
+.archived {
+  display: block;
+  padding: 10px;
+}
+
 /* Statistics block */
 
 .dashboard-statistics {

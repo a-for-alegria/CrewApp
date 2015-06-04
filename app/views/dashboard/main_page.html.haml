@@ -26,6 +26,11 @@
           %button.btn.btn-default.btn-sm{"data-target" => "#projectModal", "data-toggle" => "modal", :type => "button"}
             Add new project
           %ul#project-list.scrollable
+            %span.active Active
+            - @projects.each do |project|
+              = render partial: 'projects/project_row', locals: {project: project}
+          %ul#project-list.scrollable
+            %span.archived Archived
             - @projects.each do |project|
               = render partial: 'projects/project_row', locals: {project: project}
 .dashboard-statistics
